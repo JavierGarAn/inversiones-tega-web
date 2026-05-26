@@ -1447,54 +1447,101 @@ ul {
 }
 
 /* --------------------------------------------------------
-   11. CLIENTES (SLIDER DE MARCAS)
+   11. CLIENTES (SECCIÓN PREMIUM Y GRID)
 -------------------------------------------------------- */
-.clients {
-  background-color: var(--bg-color);
-  padding: 60px 0;
+.clients-section {
+  background-color: var(--bg-surface);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
 
-.clients-text {
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.client-card {
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+[data-theme="dark"] .client-card {
+  background-color: var(--bg-surface-elevated);
+}
+
+.client-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-medium);
+}
+
+.client-image-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 4px solid var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: all var(--transition-normal);
+}
+
+[data-theme="dark"] .client-image-wrapper {
+  border-color: var(--bg-surface);
+}
+
+.client-card:hover .client-image-wrapper {
+  transform: scale(1.08);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(143, 169, 61, 0.2);
+}
+
+.client-image-wrapper img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+.client-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.client-card-name {
+  font-size: 1.15rem;
+  color: var(--text-primary);
   font-family: var(--font-title);
-  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.client-card-sector {
+  font-size: 0.75rem;
+  color: var(--accent-color);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--text-muted);
-  margin-bottom: 30px;
+  letter-spacing: 1.5px;
 }
 
-.clients-track {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  opacity: 0.6;
-}
-
-.client-logo {
-  height: 35px;
-  filter: grayscale(1);
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-[data-theme="dark"] .client-logo {
-  filter: grayscale(1) invert(1);
-}
-
-.client-logo:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-[data-theme="dark"] .client-logo:hover {
-  filter: grayscale(0) invert(0);
+.client-card-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 /* --------------------------------------------------------
