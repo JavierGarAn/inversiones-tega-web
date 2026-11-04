@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración & Mantenimiento | Inversiones Tega B2B</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #155C2B;
+      --primary-light: #22C55E;
+      --primary-glow: rgba(34, 197, 94, 0.35);
+      --dark: #020B18;
+      --dark-card: #08162B;
+      --dark-card-hover: #0D203D;
+      --border: rgba(255, 255, 255, 0.12);
+      --border-accent: rgba(34, 197, 94, 0.4);
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --danger: #EF4444;
+      --warning: #F59E0B;
+      --success: #10B981;
+      --font-body: 'Manrope', -apple-system, sans-serif;
+      --font-display: 'Barlow Condensed', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── AUTH SCREEN ─── */
+    #authOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 11, 24, 0.94);
+      backdrop-filter: blur(14px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .auth-box {
+      background: var(--dark-card);
+      border: 1.5px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 36px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(21, 92, 43, 0.2);
+    }
+    .auth-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .auth-logo span { color: var(--primary-light); }
+    .auth-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .auth-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid var(--border);
+      color: #FFFFFF;
+      padding: 13px 16px;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .auth-input:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+    .btn-auth {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary) 0%, #1E7E34 100%);
+      color: #FFFFFF;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-auth:hover {
+      background: var(--primary-light);
+      color: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px var(--primary-glow);
+    }
+
+    /* ─── APP HEADER ─── */
+    .admin-header {
+      background: #030D1C;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .admin-header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .admin-logo-badge {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: var(--primary-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .admin-header-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .admin-header-title span { color: var(--primary-light); }
+    .admin-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-header-link {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+    .btn-header-link:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+    }
+    .btn-save-all {
+      background: var(--primary-light);
+      color: var(--dark);
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+    .btn-save-all:hover {
+      background: #4ADE80;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .admin-container {
+      max-width: 1360px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+      flex-grow: 1;
+    }
+
+    /* ─── TABS NAV ─── */
+    .admin-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1.5px solid var(--border);
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 12px 18px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: #FFFFFF;
+    }
+    .tab-btn.active {
+      color: var(--primary-light);
+      border-bottom-color: var(--primary-light);
+    }
+
+    /* ─── TAB CONTENT PANELS ─── */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── GUIDE BANNER (MEDIDAS OFICIALES) ─── */
+    .guide-banner {
+      background: linear-gradient(135deg, rgba(21, 92, 43, 0.15) 0%, rgba(34, 197, 94, 0.05) 100%);
+      border: 1.5px solid var(--border-accent);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+    }
+    .guide-banner-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .guide-banner-header svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--primary-light);
+    }
+    .guide-banner-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .guide-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+    .spec-item {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .spec-item-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .spec-item-size {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.03em;
+    }
+    .spec-item-desc {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ─── PRODUCTOS SECTION ─── */
+    .table-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .toolbar-search {
+      background: var(--dark-card);
+      border: 1.5px solid var(--border);
+      color: #FFFFFF;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      min-width: 280px;
+      outline: none;
+    }
+    .toolbar-search:focus {
+      border-color: var(--primary-light);
+    }
+    .toolbar-filter {
+      background: var(--dark-card);
+      border: 1.5px solid var(--border);
+      color: #FFFFFF;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      outline: none;
+    }
+    .btn-add-item {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+    .btn-add-item:hover {
+      background: var(--primary-light);
+      color: var(--dark);
+    }
+
+    /* PRODUCT CARDS GRID */
+    .products-admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .product-admin-card {
+      background: var(--dark-card);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+    .product-admin-card:hover {
+      border-color: var(--border-accent);
+      background: var(--dark-card-hover);
+    }
+    .prod-card-thumb-wrap {
+      width: 100%;
+      height: 170px;
+      position: relative;
+      background: #020813;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .prod-card-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .prod-card-cat-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(2, 11, 24, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--primary-light);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .prod-card-stock-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      color: #6EE7B7;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
+    .prod-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .prod-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .prod-card-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+    .prod-card-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      margin-bottom: 12px;
+    }
+    .prod-card-price {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary-light);
+    }
+    .prod-card-unit {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .prod-card-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-action-edit {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: #FFFFFF;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-action-edit:hover {
+      background: var(--primary);
+      border-color: var(--primary-light);
+    }
+    .btn-action-delete {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #F87171;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-action-delete:hover {
+      background: #EF4444;
+      color: #FFFFFF;
+    }
+
+    /* ─── CLIENTS SECTION ─── */
+    .clients-admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .client-admin-card {
+      background: var(--dark-card);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .client-logo-preview {
+      width: 100%;
+      height: 90px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .client-logo-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .client-admin-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    /* ─── MEDIA UPLOAD SECTION ─── */
+    .upload-dropzone {
+      border: 2px dashed var(--border-accent);
+      background: rgba(21, 92, 43, 0.08);
+      border-radius: 16px;
+      padding: 44px 20px;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+    .upload-dropzone:hover, .upload-dropzone.dragover {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: var(--primary-light);
+      transform: scale(1.01);
+    }
+    .upload-icon {
+      width: 48px;
+      height: 48px;
+      stroke: var(--primary-light);
+      margin-bottom: 12px;
+    }
+    .upload-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .upload-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* ─── DOMAIN & DEPLOY TAB ─── */
+    .deploy-card {
+      background: var(--dark-card);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin-bottom: 24px;
+    }
+    .deploy-card-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .deploy-card-title svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--primary-light);
+    }
+    .dns-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.85rem;
+    }
+    .dns-table th, .dns-table td {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .dns-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--primary-light);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .dns-table code {
+      background: #000000;
+      color: #4ADE80;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-box {
+      background: #08162B;
+      border: 1.5px solid var(--border-accent);
+      border-radius: 16px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #FFFFFF;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--primary-light);
+    }
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    /* ─── TOAST ─── */
+    #adminToast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #030D1C;
+      border: 1.5px solid var(--primary-light);
+      color: #FFFFFF;
+      padding: 14px 22px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      font-size: 0.88rem;
+      font-weight: 700;
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+    #adminToast.show {
+      display: flex;
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUTH SCREEN -->
+  <div id="authOverlay">
+    <div class="auth-box">
+      <div class="auth-logo">INVERSIONES <span>TEGA</span></div>
+      <div class="auth-sub">Panel de Mantenimiento B2B & Catálogo</div>
+      <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 14px;">Ingresa la contraseña de administrador:</p>
+      <input type="password" id="adminPasswordInput" class="auth-input" placeholder="••••••••" autofocus />
+      <button class="btn-auth" onclick="verifyPassword()">Ingresar al Sistema</button>
+      <div style="font-size: 0.72rem; color: #475569; margin-top: 14px;">Contraseña por defecto: <code>tega2026</code></div>
+    </div>
+  </div>
+
+  <!-- ADMIN HEADER -->
+  <header class="admin-header">
+    <div class="admin-header-brand">
+      <div class="admin-header-title">INVERSIONES <span>TEGA</span></div>
+      <span class="admin-logo-badge">ADMIN B2B v1.0</span>
+      <span style="font-size: 0.78rem; color: #22C55E; display: flex; align-items: center; gap: 4px;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #22C55E; display: inline-block;"></span>
+        En línea (Almacén Central)
+      </span>
+    </div>
+
+    <div class="admin-header-actions">
+      <a href="/" target="_blank" class="btn-header-link" title="Ver la tienda tal como la ven los clientes">
+        <svg viewBox="0 0 24 24" fill="none" style="width:15px;height:15px;stroke:currentColor;"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Ver Web en Vivo ↗
+      </a>
+      <button class="btn-save-all" onclick="saveAllChangesToServer()">
+        <svg viewBox="0 0 24 24" fill="none" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.2;"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2zM17 21v-8H7v8M7 3v5h8"/></svg>
+        Guardar Cambios
+      </button>
+      <button onclick="logoutAdmin()" class="btn-header-link" style="color:#F87171;" title="Cerrar sesión de administrador">
+        Salir
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="admin-container">
+
+    <!-- GUIDE BANNER: MEDIDAS OFICIALES RECOMENDADAS -->
+    <section class="guide-banner">
+      <div class="guide-banner-header">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <div>
+          <h2 class="guide-banner-title">Guía Oficial de Medidas & Formatos para Subir Archivos</h2>
+          <p style="font-size:0.8rem;color:var(--text-muted);">Sube tus fotos y videos en estas dimensiones para que la web cargue ultra rápido y se vea nítida en móviles y pantallas 4K:</p>
+        </div>
+      </div>
+
+      <div class="guide-specs-grid">
+        <div class="spec-item">
+          <div class="spec-item-badge">📦 Fotos de Productos</div>
+          <div class="spec-item-size">600 × 400 px</div>
+          <div class="spec-item-desc">Aspecto 3:2 | Formato JPG o WebP | Fondo blanco o neutro</div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-item-badge">🏢 Logos de Clientes / Ticker</div>
+          <div class="spec-item-size">300 × 120 px</div>
+          <div class="spec-item-desc">Aspecto 2.5:1 | Formato PNG transparente o SVG</div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-item-badge">🖼️ Portadas & Banners (Hero)</div>
+          <div class="spec-item-size">1920 × 800 px</div>
+          <div class="spec-item-desc">Aspecto 2.4:1 Panorámico | JPG o WebP &lt; 2MB</div>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-item-badge">🎥 Videos de Faena / Portada</div>
+          <div class="spec-item-size">1920 × 1080 px</div>
+          <div class="spec-item-desc">MP4 (Códec H.264) | Sin audio | Peso máx: 25MB</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABS -->
+    <nav class="admin-tabs">
+      <button class="tab-btn active" onclick="switchAdminTab('productos')">
+        📦 Mantenimiento de Productos & Precios (<span id="prodCountBadge">0</span>)
+      </button>
+      <button class="tab-btn" onclick="switchAdminTab('clientes')">
+        🏢 Logos de Clientes & Ticker (<span id="clientCountBadge">0</span>)
+      </button>
+      <button class="tab-btn" onclick="switchAdminTab('medios')">
+        📁 Subir Fotos y Videos
+      </button>
+      <button class="tab-btn" onclick="switchAdminTab('dominio')">
+        🌐 Publicar & Enlazar Dominio
+      </button>
+    </nav>
+
+    <!-- TAB 1: PRODUCTOS -->
+    <section id="panel-productos" class="tab-panel active">
+      <div class="table-toolbar">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <input type="text" id="prodSearchInput" class="toolbar-search" placeholder="🔍 Buscar producto por nombre o norma..." oninput="filterAdminProducts()" />
+          <select id="prodCatFilter" class="toolbar-filter" onchange="filterAdminProducts()">
+            <option value="all">Todas las Categorías</option>
+            <option value="epps">1) EPP's</option>
+            <option value="herramientas">2) Herramientas</option>
+            <option value="mallas">3) Malla Raschel</option>
+            <option value="carton">4) Cartón y Plásticos</option>
+            <option value="senaleticas">5) Señalización</option>
+            <option value="pvc">6) Tuberías PVC</option>
+          </select>
+        </div>
+
+        <button class="btn-add-item" onclick="openNewProductModal()">
+          <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;stroke:currentColor;stroke-width:2.5;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Agregar Nuevo Producto
+        </button>
+      </div>
+
+      <div class="products-admin-grid" id="adminProductsContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TAB 2: CLIENTES -->
+    <section id="panel-clientes" class="tab-panel">
+      <div class="table-toolbar">
+        <p style="color:var(--text-muted);font-size:0.88rem;">Empresas e inmobiliarias que aparecen en el carrusel de confianza (Ticker) en el Inicio:</p>
+        <button class="btn-add-item" onclick="openNewClientModal()">
+          <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;stroke:currentColor;stroke-width:2.5;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Agregar Cliente
+        </button>
+      </div>
+
+      <div class="clients-admin-grid" id="adminClientsContainer">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- TAB 3: GESTOR DE MEDIOS (SUBIR FOTOS Y VIDEOS) -->
+    <section id="panel-medios" class="tab-panel">
+      <div class="upload-dropzone" id="dropzone" onclick="document.getElementById('fileUploadInput').click()">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+        <div class="upload-title">Arrastra aquí tus Fotos o Videos para Subir</div>
+        <div class="upload-sub">Formatos admitidos: JPG, PNG, WEBP, SVG, MP4 (hasta 50MB)</div>
+        <button class="btn-add-item" style="pointer-events:none;">Seleccionar Archivos desde tu Computadora</button>
+        <input type="file" id="fileUploadInput" style="display:none;" multiple accept="image/*,video/mp4" onchange="handleFilesSelected(this.files)" />
+      </div>
+
+      <h3 style="font-family:var(--font-display);font-size:1.35rem;text-transform:uppercase;margin-bottom:14px;">Archivos Subidos Recientemente</h3>
+      <div id="uploadedFilesList" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:16px;">
+        <!-- Uploaded files displayed here -->
+      </div>
+    </section>
+
+    <!-- TAB 4: DOMINIO & PUBLICACIÓN -->
+    <section id="panel-dominio" class="tab-panel">
+      <div class="deploy-card">
+        <h3 class="deploy-card-title">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          Paso a Paso para Conectar tu Dominio Oficial
+        </h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.6;">
+          Para vincular tu dominio (ejemplo: <code>inversionestega.pe</code> o <code>inversionestega.com</code>), solo debes configurar los siguientes registros DNS en el panel donde compraste tu dominio (ej. Nic.pe, GoDaddy, Hostinger, Namecheap o Cloudflare):
+        </p>
+
+        <table class="dns-table">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Nombre / Host</th>
+              <th>Valor / Destino</th>
+              <th>Finalidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>A</strong></td>
+              <td><code>@</code> (o vacío)</td>
+              <td><code>76.76.21.21</code></td>
+              <td>Apunta tu dominio principal hacia el servidor global (Vercel CDN)</td>
+            </tr>
+            <tr>
+              <td><strong>CNAME</strong></td>
+              <td><code>www</code></td>
+              <td><code>cname.vercel-dns.com</code></td>
+              <td>Permite que los usuarios ingresen escribiendo www.tudominio.pe</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:20px;padding:16px;background:rgba(34,197,94,0.1);border-left:4px solid var(--primary-light);border-radius:6px;">
+          <strong style="color:var(--primary-light);">💡 ¿Ya tienes listo el nombre de tu dominio?</strong>
+          <p style="font-size:0.85rem;color:#E2E8F0;margin-top:4px;">
+            Dinos el nombre exacto de tu dominio en el chat y te generamos la configuración exacta para publicarlo de inmediato.
+          </p>
+        </div>
+      </div>
+
+      <div class="deploy-card">
+        <h3 class="deploy-card-title">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Copia de Seguridad de la Base de Datos
+        </h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:14px;">Descarga un archivo JSON completo con todos tus productos, precios y clientes:</p>
+        <button class="btn-header-link" onclick="exportDatabaseJson()">
+          📥 Descargar Respaldo JSON
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: EDITAR / CREAR PRODUCTO -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="productModalTitle">Editar Producto</h3>
+        <button class="modal-close" onclick="closeProductModal()">&times;</button>
+      </div>
+
+      <form id="productForm" onsubmit="handleProductFormSubmit(event)">
+        <input type="hidden" id="formProdId" />
+
+        <div class="form-group">
+          <label class="form-label">Nombre del Producto / Ítem</label>
+          <input type="text" id="formProdName" class="form-input" required />
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="form-group">
+            <label class="form-label">Categoría</label>
+            <select id="formProdCat" class="form-select" required>
+              <option value="epps">1) EPP's</option>
+              <option value="herramientas">2) Herramientas</option>
+              <option value="mallas">3) Malla Raschel</option>
+              <option value="carton">4) Cartón y Plásticos</option>
+              <option value="senaleticas">5) Señalización</option>
+              <option value="pvc">6) Tuberías PVC</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Etiqueta / Norma Técnica</label>
+            <input type="text" id="formProdTag" class="form-input" placeholder="Ej: Norma ANSI Z89.1" />
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="form-group">
+            <label class="form-label">Precio Referencial / B2B</label>
+            <input type="text" id="formProdPrice" class="form-input" placeholder="Ej: S/ 45.00 + IGV ó Cotizar x volumen" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Unidad de Despacho</label>
+            <input type="text" id="formProdUnit" class="form-input" placeholder="Ej: Unidad, Rollo, Caja x 20" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Descripción Técnica</label>
+          <textarea id="formProdDesc" class="form-textarea" placeholder="Especificaciones, material, norma de cumplimiento..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Foto del Producto (Ruta o URL - Medida: 600x400 px)</label>
+          <div style="display:flex;gap:10px;">
+            <input type="text" id="formProdImage" class="form-input" placeholder="/assets/nombre_foto.jpg" />
+            <button type="button" class="btn-header-link" onclick="document.getElementById('prodModalFileInput').click()">Subir Foto</button>
+            <input type="file" id="prodModalFileInput" style="display:none;" accept="image/*" onchange="uploadPhotoForProduct(this)" />
+          </div>
+          <div style="margin-top:8px;">
+            <img id="formProdImagePreview" src="" alt="Vista previa" style="max-height:90px;border-radius:6px;display:none;border:1px solid var(--border);" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Estado de Disponibilidad</label>
+          <select id="formProdStock" class="form-select">
+            <option value="En Stock">En Stock (Despacho Inmediato)</option>
+            <option value="Por Pedido">Bajo Pedido Programado</option>
+            <option value="Agotado">Temporalmente Agotado</option>
+          </select>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+          <button type="button" class="btn-header-link" onclick="closeProductModal()">Cancelar</button>
+          <button type="submit" class="btn-save-all">Guardar Producto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: AGREGAR CLIENTE -->
+  <div class="modal-overlay" id="clientModal">
+    <div class="modal-box" style="max-width:480px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Agregar Nuevo Cliente</h3>
+        <button class="modal-close" onclick="closeClientModal()">&times;</button>
+      </div>
+
+      <form id="clientForm" onsubmit="handleClientFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Nombre de la Empresa o Inmobiliaria</label>
+          <input type="text" id="formClientName" class="form-input" required placeholder="Ej: Inmobiliaria Los Portales" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Logo (Medida recomendada: 300x120 px - PNG Transparente)</label>
+          <input type="text" id="formClientLogo" class="form-input" required placeholder="/assets/logo_cliente.png" />
+          <div style="margin-top:8px;">
+            <button type="button" class="btn-header-link" onclick="document.getElementById('clientLogoFileInput').click()">Subir Imagen de Logo</button>
+            <input type="file" id="clientLogoFileInput" style="display:none;" accept="image/*" onchange="uploadLogoForClient(this)" />
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+          <button type="button" class="btn-header-link" onclick="closeClientModal()">Cancelar</button>
+          <button type="submit" class="btn-save-all">Guardar Cliente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="adminToast"></div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // ─── AUTHENTICATION ───
+    const AUTH_PASS = 'tega2026';
+    function checkAuth() {
+      if (sessionStorage.getItem('tega_admin_auth') === 'true') {
+        document.getElementById('authOverlay').style.display = 'none';
+      }
+    }
+    function verifyPassword() {
+      const input = document.getElementById('adminPasswordInput').value;
+      if (input === AUTH_PASS) {
+        sessionStorage.setItem('tega_admin_auth', 'true');
+        document.getElementById('authOverlay').style.display = 'none';
+        showToast('🔓 Acceso autorizado como Administrador');
+      } else {
+        alert('Contraseña incorrecta. Intenta nuevamente.');
+      }
+    }
+    function logoutAdmin() {
+      sessionStorage.removeItem('tega_admin_auth');
+      location.reload();
+    }
+    document.getElementById('adminPasswordInput').addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') verifyPassword();
+    });
+
+    // ─── DATA STATE ───
+    let currentDB = {
+      products: [],
+      clients: [],
+      settings: {}
+    };
+
+    async function loadDatabase() {
+      try {
+        const res = await fetch('/api/data');
+        if (res.ok) {
+          currentDB = await res.json();
+        } else {
+          loadFromLocalStorage();
+        }
+      } catch (err) {
+        console.warn('Servidor no disponible, cargando respaldo local...');
+        loadFromLocalStorage();
+      }
+      renderProductsGrid();
+      renderClientsGrid();
+      updateBadges();
+    }
+
+    function loadFromLocalStorage() {
+      const saved = localStorage.getItem('tega_db_backup');
+      if (saved) {
+        try { currentDB = JSON.parse(saved); } catch(e){}
+      }
+    }
+
+    function updateBadges() {
+      document.getElementById('prodCountBadge').textContent = (currentDB.products || []).length;
+      document.getElementById('clientCountBadge').textContent = (currentDB.clients || []).length;
+    }
+
+    // ─── TABS SWITCH ───
+    function switchAdminTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      const target = document.getElementById('panel-' + tabId);
+      if (target) target.classList.add('active');
+    }
+
+    // ─── RENDER PRODUCTOS ───
+    function renderProductsGrid(filterText = '', filterCat = 'all') {
+      const container = document.getElementById('adminProductsContainer');
+      const products = currentDB.products || [];
+
+      const filtered = products.filter(p => {
+        const matchText = !filterText || 
+          p.name.toLowerCase().includes(filterText.toLowerCase()) ||
+          (p.tag && p.tag.toLowerCase().includes(filterText.toLowerCase())) ||
+          (p.desc && p.desc.toLowerCase().includes(filterText.toLowerCase()));
+        const matchCat = filterCat === 'all' || p.cat === filterCat;
+        return matchText && matchCat;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-muted);">No se encontraron productos coincidentes.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(p => `
+        <div class="product-admin-card" id="card-${p.id}">
+          <div class="prod-card-thumb-wrap">
+            <img src="${p.image || '/assets/cat_epps.jpg'}" alt="${p.name}" onerror="this.src='/assets/cat_epps.jpg'" />
+            <span class="prod-card-cat-badge">${p.catName || p.cat}</span>
+            <span class="prod-card-stock-badge">${p.stock || 'En Stock'}</span>
+          </div>
+          <div class="prod-card-body">
+            <h4 class="prod-card-title">${p.name}</h4>
+            <p class="prod-card-desc">${p.desc || 'Sin descripción técnica'}</p>
+            <div class="prod-card-price-row">
+              <span class="prod-card-price">${p.price || 'Bajo Cotización'}</span>
+              <span class="prod-card-unit">${p.unit || 'Por volumen'}</span>
+            </div>
+            <div class="prod-card-actions">
+              <button class="btn-action-edit" onclick="editProduct('${p.id}')">
+                <svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;stroke:currentColor;"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                Editar
+              </button>
+              <button class="btn-action-delete" onclick="deleteProduct('${p.id}')" title="Eliminar">
+                <svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;stroke:currentColor;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterAdminProducts() {
+      const q = document.getElementById('prodSearchInput').value;
+      const cat = document.getElementById('prodCatFilter').value;
+      renderProductsGrid(q, cat);
+    }
+
+    // ─── EDIT & CREATE PRODUCT ───
+    function openNewProductModal() {
+      document.getElementById('productModalTitle').textContent = 'Agregar Nuevo Producto';
+      document.getElementById('formProdId').value = 'prod-' + Date.now();
+      document.getElementById('formProdName').value = '';
+      document.getElementById('formProdCat').value = 'epps';
+      document.getElementById('formProdTag').value = '';
+      document.getElementById('formProdPrice').value = 'Cotizar por volumen';
+      document.getElementById('formProdUnit').value = 'Unidad';
+      document.getElementById('formProdDesc').value = '';
+      document.getElementById('formProdImage').value = '/assets/cat_epps.jpg';
+      document.getElementById('formProdStock').value = 'En Stock';
+      document.getElementById('formProdImagePreview').style.display = 'none';
+
+      document.getElementById('productModal').classList.add('open');
+    }
+
+    function editProduct(id) {
+      const p = currentDB.products.find(item => item.id === id);
+      if (!p) return;
+
+      document.getElementById('productModalTitle').textContent = 'Editar Producto';
+      document.getElementById('formProdId').value = p.id;
+      document.getElementById('formProdName').value = p.name;
+      document.getElementById('formProdCat').value = p.cat;
+      document.getElementById('formProdTag').value = p.tag || '';
+      document.getElementById('formProdPrice').value = p.price || '';
+      document.getElementById('formProdUnit').value = p.unit || '';
+      document.getElementById('formProdDesc').value = p.desc || '';
+      document.getElementById('formProdImage').value = p.image || '';
+      document.getElementById('formProdStock').value = p.stock || 'En Stock';
+
+      if (p.image) {
+        const prev = document.getElementById('formProdImagePreview');
+        prev.src = p.image;
+        prev.style.display = 'block';
+      }
+
+      document.getElementById('productModal').classList.add('open');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('open');
+    }
+
+    function handleProductFormSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById('formProdId').value;
+      const name = document.getElementById('formProdName').value.trim();
+      const cat = document.getElementById('formProdCat').value;
+      const tag = document.getElementById('formProdTag').value.trim();
+      const price = document.getElementById('formProdPrice').value.trim();
+      const unit = document.getElementById('formProdUnit').value.trim();
+      const desc = document.getElementById('formProdDesc').value.trim();
+      const image = document.getElementById('formProdImage').value.trim();
+      const stock = document.getElementById('formProdStock').value;
+
+      const catNames = {
+        epps: "EPP's",
+        herramientas: "Herramientas",
+        mallas: "Malla Raschel",
+        carton: "Cartón & Plásticos",
+        senaleticas: "Señalización",
+        pvc: "Tuberías PVC"
+      };
+
+      const existingIdx = currentDB.products.findIndex(p => p.id === id);
+      const productObj = {
+        id,
+        name,
+        cat,
+        catName: catNames[cat] || cat,
+        tag,
+        price,
+        unit,
+        desc,
+        image,
+        stock
+      };
+
+      if (existingIdx !== -1) {
+        currentDB.products[existingIdx] = productObj;
+        showToast('✓ Producto actualizado con éxito');
+      } else {
+        currentDB.products.unshift(productObj);
+        showToast('✓ Nuevo producto agregado');
+      }
+
+      closeProductModal();
+      renderProductsGrid();
+      updateBadges();
+      saveAllChangesToServer();
+    }
+
+    function deleteProduct(id) {
+      if (!confirm('¿Estás seguro de eliminar este producto del catálogo?')) return;
+      currentDB.products = currentDB.products.filter(p => p.id !== id);
+      renderProductsGrid();
+      updateBadges();
+      saveAllChangesToServer();
+      showToast('🗑️ Producto eliminado');
+    }
+
+    // ─── CLIENTS MANAGEMENT ───
+    function renderClientsGrid() {
+      const container = document.getElementById('adminClientsContainer');
+      const clients = currentDB.clients || [];
+
+      container.innerHTML = clients.map(c => `
+        <div class="client-admin-card">
+          <div class="client-logo-preview">
+            <img src="${c.logo}" alt="${c.name}" onerror="this.src='/assets/logo_grupo_tc.png'" />
+          </div>
+          <div class="client-admin-name">${c.name}</div>
+          <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:10px;">${c.logo}</div>
+          <button class="btn-action-delete" style="width:100%;" onclick="deleteClient('${c.id}')">
+            Eliminar Cliente
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function openNewClientModal() {
+      document.getElementById('formClientName').value = '';
+      document.getElementById('formClientLogo').value = '';
+      document.getElementById('clientModal').classList.add('open');
+    }
+
+    function closeClientModal() {
+      document.getElementById('clientModal').classList.remove('open');
+    }
+
+    function handleClientFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('formClientName').value.trim();
+      const logo = document.getElementById('formClientLogo').value.trim();
+
+      const newClient = {
+        id: 'cli-' + Date.now(),
+        name,
+        logo,
+        status: 'active'
+      };
+
+      currentDB.clients.push(newClient);
+      closeClientModal();
+      renderClientsGrid();
+      updateBadges();
+      saveAllChangesToServer();
+      showToast('✓ Nuevo cliente agregado al ticker');
+    }
+
+    function deleteClient(id) {
+      if (!confirm('¿Eliminar este cliente del carrusel de marcas?')) return;
+      currentDB.clients = currentDB.clients.filter(c => c.id !== id);
+      renderClientsGrid();
+      updateBadges();
+      saveAllChangesToServer();
+      showToast('🗑️ Cliente eliminado');
+    }
+
+    // ─── UPLOADER (FOTOS & VIDEOS) ───
+    async function uploadFileToServer(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = async function() {
+          try {
+            const res = await fetch('/api/upload', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                fileName: file.name,
+                fileData: reader.result
+              })
+            });
+            const data = await res.json();
+            if (data.success) {
+              resolve(data);
+            } else {
+              reject(data.error);
+            }
+          } catch (e) {
+            reject(e);
+          }
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function handleFilesSelected(files) {
+      if (!files || files.length === 0) return;
+      showToast('⏳ Subiendo ' + files.length + ' archivo(s)...');
+
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        try {
+          const res = await uploadFileToServer(file);
+          addUploadedFileToGallery(res.fileName, res.url, file.type);
+          showToast('✓ Subido: ' + file.name);
+        } catch (err) {
+          alert('Error al subir ' + file.name + ': ' + err);
+        }
+      }
+    }
+
+    function addUploadedFileToGallery(name, url, type) {
+      const list = document.getElementById('uploadedFilesList');
+      const isVideo = type.includes('video') || name.endsWith('.mp4');
+
+      const card = document.createElement('div');
+      card.className = 'product-admin-card';
+      card.style.padding = '12px';
+      card.innerHTML = `
+        <div style="height:120px;background:#000;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;margin-bottom:8px;">
+          ${isVideo 
+            ? `<video src="${url}" controls style="width:100%;height:100%;object-fit:cover;"></video>`
+            : `<img src="${url}" style="width:100%;height:100%;object-fit:cover;" />`}
+        </div>
+        <div style="font-size:0.78rem;font-weight:700;word-break:break-all;color:#FFF;margin-bottom:6px;">${name}</div>
+        <button class="btn-action-edit" style="width:100%;" onclick="copyToClipboard('${url}')">
+          📋 Copiar Ruta (${url})
+        </button>
+      `;
+      list.prepend(card);
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('📋 Ruta copiada al portapapeles: ' + text);
+      });
+    }
+
+    async function uploadPhotoForProduct(input) {
+      if (!input.files || input.files.length === 0) return;
+      const file = input.files[0];
+      showToast('⏳ Subiendo foto del producto...');
+      try {
+        const res = await uploadFileToServer(file);
+        document.getElementById('formProdImage').value = res.url;
+        const prev = document.getElementById('formProdImagePreview');
+        prev.src = res.url;
+        prev.style.display = 'block';
+        showToast('✓ Foto asignada al producto: ' + res.url);
+      } catch (e) {
+        alert('Error al subir: ' + e);
+      }
+    }
+
+    async function uploadLogoForClient(input) {
+      if (!input.files || input.files.length === 0) return;
+      const file = input.files[0];
+      showToast('⏳ Subiendo logo...');
+      try {
+        const res = await uploadFileToServer(file);
+        document.getElementById('formClientLogo').value = res.url;
+        showToast('✓ Logo cargado: ' + res.url);
+      } catch (e) {
+        alert('Error al subir logo: ' + e);
+      }
+    }
+
+    // ─── SAVE TO SERVER & LOCALSTORAGE ───
+    async function saveAllChangesToServer() {
+      localStorage.setItem('tega_db_backup', JSON.stringify(currentDB));
+
+      try {
+        const pRes = await fetch('/api/products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ products: currentDB.products })
+        });
+        const cRes = await fetch('/api/clients', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ clients: currentDB.clients })
+        });
+
+        if (pRes.ok && cRes.ok) {
+          showToast('💾 Todos los cambios guardados y sincronizados en vivo');
+        } else {
+          showToast('⚠️ Guardado en respaldo local (sin conexión al servidor)');
+        }
+      } catch (err) {
+        showToast('⚠️ Guardado localmente en tu navegador');
+      }
+    }
+
+    function exportDatabaseJson() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(currentDB, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "inversiones_tega_backup_" + new Date().toISOString().slice(0,10) + ".json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      showToast('📥 Respaldo JSON descargado');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('adminToast');
+      toast.innerHTML = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    // Drag and drop events
+    const dropzone = document.getElementById('dropzone');
+    ['dragenter', 'dragover'].forEach(name => {
+      dropzone.addEventListener(name, (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
+    });
+    ['dragleave', 'drop'].forEach(name => {
+      dropzone.addEventListener(name, (e) => { e.preventDefault(); dropzone.classList.remove('dragover'); });
+    });
+    dropzone.addEventListener('drop', (e) => {
+      if (e.dataTransfer && e.dataTransfer.files) {
+        handleFilesSelected(e.dataTransfer.files);
+      }
+    });
+
+    // INIT
+    checkAuth();
+    loadDatabase();
+  </script>
+</body>
+</html>

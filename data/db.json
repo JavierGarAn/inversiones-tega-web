@@ -1,0 +1,372 @@
+{
+  "settings": {
+    "siteName": "Inversiones Tega B2B",
+    "phone": "+51 976 670 599",
+    "email": "ventas@inversionestega.pe",
+    "addressCentral": "Av. Túpac Amaru 378, El Agustino, Lima",
+    "addressMalvinas": "Av. Argentina, C.C. Nicolini, Lima",
+    "updatedAt": "2026-11-04T00:00:00Z"
+  },
+  "dimensionsGuide": {
+    "products": {
+      "width": 600,
+      "height": 400,
+      "aspect": "3:2",
+      "formats": [
+        "JPG",
+        "WEBP",
+        "PNG"
+      ],
+      "maxSize": "2MB",
+      "desc": "Fotografía limpia con fondo neutro o en uso real de obra."
+    },
+    "heroSlider": {
+      "width": 1920,
+      "height": 800,
+      "aspect": "2.4:1 (Panorámico)",
+      "formats": [
+        "JPG",
+        "WEBP",
+        "MP4"
+      ],
+      "maxSize": "5MB (Foto) / 25MB (Video)",
+      "desc": "Tomas panorámicas de faenas de construcción, almacén o cuadrillas."
+    },
+    "clients": {
+      "width": 300,
+      "height": 120,
+      "aspect": "2.5:1",
+      "formats": [
+        "PNG Transparente",
+        "SVG"
+      ],
+      "maxSize": "500KB",
+      "desc": "Logotipo corporativo en alta resolución con fondo transparente."
+    },
+    "marcas": {
+      "width": 300,
+      "height": 120,
+      "aspect": "2.5:1",
+      "formats": [
+        "PNG Transparente",
+        "SVG"
+      ],
+      "maxSize": "500KB",
+      "desc": "Logotipo monocromático o blanco para contraste sobre fondo oscuro."
+    },
+    "videos": {
+      "width": 1920,
+      "height": 1080,
+      "aspect": "16:9 o 2.4:1",
+      "formats": [
+        "MP4 (Codec H.264)"
+      ],
+      "maxSize": "25MB",
+      "desc": "Video industrial comprimido sin audio para autoplay en portada."
+    }
+  },
+  "clients": [
+    {
+      "id": "cli-1",
+      "name": "Grupo T&C",
+      "logo": "/assets/logo_grupo_tc.png",
+      "status": "active"
+    },
+    {
+      "id": "cli-2",
+      "name": "Grupo Royal",
+      "logo": "/assets/logo_grupo_royal.png",
+      "status": "active"
+    },
+    {
+      "id": "cli-3",
+      "name": "Urban Arquitectos",
+      "logo": "/assets/logo_urban_arquitectos.png",
+      "status": "active"
+    },
+    {
+      "id": "cli-4",
+      "name": "Alanco",
+      "logo": "/assets/logo_alanco.png",
+      "status": "active"
+    },
+    {
+      "id": "cli-5",
+      "name": "Cissac",
+      "logo": "/assets/logo_cissac.png",
+      "status": "active"
+    },
+    {
+      "id": "cli-6",
+      "name": "Inmobiliaria Jakamar",
+      "logo": "/assets/logo_akamai.png",
+      "status": "active"
+    },
+    {
+      "id": "cli-7",
+      "name": "Leven",
+      "logo": "/assets/logo_leven.png",
+      "status": "active"
+    },
+    {
+      "id": "cli-8",
+      "name": "San Charbel",
+      "logo": "/assets/logo_san_charbel.png",
+      "status": "active"
+    }
+  ],
+  "products": [
+    {
+      "id": "epp-1",
+      "cat": "epps",
+      "catName": "EPP's",
+      "name": "Casco de Seguridad Jockey c/Barbiquejo",
+      "desc": "Certificación ANSI Z89.1 Tipo I Clase E/G. Ranuras para orejeras y ajuste ratchet.",
+      "tag": "Norma ANSI Z89.1",
+      "price": "Cotizar por volumen",
+      "unit": "Unidad / Caja x 20",
+      "image": "/assets/cat_epps.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "epp-2",
+      "cat": "epps",
+      "catName": "EPP's",
+      "name": "Lentes de Seguridad Antiempañantes",
+      "desc": "Policarbonato de alta resistencia contra impactos. Filtro UV 99.9%, norma ANSI Z87.1.",
+      "tag": "Protección Visual",
+      "price": "Cotizar por volumen",
+      "unit": "Docena / Caja x 144",
+      "image": "/assets/cat_epps.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "epp-3",
+      "cat": "epps",
+      "catName": "EPP's",
+      "name": "Guantes de Nitrilo / Cuero de Obra",
+      "desc": "Alta resistencia a abrasión, solventes y manipulación de fierro y concreto.",
+      "tag": "Protección Manual",
+      "price": "Cotizar por volumen",
+      "unit": "Par / Docena",
+      "image": "/assets/cat_epps.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "epp-4",
+      "cat": "epps",
+      "catName": "EPP's",
+      "name": "Botas de Seguridad c/Punta de Acero",
+      "desc": "Cuero grabado resistente al agua, planta de poliuretano antideslizante dieléctrica.",
+      "tag": "Calzado Industrial",
+      "price": "Cotizar por volumen",
+      "unit": "Par",
+      "image": "/assets/cat_epps.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "epp-5",
+      "cat": "epps",
+      "catName": "EPP's",
+      "name": "Arnés de Seguridad 3 Anillos y Línea de Vida",
+      "desc": "Cintas de poliéster de alta tenacidad con absorbedor de impacto para trabajo en altura.",
+      "tag": "Contra Caídas",
+      "price": "Cotizar por volumen",
+      "unit": "Kit Completo",
+      "image": "/assets/cat_epps.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "tool-1",
+      "cat": "herramientas",
+      "catName": "Herramientas",
+      "name": "Carretilla Bugui de Obra Reforzada",
+      "desc": "Tolva pesada para transporte de agregados y concreto. Llanta neumática reforzada.",
+      "tag": "Albañilería",
+      "price": "Cotizar por volumen",
+      "unit": "Unidad",
+      "image": "/assets/cat_herramientas.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "tool-2",
+      "cat": "herramientas",
+      "catName": "Herramientas",
+      "name": "Discos Diamantados de Corte (Concreto / Porcelanato)",
+      "desc": "Segmentados y continuos para corte rápido en seco o húmedo de losas y cerámicos.",
+      "tag": "Consumibles",
+      "price": "Cotizar por volumen",
+      "unit": "Unidad / Caja",
+      "image": "/assets/cat_herramientas.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "tool-3",
+      "cat": "herramientas",
+      "catName": "Herramientas",
+      "name": "Palas Tipo Cuchara y Rectas c/Mango Madera",
+      "desc": "Acero templado resistente al desgaste en excavaciones y preparación de mezclas.",
+      "tag": "Manuales",
+      "price": "Cotizar por volumen",
+      "unit": "Unidad / Docena",
+      "image": "/assets/cat_herramientas.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "tool-4",
+      "cat": "herramientas",
+      "catName": "Herramientas",
+      "name": "Rotomartillos y Amoladoras Industriales",
+      "desc": "Equipos para demolición ligera, desbaste y perforación en mampostería.",
+      "tag": "Eléctricas",
+      "price": "Cotizar por volumen",
+      "unit": "Unidad",
+      "image": "/assets/cat_herramientas.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "sen-1",
+      "cat": "senaleticas",
+      "catName": "Señalización",
+      "name": "Señales Fotoluminiscentes de Evacuación",
+      "desc": "Planchas de estireno con fotoluminiscencia de alta intensidad según norma INDECI/NTP.",
+      "tag": "Seguridad SSOMA",
+      "price": "Cotizar por volumen",
+      "unit": "Unidad / Paquete",
+      "image": "/assets/cat_senalizacion.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "sen-2",
+      "cat": "senaleticas",
+      "catName": "Señalización",
+      "name": "Conos Viales de Seguridad 28\" c/Cinta Reflectiva",
+      "desc": "PVC flexible de alta visibilidad para delimitación de tránsito y zonas de maniobra.",
+      "tag": "Vial",
+      "price": "Cotizar por volumen",
+      "unit": "Unidad",
+      "image": "/assets/cat_senalizacion.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "sen-3",
+      "cat": "senaleticas",
+      "catName": "Señalización",
+      "name": "Malla de Faena Naranja para Cerco",
+      "desc": "Polietileno de alta densidad para señalización perimétrica de excavaciones y zanjas.",
+      "tag": "Perímetro",
+      "price": "Cotizar por volumen",
+      "unit": "Rollo 1m x 50m",
+      "image": "/assets/cat_senalizacion.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "sen-4",
+      "cat": "senaleticas",
+      "catName": "Señalización",
+      "name": "Cinta Amarilla / Roja \"Peligro Obras\"",
+      "desc": "Rollos de polietileno resistente al viento y sol para cercado perimétrico de obra.",
+      "tag": "Delimitación",
+      "price": "Cotizar por volumen",
+      "unit": "Rollo x 500m",
+      "image": "/assets/cat_senalizacion.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "cart-1",
+      "cat": "carton",
+      "catName": "Cartón & Plásticos",
+      "name": "Rollo de Cartón Corrugado para Pisos (Pesado)",
+      "desc": "Gramaje especial para proteger porcelanatos, pisos flotantes y mármol contra golpes y tránsito.",
+      "tag": "Protección Pisos",
+      "price": "Cotizar por volumen",
+      "unit": "Rollo pesado",
+      "image": "/assets/cat_carton_plasticos.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "cart-2",
+      "cat": "carton",
+      "catName": "Cartón & Plásticos",
+      "name": "Láminas de Cartón Corrugado Simple / Doble",
+      "desc": "Planchas protectoras para divisiones, enchapes y encofrados temporales.",
+      "tag": "Embalaje",
+      "price": "Cotizar por volumen",
+      "unit": "Plancha / Millar",
+      "image": "/assets/cat_carton_plasticos.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "plas-1",
+      "cat": "plasticos",
+      "catName": "Malla Raschel",
+      "name": "Malla Raschel 80% / 90% Sombrío y Antipolvo",
+      "desc": "Protección perimétrica de andamios, retención de polvo y control de radiación solar en obra.",
+      "tag": "Andamios & Cerco",
+      "price": "Cotizar por volumen",
+      "unit": "Rollo 4.20m x 100m",
+      "image": "/assets/cat_malla_raschel.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "plas-2",
+      "cat": "plasticos",
+      "catName": "Cartón & Plásticos",
+      "name": "Film Stretch Industrial para Paletizado",
+      "desc": "Film estirable transparente y negro para amarre y protección de insumos contra humedad.",
+      "tag": "Embalaje",
+      "price": "Cotizar por volumen",
+      "unit": "Caja x 4 rollos",
+      "image": "/assets/cat_carton_plasticos.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "plas-3",
+      "cat": "plasticos",
+      "catName": "Cartón & Plásticos",
+      "name": "Plástico Negro de Polietileno (Curado y Cimientos)",
+      "desc": "Espesores de 1m a 3m de ancho para impermeabilización de cimientos y curado de losas.",
+      "tag": "Impermeabilización",
+      "price": "Cotizar por volumen",
+      "unit": "Rollo",
+      "image": "/assets/cat_carton_plasticos.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "pvc-1",
+      "cat": "pvc",
+      "catName": "Tuberías PVC",
+      "name": "Tubos y Accesorios PVC SAL (Desagüe)",
+      "desc": "Tuberías livianas y pesadas para instalaciones de desagüe y ventilación en edificios.",
+      "tag": "Desagüe",
+      "price": "Cotizar por volumen",
+      "unit": "Tubo x 3m / 5m",
+      "image": "/assets/cat_tuberias_pvc.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "pvc-2",
+      "cat": "pvc",
+      "catName": "Tuberías PVC",
+      "name": "Tubos y Accesorios PVC SAP Clase 10 (Agua Fría)",
+      "desc": "Tuberías con rosca o embone para presiones nominales de agua en redes interiores.",
+      "tag": "Agua Fría",
+      "price": "Cotizar por volumen",
+      "unit": "Tubo x 5m",
+      "image": "/assets/cat_tuberias_pvc.jpg",
+      "stock": "En Stock"
+    },
+    {
+      "id": "pvc-3",
+      "cat": "pvc",
+      "catName": "Tuberías PVC",
+      "name": "Pegamento Industrial para PVC / CPVC",
+      "desc": "Soldadura líquida de secado rápido y máxima adherencia hermética en redes presurizadas.",
+      "tag": "Instalaciones",
+      "price": "Cotizar por volumen",
+      "unit": "Lata 1/4 gal / 1 gal",
+      "image": "/assets/cat_tuberias_pvc.jpg",
+      "stock": "En Stock"
+    }
+  ]
+}

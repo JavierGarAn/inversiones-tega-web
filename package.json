@@ -1,0 +1,19 @@
+{
+  "name": "inversiones-tega-b2b",
+  "version": "1.0.0",
+  "description": "Web Corporativa Inversiones Tega B2B",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "b2b",
+    "construccion",
+    "ferreteria",
+    "peru"
+  ],
+  "author": "Inversiones Tega",
+  "license": "ISC"
+}
+
