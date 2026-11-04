@@ -52,7 +52,7 @@ function parseJsonBody(req, callback) {
   let body = '';
   req.on('data', chunk => {
     body += chunk;
-    if (body.length > 60 * 1024 * 1024) { // 60MB max
+    if (body.length > 150 * 1024 * 1024) { // 150MB max
       req.destroy();
     }
   });
@@ -125,6 +125,35 @@ const server = http.createServer((req, res) => {
       writeDB(db);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ success: true, count: db.clients.length }));
+    });
+    return;
+  }
+
+
+  // 4b. POST /api/upload-hero-video (Direct replace of hero_portada_video.mp4)
+  if (urlPath === '/api/upload-hero-video' && req.method === 'POST') {
+    parseJsonBody(req, (err, payload) => {
+      if (err || !payload || !payload.fileData) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Se requiere fileData en base64' }));
+        return;
+      }
+      try {
+        const targetPath = path.join(ASSETS_DIR, 'hero_portada_video.mp4');
+        let base64Data = payload.fileData;
+        if (base64Data.includes('base64,')) {
+          base64Data = base64Data.split('base64,')[1];
+        }
+        const buffer = Buffer.from(base64Data, 'base64');
+        fs.writeFileSync(targetPath, buffer);
+        console.log(`[HERO VIDEO] Actualizado video de portada principal: ${buffer.length} bytes`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, url: '/assets/hero_portada_video.mp4?v=' + Date.now(), size: buffer.length }));
+      } catch (e) {
+        console.error('Error updating hero video:', e);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Error al sobreescribir el video de portada' }));
+      }
     });
     return;
   }
