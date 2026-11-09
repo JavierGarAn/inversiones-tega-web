@@ -1997,101 +1997,95 @@
       flex-shrink: 0;
     }
 
-    /* ─── DUAL CARDS: MISIÓN Y VISIÓN CON IMAGEN COMPARTIDA / CUADRO TÉCNICO ─── */
-    .mision-vision-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
-      margin-bottom: 44px;
+    /* ─── FILAS COMPLETAS: MISIÓN Y VISIÓN (FORMATO HORIZONTAL DE ANCHO COMPLETO) ─── */
+    .mision-vision-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 48px;
     }
-    @media (max-width: 900px) {
-      .mision-vision-grid { grid-template-columns: 1fr; }
-    }
-    .mv-showcase-card {
+    .mv-row-card {
       background: #FFFFFF;
       border: 1.5px solid #E2E8F0;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      display: grid;
+      grid-template-columns: 290px 1fr;
       transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
-    .mv-showcase-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 36px -6px rgba(21, 92, 43, 0.16);
+    .mv-row-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px -6px rgba(21, 92, 43, 0.15);
       border-color: #155C2B;
     }
-    
-    /* CUADRO / ESPACIO RESERVADO PARA LA IMAGEN CON ESTILO TÉCNICO INDUSTRIAL */
-    .mv-photo-container {
-      width: 100%;
-      height: 220px;
+    .mv-row-card.vision-card:hover {
+      box-shadow: 0 14px 34px -6px rgba(2, 132, 199, 0.15);
+      border-color: #0284C7;
+    }
+    .mv-row-visual {
       position: relative;
-      background: linear-gradient(135deg, #020B18 0%, #0B1E38 100%);
-      border-bottom: 2px solid #E2E8F0;
-      overflow: hidden;
+      background: linear-gradient(145deg, #020B18 0%, #0F381E 100%);
+      padding: 32px 24px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      color: #FFFFFF;
+      overflow: hidden;
     }
-    .mv-photo-container.vision-bg {
-      background: linear-gradient(135deg, #061910 0%, #0F3320 100%);
+    .mv-row-visual.vision-visual {
+      background: linear-gradient(145deg, #020B18 0%, #0B2A4A 100%);
     }
-    .mv-photo-grid-pattern {
+    .mv-row-visual-pattern {
       position: absolute;
       inset: 0;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 24px 24px;
+        linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 20px 20px;
       opacity: 0.8;
       pointer-events: none;
     }
-    .mv-photo-placeholder-box {
+    .mv-row-icon-circle {
       position: relative;
       z-index: 2;
-      border: 2px dashed rgba(255, 255, 255, 0.35);
-      border-radius: 10px;
-      padding: 16px 22px;
-      text-align: center;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(8px);
-      color: #FFFFFF;
-      max-width: 86%;
-      transition: all 0.3s ease;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
-    .mv-showcase-card:hover .mv-photo-placeholder-box {
-      border-color: #22C55E;
-      background: rgba(15, 23, 42, 0.82);
-    }
-    .mv-photo-placeholder-box svg {
-      width: 32px;
-      height: 32px;
+    .mv-row-icon-circle svg {
+      width: 38px;
+      height: 38px;
       stroke: #22C55E;
-      stroke-width: 1.8;
-      margin-bottom: 6px;
     }
-    .mv-photo-placeholder-title {
+    .mv-row-visual.vision-visual .mv-row-icon-circle svg {
+      stroke: #38BDF8;
+    }
+    .mv-row-visual-tag {
+      position: relative;
+      z-index: 2;
       font-size: 0.82rem;
       font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #FFFFFF;
       font-family: 'Barlow Condensed', sans-serif;
+      color: rgba(255, 255, 255, 0.95);
     }
-    .mv-photo-placeholder-sub {
-      font-size: 0.72rem;
-      color: #94A3B8;
-      margin-top: 3px;
-    }
-
-    /* CONTENIDO DE TEXTO DE LA MISIÓN / VISIÓN */
-    .mv-content-box {
-      padding: 26px 28px 28px;
+    .mv-row-content {
+      padding: 34px 38px;
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
+      justify-content: center;
       background: #FFFFFF;
     }
     .mv-badge {
@@ -2120,7 +2114,7 @@
       color: #0369A1;
     }
     .mv-title {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 800;
       font-family: 'Barlow Condensed', sans-serif;
       color: #0F172A;
@@ -2129,32 +2123,69 @@
       text-transform: uppercase;
     }
     .mv-desc {
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 18px;
-      flex-grow: 1;
     }
-    .mv-pillars {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .mv-pillars-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
       border-top: 1px solid #F1F5F9;
-      padding-top: 16px;
+      padding-top: 18px;
     }
-    .mv-pillar-item {
+    .mv-pillar-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 12px 14px;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: #1E293B;
+      align-items: flex-start;
+      gap: 10px;
     }
-    .mv-pillar-item svg {
-      width: 16px;
-      height: 16px;
+    .mv-pillar-card svg {
+      width: 18px;
+      height: 18px;
       stroke: #155C2B;
       flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .mv-row-card.vision-card .mv-pillar-card svg {
+      stroke: #0284C7;
+    }
+    .mv-pillar-text {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 900px) {
+      .mv-row-card {
+        grid-template-columns: 1fr;
+      }
+      .mv-row-visual {
+        padding: 22px 18px;
+        flex-direction: row;
+        gap: 14px;
+      }
+      .mv-row-icon-circle {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 0;
+      }
+      .mv-row-icon-circle svg {
+        width: 26px;
+        height: 26px;
+      }
+      .mv-row-content {
+        padding: 22px 20px;
+      }
+      .mv-pillars-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
     }
 
     /* ─── VALORES CORPORATIVOS B2B (5 VALORES CON RELIEVE) ─── */
@@ -4243,75 +4274,81 @@
         </div>
 
         <!-- ══════════════════════════════════════════════════════════════════ -->
-        <!--   MISIÓN Y VISIÓN CON CUADRO DE IMAGEN Y TEXTO COMPARTIDO        -->
+        <!--   MISIÓN Y VISIÓN: FILAS COMPLETAS HORIZONTALES (FORMATO FULL WIDTH) -->
         <!-- ══════════════════════════════════════════════════════════════════ -->
-        <div class="mision-vision-grid">
+        <div class="mision-vision-stack">
           
-          <!-- TARJETA 1: NUESTRA MISIÓN -->
-          <div class="mv-showcase-card">
-            <!-- CUADRO DONDE VA LA IMAGEN DE MISIÓN -->
-            <div class="mv-photo-container">
-              <div class="mv-photo-grid-pattern"></div>
-              <div class="mv-photo-placeholder-box">
-                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                <div class="mv-photo-placeholder-title">[ IMAGEN: OPERACIONES & DESPACHO EN OBRA ]</div>
-                <div class="mv-photo-placeholder-sub">Espacio reservado para fotografía de operaciones (800 × 480 px)</div>
+          <!-- FILA 1: NUESTRA MISIÓN CORPORATIVA -->
+          <div class="mv-row-card">
+            <div class="mv-row-visual">
+              <div class="mv-row-visual-pattern"></div>
+              <div class="mv-row-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
               </div>
+              <div class="mv-row-visual-tag">Misión Corporativa</div>
+              <div style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-top:4px;">Compromiso con cada Obra</div>
             </div>
-            <!-- TEXTO DE LA MISIÓN -->
-            <div class="mv-content-box">
+
+            <div class="mv-row-content">
               <div class="mv-badge">Nuestra Misión</div>
-              <h2 class="mv-title">Soluciones integrales con calidad y servicio ágil</h2>
+              <h2 class="mv-title">Garantizar la continuidad operativa y la seguridad en cada frente de obra</h2>
               <p class="mv-desc">
-                Ofrecer soluciones integrales en ferretería industrial y materiales de construcción con calidad certificada, asesoría técnica especializada y un servicio logístico ágil, asegurando que cada proyecto de construcción e infraestructura se desarrolle de manera segura, productiva y sin paralizaciones.
+                Abastecer de manera integral, oportuna y confiable al sector de la construcción, inmobiliario e industrial con suministros ferreteros, EPPs certificados y materiales de alta exigencia técnica. Respaldamos el avance de cada proyecto mediante cotizaciones ágiles por partida, asesoría técnica especializada y una logística de distribución directa que previene retrasos y tiempos muertos en obra.
               </p>
-              <div class="mv-pillars">
-                <div class="mv-pillar-item">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Cumplimiento estricto de normativas técnicas (NTP, ANSI, SSOMA)</span>
+              
+              <div class="mv-pillars-row">
+                <div class="mv-pillar-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  <div class="mv-pillar-text"><strong>Calidad Certificada:</strong> Cumplimiento estricto de normas NTP, ANSI y estándares SSOMA.</div>
                 </div>
-                <div class="mv-pillar-item">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Cotizaciones formales y cubicación por partida en menos de 2 horas</span>
+                <div class="mv-pillar-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  <div class="mv-pillar-text"><strong>Respuesta en &lt; 2 Horas:</strong> Cubicaciones rápidas por partida y propuestas formales por ítem.</div>
                 </div>
-                <div class="mv-pillar-item">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Despacho directo y coordinado a pie de obra</span>
+                <div class="mv-pillar-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  <div class="mv-pillar-text"><strong>Logística a Pie de Obra:</strong> Despachos directos a almacenes de obra en Lima y envíos a provincia.</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- TARJETA 2: NUESTRA VISIÓN -->
-          <div class="mv-showcase-card">
-            <!-- CUADRO DONDE VA LA IMAGEN DE VISIÓN -->
-            <div class="mv-photo-container vision-bg">
-              <div class="mv-photo-grid-pattern"></div>
-              <div class="mv-photo-placeholder-box">
-                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                <div class="mv-photo-placeholder-title">[ IMAGEN: PROYECCIÓN & EXPANSIÓN B2B ]</div>
-                <div class="mv-photo-placeholder-sub">Espacio reservado para fotografía de expansión nacional (800 × 480 px)</div>
+          <!-- FILA 2: NUESTRA VISIÓN ESTRATÉGICA -->
+          <div class="mv-row-card vision-card">
+            <div class="mv-row-visual vision-visual">
+              <div class="mv-row-visual-pattern"></div>
+              <div class="mv-row-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                </svg>
               </div>
+              <div class="mv-row-visual-tag">Visión Estratégica</div>
+              <div style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-top:4px;">Proyección B2B Nacional</div>
             </div>
-            <!-- TEXTO DE LA VISIÓN -->
-            <div class="mv-content-box">
+
+            <div class="mv-row-content">
               <div class="mv-badge vision">Nuestra Visión</div>
-              <h2 class="mv-title">Liderazgo regional y excelencia en suministro</h2>
+              <h2 class="mv-title">Liderar el suministro ferretero e industrial B2B de mayor confianza en el Perú</h2>
               <p class="mv-desc">
-                Ser la empresa ferretera líder en abastecimiento para el sector de la construcción e inmobiliaria en los próximos 5 años, destacando por nuestra innovación logística, excelencia en el servicio al cliente y asesoría técnica en obra, con una participación creciente en proyectos de envergadura y expansión regional consolidada.
+                Consolidarnos como el distribuidor ferretero e industrial de referencia preferente para las principales constructoras, inmobiliarias y corporaciones del país. Ser reconocidos por nuestra solidez de inventario, alianzas con marcas líderes globales, excelencia operativa y un compromiso inquebrantable con la productividad y la seguridad de las cuadrillas en cada proyecto.
               </p>
-              <div class="mv-pillars">
-                <div class="mv-pillar-item">
-                  <svg viewBox="0 0 24 24" fill="none" style="stroke:#0284C7;"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Consolidación como proveedor preferente de las principales inmobiliarias</span>
+              
+              <div class="mv-pillars-row">
+                <div class="mv-pillar-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  <div class="mv-pillar-text"><strong>Socio Estratégico:</strong> Proveedor preferencial de las constructoras e inmobiliarias más exigentes.</div>
                 </div>
-                <div class="mv-pillar-item">
-                  <svg viewBox="0 0 24 24" fill="none" style="stroke:#0284C7;"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Ampliación constante de líneas de suministro pesado y terminaciones</span>
+                <div class="mv-pillar-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  <div class="mv-pillar-text"><strong>Solidez de Inventario:</strong> Cobertura permanente de líneas de seguridad, acabados y herramientas.</div>
                 </div>
-                <div class="mv-pillar-item">
-                  <svg viewBox="0 0 24 24" fill="none" style="stroke:#0284C7;"><path d="M20 6L9 17l-5-5"/></svg>
-                  <span>Digitalización y trazabilidad en tiempo real de cada despacho</span>
+                <div class="mv-pillar-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  <div class="mv-pillar-text"><strong>Innovación y Trazabilidad:</strong> Seguimiento transparente en cada entrega y formalidad garantizada.</div>
                 </div>
               </div>
             </div>
@@ -5028,7 +5065,6 @@
       <div>© 2024 Inversiones Tega. Todos los derechos reservados.</div>
       <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
         <span>RUC 10 · <span style="color:#A7F3D0;">inversionestega.pe</span></span>
-        <a href="/admin" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.78rem;display:inline-flex;align-items:center;gap:4px;" title="Acceso al Panel de Administración">⚙️ Panel Admin</a>
       </div>
     </div>
   </div>

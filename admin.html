@@ -736,11 +736,20 @@
   <div id="authOverlay">
     <div class="auth-box">
       <div class="auth-logo">INVERSIONES <span>TEGA</span></div>
-      <div class="auth-sub">Panel de Mantenimiento B2B & Catálogo</div>
-      <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 14px;">Ingresa la contraseña de administrador:</p>
-      <input type="password" id="adminPasswordInput" class="auth-input" placeholder="••••••••" autofocus />
-      <button class="btn-auth" onclick="verifyPassword()">Ingresar al Sistema</button>
-      <div style="font-size: 0.72rem; color: #475569; margin-top: 14px;">Contraseña por defecto: <code>tega2026</code></div>
+      <div class="auth-sub">Portal de Mantenimiento B2B & Catálogo</div>
+      
+      <div style="text-align: left; margin-bottom: 14px;">
+        <label style="font-size: 0.76rem; color: #94A3B8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">Usuario (DNI)</label>
+        <input type="text" id="adminUserInput" class="auth-input" placeholder="Ingresa tu DNI" autofocus style="text-align:left;letter-spacing:normal;margin-bottom:0;" />
+      </div>
+
+      <div style="text-align: left; margin-bottom: 18px;">
+        <label style="font-size: 0.76rem; color: #94A3B8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">Contraseña de Seguridad</label>
+        <input type="password" id="adminPasswordInput" class="auth-input" placeholder="••••••••••••" style="text-align:left;letter-spacing:normal;margin-bottom:0;" />
+      </div>
+
+      <button class="btn-auth" onclick="verifyPassword()" style="width:100%;">Iniciar Sesión</button>
+      <div id="authErrorMsg" style="display:none;color:#EF4444;font-size:0.8rem;margin-top:14px;background:rgba(239,68,68,0.12);padding:10px 14px;border-radius:8px;border:1px solid rgba(239,68,68,0.3);font-weight:600;"></div>
     </div>
   </div>
 
@@ -1088,28 +1097,56 @@
   <!-- JAVASCRIPT LOGIC -->
   <script>
     // ─── AUTHENTICATION ───
-    const AUTH_PASS = 'tega2026';
+    const AUTH_USER = '71872179';
+    const AUTH_PASS = 'Ja15071999!';
+
     function checkAuth() {
       if (sessionStorage.getItem('tega_admin_auth') === 'true') {
         document.getElementById('authOverlay').style.display = 'none';
       }
     }
+
     function verifyPassword() {
-      const input = document.getElementById('adminPasswordInput').value;
-      if (input === AUTH_PASS) {
+      const u = (document.getElementById('adminUserInput') ? document.getElementById('adminUserInput').value : '').trim();
+      const p = (document.getElementById('adminPasswordInput') ? document.getElementById('adminPasswordInput').value : '').trim();
+      const errBox = document.getElementById('authErrorMsg');
+
+      if (u === AUTH_USER && p === AUTH_PASS) {
         sessionStorage.setItem('tega_admin_auth', 'true');
         document.getElementById('authOverlay').style.display = 'none';
+        if (errBox) errBox.style.display = 'none';
         showToast('🔓 Acceso autorizado como Administrador');
       } else {
-        alert('Contraseña incorrecta. Intenta nuevamente.');
+        if (errBox) {
+          errBox.textContent = 'Credenciales no válidas. Acceso restringido.';
+          errBox.style.display = 'block';
+        } else {
+          alert('Credenciales no válidas. Acceso restringido.');
+        }
       }
     }
+
     function logoutAdmin() {
       sessionStorage.removeItem('tega_admin_auth');
       location.reload();
     }
-    document.getElementById('adminPasswordInput').addEventListener('keyup', (e) => {
-      if (e.key === 'Enter') verifyPassword();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const uInput = document.getElementById('adminUserInput');
+      const pInput = document.getElementById('adminPasswordInput');
+      if (uInput) {
+        uInput.addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') {
+            if (pInput) pInput.focus();
+            else verifyPassword();
+          }
+        });
+      }
+      if (pInput) {
+        pInput.addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') verifyPassword();
+        });
+      }
     });
 
     // ─── DATA STATE ───
