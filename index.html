@@ -1508,7 +1508,7 @@
       margin-bottom: 20px;
     }
     .ticker-wrap {
-      overflow-x: scroll;
+      overflow-x: hidden;
       overflow-y: hidden;
       position: relative;
       cursor: grab;
@@ -1517,6 +1517,8 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
       padding: 6px 0;
+      touch-action: pan-y;
+      width: 100%;
     }
     .ticker-wrap::-webkit-scrollbar {
       display: none;
@@ -5346,11 +5348,11 @@
     const track = document.querySelector('.ticker-track');
     if (!track || !clients || clients.length === 0) return;
     
-    // Generar doble bucle para scroll infinito
     const itemsHtml = clients.map(c => `
       <div class="client-logo-item"><img src="${c.logo}" alt="${c.name}" draggable="false" /></div>
     `).join('');
-    track.innerHTML = itemsHtml + itemsHtml;
+    track.innerHTML = itemsHtml;
+    initClientTicker();
   }
 
   async function syncCatalogWithAdmin() {
@@ -5555,132 +5557,178 @@
     }
   }, { capture: true, passive: false });
 
-  // ─── TICKER CLIENTES: AUTO-SCROLL + PAUSA EN HOVER + ARRASTRE MANUAL (DRAG & DROP) ───
+  // ─── TICKER CLIENTES: MARQUESINA CONTINUA INFINITA + ARRASTRE MANUAL (MOUSE & TOUCH) ───
   function initClientTicker() {
     var wrap = document.querySelector('.ticker-wrap');
     var track = document.querySelector('.ticker-track');
     if (!wrap || !track) return;
 
-    var isDown = false;
+    if (window._clientTickerRaf) {
+      cancelAnimationFrame(window._clientTickerRaf);
+      window._clientTickerRaf = null;
+    }
+
+    var rawItems = Array.from(track.querySelectorAll('.client-logo-item'));
+    if (rawItems.length === 0) return;
+
+    // Detectar logos base únicos
+    var uniqueCount = rawItems.length >= 16 ? Math.floor(rawItems.length / 2) : rawItems.length;
+    var baseItems = rawItems.slice(0, uniqueCount);
+    var baseHTML = baseItems.map(function(el) { return el.outerHTML; }).join('');
+
+    // Replicar x4 para garantizar bucle infinito sin ningún vacío en monitores panorámicos
+    track.innerHTML = baseHTML + baseHTML + baseHTML + baseHTML;
+
+    var isDragging = false;
     var startX = 0;
-    var scrollLeft = 0;
-    var isHovered = false;
-    var autoSpeed = 0.85; // Velocidad suave de avance constante
+    var startScroll = 0;
+    var isPointerOver = false;
+    var autoSpeed = 0.95; // Velocidad continua y fluida
     var singleSetWidth = 0;
+    var resumeTimer = null;
+    var canAutoMove = true;
 
-    // Duplicar elementos para garantizar un carrusel continuo e infinito sin vacíos
-    var initialHTML = track.innerHTML;
-    track.innerHTML = initialHTML + initialHTML;
-
-    function measureCycle() {
-      var items = track.querySelectorAll('.client-logo-item');
-      if (items.length >= 16) {
-        var item0 = items[0];
-        var item16 = items[16];
-        if (item0 && item16) {
-          singleSetWidth = item16.offsetLeft - item0.offsetLeft;
+    function recalculate() {
+      var allItems = track.querySelectorAll('.client-logo-item');
+      if (allItems.length >= uniqueCount * 2) {
+        var firstEl = allItems[0];
+        var nextSetEl = allItems[uniqueCount];
+        if (firstEl && nextSetEl) {
+          singleSetWidth = nextSetEl.offsetLeft - firstEl.offsetLeft;
         }
       }
       if (!singleSetWidth || singleSetWidth <= 0) {
-        singleSetWidth = track.scrollWidth / 2;
+        singleSetWidth = track.scrollWidth / 4;
+      }
+      // Centrar el scroll inicial en el segundo set para permitir arrastre infinito en ambas direcciones
+      if (wrap.scrollLeft < singleSetWidth * 0.5) {
+        wrap.scrollLeft = singleSetWidth;
       }
     }
 
-    measureCycle();
-    window.addEventListener('resize', measureCycle);
+    recalculate();
+    window.addEventListener('resize', recalculate);
+    window.addEventListener('load', recalculate);
+    setTimeout(recalculate, 250);
+    setTimeout(recalculate, 800);
 
-    // Bucle continuo de animación
-    function tick() {
-      if (!isDown && !isHovered) {
+    // Bucle continuo a 60 FPS
+    function loop() {
+      if (canAutoMove && !isDragging && !isPointerOver) {
         wrap.scrollLeft += autoSpeed;
         if (singleSetWidth > 0) {
-          if (wrap.scrollLeft >= singleSetWidth) {
+          if (wrap.scrollLeft >= singleSetWidth * 2.5) {
             wrap.scrollLeft -= singleSetWidth;
-          } else if (wrap.scrollLeft <= 0) {
+          } else if (wrap.scrollLeft <= singleSetWidth * 0.5) {
             wrap.scrollLeft += singleSetWidth;
           }
         }
       }
-      requestAnimationFrame(tick);
+      window._clientTickerRaf = requestAnimationFrame(loop);
+    }
+    window._clientTickerRaf = requestAnimationFrame(loop);
+
+    // Pausa en hover ÚNICAMENTE con puntero fino (ratón de PC), jamás en pantallas táctiles
+    var hasFinePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (hasFinePointer) {
+      wrap.addEventListener('mouseenter', function() {
+        isPointerOver = true;
+      });
+      wrap.addEventListener('mouseleave', function() {
+        isPointerOver = false;
+        if (isDragging) {
+          isDragging = false;
+          wrap.classList.remove('is-dragging');
+        }
+      });
     }
 
-    requestAnimationFrame(tick);
-
-    // Pausa al acercar el cursor (hover)
-    wrap.addEventListener('mouseenter', function() {
-      isHovered = true;
-    });
-
-    wrap.addEventListener('mouseleave', function() {
-      isHovered = false;
-      if (isDown) {
-        isDown = false;
-        wrap.classList.remove('is-dragging');
-      }
-    });
-
-    // Iniciar arrastre manual con el mouse (Drag)
+    // ─── CONTROL DE ARRASTRE CON RATÓN (PC DRAG) ───
     wrap.addEventListener('mousedown', function(e) {
-      isDown = true;
+      isDragging = true;
+      canAutoMove = false;
       wrap.classList.add('is-dragging');
-      startX = e.pageX - wrap.offsetLeft;
-      scrollLeft = wrap.scrollLeft;
+      startX = e.pageX;
+      startScroll = wrap.scrollLeft;
+      if (resumeTimer) clearTimeout(resumeTimer);
     });
 
-    window.addEventListener('mouseup', function() {
-      if (isDown) {
-        isDown = false;
-        wrap.classList.remove('is-dragging');
-      }
-    });
-
-    wrap.addEventListener('mousemove', function(e) {
-      if (!isDown) return;
+    window.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
       e.preventDefault();
-      var x = e.pageX - wrap.offsetLeft;
-      var walk = (x - startX) * 1.5; // Multiplicador de suavidad y respuesta
-      wrap.scrollLeft = scrollLeft - walk;
+      var dx = (e.pageX - startX) * 1.35;
+      wrap.scrollLeft = startScroll - dx;
 
       if (singleSetWidth > 0) {
-        if (wrap.scrollLeft >= singleSetWidth) {
+        if (wrap.scrollLeft >= singleSetWidth * 2.5) {
           wrap.scrollLeft -= singleSetWidth;
-          scrollLeft -= singleSetWidth;
-        } else if (wrap.scrollLeft <= 0) {
+          startScroll -= singleSetWidth;
+        } else if (wrap.scrollLeft <= singleSetWidth * 0.5) {
           wrap.scrollLeft += singleSetWidth;
-          scrollLeft += singleSetWidth;
+          startScroll += singleSetWidth;
         }
       }
     });
 
-    // Soporte táctil en dispositivos móviles y tablets
-    var touchStartX = 0;
-    var touchScrollLeft = 0;
-    wrap.addEventListener('touchstart', function(e) {
-      isDown = true;
-      touchStartX = e.touches[0].pageX - wrap.offsetLeft;
-      touchScrollLeft = wrap.scrollLeft;
-    }, { passive: true });
+    function stopDragging() {
+      if (isDragging) {
+        isDragging = false;
+        wrap.classList.remove('is-dragging');
+        if (resumeTimer) clearTimeout(resumeTimer);
+        // Al soltar el ratón, reanuda automáticamente el avance
+        resumeTimer = setTimeout(function() {
+          canAutoMove = true;
+          isPointerOver = false;
+        }, 700);
+      }
+    }
 
-    wrap.addEventListener('touchend', function() {
-      isDown = false;
-    });
+    window.addEventListener('mouseup', stopDragging);
+
+    // ─── CONTROL TÁCTIL EN CELULARES Y TABLETS (TOUCH DRAG) ───
+    var touchStartX = 0;
+    var touchStartScroll = 0;
+
+    wrap.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        canAutoMove = false;
+        touchStartX = e.touches[0].pageX;
+        touchStartScroll = wrap.scrollLeft;
+        if (resumeTimer) clearTimeout(resumeTimer);
+      }
+    }, { passive: true });
 
     wrap.addEventListener('touchmove', function(e) {
-      if (!isDown) return;
-      var x = e.touches[0].pageX - wrap.offsetLeft;
-      var walk = (x - touchStartX) * 1.3;
-      wrap.scrollLeft = touchScrollLeft - walk;
+      if (!isDragging || e.touches.length !== 1) return;
+      var dx = (e.touches[0].pageX - touchStartX) * 1.3;
+      wrap.scrollLeft = touchStartScroll - dx;
 
       if (singleSetWidth > 0) {
-        if (wrap.scrollLeft >= singleSetWidth) {
+        if (wrap.scrollLeft >= singleSetWidth * 2.5) {
           wrap.scrollLeft -= singleSetWidth;
-          touchScrollLeft -= singleSetWidth;
-        } else if (wrap.scrollLeft <= 0) {
+          touchStartScroll -= singleSetWidth;
+        } else if (wrap.scrollLeft <= singleSetWidth * 0.5) {
           wrap.scrollLeft += singleSetWidth;
-          touchScrollLeft += singleSetWidth;
+          touchStartScroll += singleSetWidth;
         }
       }
     }, { passive: true });
+
+    function stopTouch() {
+      if (isDragging) {
+        isDragging = false;
+        if (resumeTimer) clearTimeout(resumeTimer);
+        // En celular, al soltar el dedo la cinta reanuda su avance infinito
+        resumeTimer = setTimeout(function() {
+          canAutoMove = true;
+          isPointerOver = false;
+        }, 600);
+      }
+    }
+
+    wrap.addEventListener('touchend', stopTouch);
+    wrap.addEventListener('touchcancel', stopTouch);
   }
 
   function initHeroSlider() {
