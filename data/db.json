@@ -113,6 +113,12 @@
       "name": "San Charbel",
       "logo": "/assets/logo_san_charbel.png",
       "status": "active"
+    },
+    {
+      "id": "cli-9",
+      "name": "Luis Mar Constructora",
+      "logo": "/assets/logo_luis_mar.png",
+      "status": "active"
     }
   ],
   "products": [
