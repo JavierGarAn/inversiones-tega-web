@@ -119,6 +119,12 @@
       "name": "Luis Mar Constructora",
       "logo": "/assets/logo_luis_mar.png",
       "status": "active"
+    },
+    {
+      "id": "cli-10",
+      "name": "Kontructiva",
+      "logo": "/assets/logo_kontructiva.png",
+      "status": "active"
     }
   ],
   "products": [
