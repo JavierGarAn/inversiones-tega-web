@@ -2477,38 +2477,59 @@
       box-shadow: 0 16px 32px -6px rgba(21, 92, 43, 0.16);
     }
     .team-photo-frame {
-      height: 160px;
-      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      height: 180px;
       position: relative;
-      border-bottom: 2px solid #E2E8F0;
       overflow: hidden;
+      background: #0B2B15;
+      border-bottom: 3px solid #22C55E;
     }
-    .team-photo-placeholder {
-      border: 1.5px dashed rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      width: 76px;
-      height: 76px;
-      display: flex;
+    .team-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .team-card:hover .team-photo-img {
+      transform: scale(1.08);
+    }
+    .team-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(21, 92, 43, 0.15) 0%, rgba(11, 43, 21, 0.65) 100%);
+      pointer-events: none;
+      transition: background 0.3s ease;
+    }
+    .team-card:hover .team-photo-overlay {
+      background: linear-gradient(180deg, rgba(21, 92, 43, 0.08) 0%, rgba(11, 43, 21, 0.55) 100%);
+    }
+    .team-photo-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      color: #94A3B8;
-      background: rgba(255, 255, 255, 0.05);
-      transition: all 0.3s ease;
+      gap: 6px;
+      padding: 4px 10px;
+      background: rgba(11, 43, 21, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #E6FCE8;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
-    .team-card:hover .team-photo-placeholder {
-      border-color: #22C55E;
-      color: #22C55E;
-      transform: scale(1.05);
-    }
-    .team-photo-placeholder svg {
-      width: 36px;
-      height: 36px;
-      stroke: currentColor;
-      stroke-width: 1.6;
+    .team-tag-dot {
+      width: 6px;
+      height: 6px;
+      background: #22C55E;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #22C55E;
+      flex-shrink: 0;
     }
     .team-card-body {
       padding: 18px 16px 20px;
@@ -4469,9 +4490,9 @@
             <!-- MIEMBRO 1: DIRECCIÓN GENERAL -->
             <div class="team-card">
               <div class="team-photo-frame">
-                <div class="team-photo-placeholder">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
-                </div>
+                <img src="/assets/team_direccion_proyectos.jpg" alt="Dirección General & Proyectos Inversiones Tega" class="team-photo-img" loading="lazy" />
+                <div class="team-photo-overlay"></div>
+                <span class="team-photo-tag"><span class="team-tag-dot"></span>Liderazgo & Estrategia</span>
               </div>
               <div class="team-card-body">
                 <span class="team-dept-badge">Liderazgo & Estrategia</span>
@@ -4489,9 +4510,9 @@
             <!-- MIEMBRO 2: ASESORÍA COMERCIAL B2B -->
             <div class="team-card">
               <div class="team-photo-frame">
-                <div class="team-photo-placeholder">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                </div>
+                <img src="/assets/team_asesoria_comercial.jpg" alt="Asesoría Comercial B2B Inversiones Tega" class="team-photo-img" loading="lazy" />
+                <div class="team-photo-overlay"></div>
+                <span class="team-photo-tag"><span class="team-tag-dot"></span>Ventas & Cubicación</span>
               </div>
               <div class="team-card-body">
                 <span class="team-dept-badge">Ventas & Cubicación</span>
@@ -4509,9 +4530,9 @@
             <!-- MIEMBRO 3: LOGÍSTICA & ALMACÉN -->
             <div class="team-card">
               <div class="team-photo-frame">
-                <div class="team-photo-placeholder">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-                </div>
+                <img src="/assets/team_logistica_almacen.jpg" alt="Logística & Almacén Central Inversiones Tega" class="team-photo-img" loading="lazy" />
+                <div class="team-photo-overlay"></div>
+                <span class="team-photo-tag"><span class="team-tag-dot"></span>Centro de Acopio</span>
               </div>
               <div class="team-card-body">
                 <span class="team-dept-badge">Centro de Acopio</span>
@@ -4529,9 +4550,9 @@
             <!-- MIEMBRO 4: SOPORTE TÉCNICO SSOMA -->
             <div class="team-card">
               <div class="team-photo-frame">
-                <div class="team-photo-placeholder">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-                </div>
+                <img src="/assets/team_soporte_ssoma.jpg" alt="Soporte Técnico & SSOMA Inversiones Tega" class="team-photo-img" loading="lazy" />
+                <div class="team-photo-overlay"></div>
+                <span class="team-photo-tag"><span class="team-tag-dot"></span>Calidad & Normas</span>
               </div>
               <div class="team-card-body">
                 <span class="team-dept-badge">Calidad & Normas</span>
