@@ -5583,10 +5583,11 @@
     var startX = 0;
     var startScroll = 0;
     var isPointerOver = false;
-    var autoSpeed = 0.95; // Velocidad continua y fluida
+    var autoSpeed = 1.15; // Velocidad continua, visible y fluida
     var singleSetWidth = 0;
     var resumeTimer = null;
     var canAutoMove = true;
+    var currentScroll = 0;
 
     function recalculate() {
       var allItems = track.querySelectorAll('.client-logo-item');
@@ -5604,25 +5605,29 @@
       if (wrap.scrollLeft < singleSetWidth * 0.5) {
         wrap.scrollLeft = singleSetWidth;
       }
+      currentScroll = wrap.scrollLeft;
     }
 
     recalculate();
     window.addEventListener('resize', recalculate);
     window.addEventListener('load', recalculate);
-    setTimeout(recalculate, 250);
+    setTimeout(recalculate, 200);
     setTimeout(recalculate, 800);
 
-    // Bucle continuo a 60 FPS
+    // Bucle continuo a 60 FPS con acumulador numérico para compatibilidad total con móviles
     function loop() {
       if (canAutoMove && !isDragging && !isPointerOver) {
-        wrap.scrollLeft += autoSpeed;
+        currentScroll += autoSpeed;
         if (singleSetWidth > 0) {
-          if (wrap.scrollLeft >= singleSetWidth * 2.5) {
-            wrap.scrollLeft -= singleSetWidth;
-          } else if (wrap.scrollLeft <= singleSetWidth * 0.5) {
-            wrap.scrollLeft += singleSetWidth;
+          if (currentScroll >= singleSetWidth * 2.5) {
+            currentScroll -= singleSetWidth;
+          } else if (currentScroll <= singleSetWidth * 0.5) {
+            currentScroll += singleSetWidth;
           }
         }
+        wrap.scrollLeft = Math.round(currentScroll);
+      } else {
+        currentScroll = wrap.scrollLeft;
       }
       window._clientTickerRaf = requestAnimationFrame(loop);
     }
@@ -5650,6 +5655,7 @@
       wrap.classList.add('is-dragging');
       startX = e.pageX;
       startScroll = wrap.scrollLeft;
+      currentScroll = wrap.scrollLeft;
       if (resumeTimer) clearTimeout(resumeTimer);
     });
 
@@ -5658,14 +5664,17 @@
       e.preventDefault();
       var dx = (e.pageX - startX) * 1.35;
       wrap.scrollLeft = startScroll - dx;
+      currentScroll = wrap.scrollLeft;
 
       if (singleSetWidth > 0) {
-        if (wrap.scrollLeft >= singleSetWidth * 2.5) {
-          wrap.scrollLeft -= singleSetWidth;
+        if (currentScroll >= singleSetWidth * 2.5) {
+          currentScroll -= singleSetWidth;
           startScroll -= singleSetWidth;
-        } else if (wrap.scrollLeft <= singleSetWidth * 0.5) {
-          wrap.scrollLeft += singleSetWidth;
+          wrap.scrollLeft = currentScroll;
+        } else if (currentScroll <= singleSetWidth * 0.5) {
+          currentScroll += singleSetWidth;
           startScroll += singleSetWidth;
+          wrap.scrollLeft = currentScroll;
         }
       }
     });
@@ -5674,12 +5683,13 @@
       if (isDragging) {
         isDragging = false;
         wrap.classList.remove('is-dragging');
+        currentScroll = wrap.scrollLeft;
         if (resumeTimer) clearTimeout(resumeTimer);
         // Al soltar el ratón, reanuda automáticamente el avance
         resumeTimer = setTimeout(function() {
           canAutoMove = true;
           isPointerOver = false;
-        }, 700);
+        }, 500);
       }
     }
 
@@ -5695,6 +5705,7 @@
         canAutoMove = false;
         touchStartX = e.touches[0].pageX;
         touchStartScroll = wrap.scrollLeft;
+        currentScroll = wrap.scrollLeft;
         if (resumeTimer) clearTimeout(resumeTimer);
       }
     }, { passive: true });
@@ -5703,14 +5714,17 @@
       if (!isDragging || e.touches.length !== 1) return;
       var dx = (e.touches[0].pageX - touchStartX) * 1.3;
       wrap.scrollLeft = touchStartScroll - dx;
+      currentScroll = wrap.scrollLeft;
 
       if (singleSetWidth > 0) {
-        if (wrap.scrollLeft >= singleSetWidth * 2.5) {
-          wrap.scrollLeft -= singleSetWidth;
+        if (currentScroll >= singleSetWidth * 2.5) {
+          currentScroll -= singleSetWidth;
           touchStartScroll -= singleSetWidth;
-        } else if (wrap.scrollLeft <= singleSetWidth * 0.5) {
-          wrap.scrollLeft += singleSetWidth;
+          wrap.scrollLeft = currentScroll;
+        } else if (currentScroll <= singleSetWidth * 0.5) {
+          currentScroll += singleSetWidth;
           touchStartScroll += singleSetWidth;
+          wrap.scrollLeft = currentScroll;
         }
       }
     }, { passive: true });
@@ -5718,12 +5732,13 @@
     function stopTouch() {
       if (isDragging) {
         isDragging = false;
+        currentScroll = wrap.scrollLeft;
         if (resumeTimer) clearTimeout(resumeTimer);
-        // En celular, al soltar el dedo la cinta reanuda su avance infinito
+        // En celular, al soltar el dedo la cinta reanuda de inmediato su avance infinito
         resumeTimer = setTimeout(function() {
           canAutoMove = true;
           isPointerOver = false;
-        }, 600);
+        }, 500);
       }
     }
 
