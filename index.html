@@ -272,6 +272,8 @@
     }
     /* FULL 16:9 VIEW WITHOUT CROPPING HELMET, LOGO OR EDGES */
     .hero-bg-video {
+      position: absolute;
+      inset: 0;
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
@@ -280,8 +282,11 @@
       margin: 0 !important;
       padding: 0 !important;
       border: none !important;
+      z-index: 2;
     }
     .hero-bg-img {
+      position: absolute;
+      inset: 0;
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
@@ -290,6 +295,7 @@
       margin: 0 !important;
       padding: 0 !important;
       border: none !important;
+      z-index: 1;
     }
 
     /* PARTICLES CANVAS OVERLAY */
@@ -3865,9 +3871,10 @@
         <!-- PARTE 1: VIDEO COMPLETO (SIN CORTES, SIN ARRASTRE) -->
         <div class="hero-panoramic-slide active" id="hero-slide-1">
           <div class="hero-media-bg">
-            <video autoplay muted playsinline poster="/assets/hero_portada_1.jpg" class="hero-bg-video" id="heroVideoEl" draggable="false">
+            <!-- Imagen de respaldo inmediata: previene cualquier fondo blanco durante la carga o en segundo plano -->
+            <img src="/assets/hero_portada_1.jpg" alt="Inversiones Tega Portada" class="hero-bg-img hero-fallback-img" draggable="false" />
+            <video autoplay muted playsinline preload="auto" poster="/assets/hero_portada_1.jpg" class="hero-bg-video" id="heroVideoEl" draggable="false">
               <source src="/assets/hero_portada_video.mp4" type="video/mp4">
-              <img src="/assets/hero_portada_1.jpg" alt="Inversiones Tega Video" class="hero-bg-img" draggable="false" />
             </video>
           </div>
         </div>
@@ -5571,7 +5578,7 @@
     var vid = document.getElementById('heroVideoEl');
 
     if (idx === 1) {
-      // Activar Slide 1 (Video)
+      // Activar Slide 1 (Video con imagen de respaldo inmediata)
       if (s1) {
         s1.classList.add('active');
         s1.style.opacity = '1';
@@ -5588,24 +5595,47 @@
       if (d2) d2.classList.remove('active');
 
       if (vid) {
-        vid.currentTime = 0;
-        var playPromise = vid.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(function() {});
+        vid.muted = true;
+        vid.defaultMuted = true;
+
+        // Reiniciar posición solo si ya terminó o avanzó para no cancelar la descarga inicial
+        if (vid.ended || vid.currentTime > 0.5) {
+          try { vid.currentTime = 0; } catch (e) {}
         }
 
-        // Al terminar el video ("cuando termine de ejecutarse"), pasar a la foto
+        // Manejador cuando finaliza el video
         vid.onended = function() {
+          if (!document.hidden) {
+            switchHeroSlide(2);
+          }
+        };
+
+        // Fallback si ocurre error o bloqueo en decodificación
+        vid.onerror = function() {
           switchHeroSlide(2);
         };
 
-        // Fallback de seguridad (duración del video o 10.5 segundos)
+        // Iniciar reproducción segura (evitando excepciones de autoplay)
+        var playPromise = vid.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(function() {
+            // Si el navegador bloquea autoplay, programamos la transición a foto en 5s
+            clearHeroTimeout();
+            heroSlideTimeout = setTimeout(function() {
+              if (currentHeroSlide === 1 && !document.hidden) {
+                switchHeroSlide(2);
+              }
+            }, 5000);
+          });
+        }
+
+        // Fallback de duración dinámica para asegurar que la alternancia nunca se quede congelada
         var fallbackDuration = 10500;
         if (vid.duration && !isNaN(vid.duration) && vid.duration > 1) {
           fallbackDuration = Math.round(vid.duration * 1000) + 300;
         }
         heroSlideTimeout = setTimeout(function() {
-          if (currentHeroSlide === 1) {
+          if (currentHeroSlide === 1 && !document.hidden) {
             switchHeroSlide(2);
           }
         }, fallbackDuration);
@@ -5632,15 +5662,61 @@
 
       if (vid) {
         vid.onended = null;
-        vid.pause();
+        try { vid.pause(); } catch (e) {}
       }
 
       // La foto se muestra durante 5 segundos y luego regresa al video
       heroSlideTimeout = setTimeout(function() {
-        switchHeroSlide(1);
+        if (!document.hidden) {
+          switchHeroSlide(1);
+        }
       }, 5000);
     }
   }
+
+  // ─── CONTROL DE SEGUNDO PLANO (VISIBILITY CHANGE): EVITA FONDOS BLANCOS O DESFASES ───
+  document.addEventListener('visibilitychange', function() {
+    var vid = document.getElementById('heroVideoEl');
+    if (document.hidden) {
+      // Tab en segundo plano: pausamos el temporizador para que no se desincronice
+      clearHeroTimeout();
+      if (vid && !vid.paused) {
+        try { vid.pause(); } catch (e) {}
+      }
+    } else {
+      // Tab vuelve a estar activo: reanudar limpiamente según el slide actual
+      if (currentHeroSlide === 1) {
+        if (vid) {
+          vid.muted = true;
+          vid.defaultMuted = true;
+          var p = vid.play();
+          if (p !== undefined) {
+            p.catch(function() {
+              switchHeroSlide(2);
+            });
+          }
+          var remaining = (vid.duration && !isNaN(vid.duration) && vid.duration > vid.currentTime)
+            ? Math.round((vid.duration - vid.currentTime) * 1000) + 300
+            : 10000;
+          clearHeroTimeout();
+          heroSlideTimeout = setTimeout(function() {
+            if (currentHeroSlide === 1 && !document.hidden) {
+              switchHeroSlide(2);
+            }
+          }, Math.max(2000, remaining));
+        } else {
+          switchHeroSlide(1);
+        }
+      } else {
+        clearHeroTimeout();
+        heroSlideTimeout = setTimeout(function() {
+          if (currentHeroSlide === 2 && !document.hidden) {
+            switchHeroSlide(1);
+          }
+        }, 3500);
+      }
+    }
+  });
 
   function nextHeroSlide() {
     switchHeroSlide(currentHeroSlide === 1 ? 2 : 1);
