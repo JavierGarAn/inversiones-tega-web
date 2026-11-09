@@ -131,6 +131,12 @@
       "name": "Ucronia",
       "logo": "/assets/logo_ucronia.png",
       "status": "active"
+    },
+    {
+      "id": "cli-12",
+      "name": "Minera Movisa",
+      "logo": "/assets/logo_minera_movisa.png",
+      "status": "active"
     }
   ],
   "products": [
