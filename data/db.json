@@ -125,6 +125,12 @@
       "name": "Kontructiva",
       "logo": "/assets/logo_kontructiva.png",
       "status": "active"
+    },
+    {
+      "id": "cli-11",
+      "name": "Ucronia",
+      "logo": "/assets/logo_ucronia.png",
+      "status": "active"
     }
   ],
   "products": [
