@@ -1997,7 +1997,7 @@
       flex-shrink: 0;
     }
 
-    /* ─── FILAS COMPLETAS: MISIÓN Y VISIÓN (FORMATO HORIZONTAL DE ANCHO COMPLETO) ─── */
+    /* ─── FILAS COMPLETAS: MISIÓN Y VISIÓN (FORMATO HORIZONTAL CON FOTOGRAFÍA CORPORATIVA) ─── */
     .mision-vision-stack {
       display: flex;
       flex-direction: column;
@@ -2011,7 +2011,7 @@
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
       display: grid;
-      grid-template-columns: 290px 1fr;
+      grid-template-columns: 340px 1fr;
       transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
     .mv-row-card:hover {
@@ -2023,63 +2023,49 @@
       box-shadow: 0 14px 34px -6px rgba(2, 132, 199, 0.15);
       border-color: #0284C7;
     }
-    .mv-row-visual {
+    .mv-row-photo-wrap {
       position: relative;
-      background: linear-gradient(145deg, #020B18 0%, #0F381E 100%);
-      padding: 32px 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #FFFFFF;
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
       overflow: hidden;
+      background: #020B18;
     }
-    .mv-row-visual.vision-visual {
-      background: linear-gradient(145deg, #020B18 0%, #0B2A4A 100%);
+    .mv-row-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
     }
-    .mv-row-visual-pattern {
+    .mv-row-card:hover .mv-row-photo {
+      transform: scale(1.05);
+    }
+    .mv-row-photo-overlay {
       position: absolute;
       inset: 0;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-      background-size: 20px 20px;
-      opacity: 0.8;
+      background: linear-gradient(180deg, rgba(2, 11, 24, 0.1) 0%, rgba(2, 11, 24, 0.55) 100%);
       pointer-events: none;
     }
-    .mv-row-icon-circle {
-      position: relative;
-      z-index: 2;
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1.5px solid rgba(255, 255, 255, 0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    }
-    .mv-row-icon-circle svg {
-      width: 38px;
-      height: 38px;
-      stroke: #22C55E;
-    }
-    .mv-row-visual.vision-visual .mv-row-icon-circle svg {
-      stroke: #38BDF8;
-    }
-    .mv-row-visual-tag {
-      position: relative;
-      z-index: 2;
-      font-size: 0.82rem;
+    .mv-photo-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 0.74rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-family: 'Barlow Condensed', sans-serif;
-      color: rgba(255, 255, 255, 0.95);
+      padding: 6px 14px;
+      border-radius: 4px;
+      border-left: 3px solid #22C55E;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+    .mv-row-card.vision-card .mv-photo-tag {
+      border-left-color: #0284C7;
     }
     .mv-row-content {
       padding: 34px 38px;
@@ -2165,19 +2151,9 @@
       .mv-row-card {
         grid-template-columns: 1fr;
       }
-      .mv-row-visual {
-        padding: 22px 18px;
-        flex-direction: row;
-        gap: 14px;
-      }
-      .mv-row-icon-circle {
-        width: 52px;
-        height: 52px;
-        margin-bottom: 0;
-      }
-      .mv-row-icon-circle svg {
-        width: 26px;
-        height: 26px;
+      .mv-row-photo-wrap {
+        height: 220px;
+        min-height: 200px;
       }
       .mv-row-content {
         padding: 22px 20px;
@@ -4280,16 +4256,10 @@
           
           <!-- FILA 1: NUESTRA MISIÓN CORPORATIVA -->
           <div class="mv-row-card">
-            <div class="mv-row-visual">
-              <div class="mv-row-visual-pattern"></div>
-              <div class="mv-row-icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="M9 12l2 2 4-4"/>
-                </svg>
-              </div>
-              <div class="mv-row-visual-tag">Misión Corporativa</div>
-              <div style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-top:4px;">Compromiso con cada Obra</div>
+            <div class="mv-row-photo-wrap">
+              <img src="/assets/mision_seguridad_ssoma.jpg" alt="Misión Inversiones Tega - Seguridad Certificada y SSOMA en Obra" class="mv-row-photo" draggable="false" />
+              <div class="mv-row-photo-overlay"></div>
+              <span class="mv-photo-tag">Seguridad Certificada SSOMA</span>
             </div>
 
             <div class="mv-row-content">
@@ -4318,16 +4288,10 @@
 
           <!-- FILA 2: NUESTRA VISIÓN ESTRATÉGICA -->
           <div class="mv-row-card vision-card">
-            <div class="mv-row-visual vision-visual">
-              <div class="mv-row-visual-pattern"></div>
-              <div class="mv-row-icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-                </svg>
-              </div>
-              <div class="mv-row-visual-tag">Visión Estratégica</div>
-              <div style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-top:4px;">Proyección B2B Nacional</div>
+            <div class="mv-row-photo-wrap">
+              <img src="/assets/vision_alianza_corporativa.jpg" alt="Visión Inversiones Tega - Alianza Estratégica y Liderazgo B2B Nacional" class="mv-row-photo" draggable="false" />
+              <div class="mv-row-photo-overlay"></div>
+              <span class="mv-photo-tag">Alianza B2B Nacional</span>
             </div>
 
             <div class="mv-row-content">
