@@ -570,57 +570,61 @@
       background: var(--white);
     }
     .cta-banner-card {
-      background: linear-gradient(135deg, #0B2B15 0%, #155C2B 100%);
+      background: radial-gradient(circle at 12% 18%, rgba(74, 222, 128, 0.26) 0%, transparent 45%),
+                  radial-gradient(circle at 88% 82%, rgba(34, 197, 94, 0.20) 0%, transparent 50%),
+                  linear-gradient(135deg, #115328 0%, #156534 50%, #167a3d 100%);
       border-radius: 28px;
-      padding: 48px 44px;
+      padding: 46px 44px;
       color: var(--white);
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1.22fr 0.78fr;
       gap: 36px;
       align-items: center;
-      box-shadow: var(--shadow-xl);
-      border: 1.5px solid rgba(134, 239, 172, 0.25);
+      box-shadow: 0 20px 45px rgba(17, 83, 40, 0.22);
+      border: 1.5px solid rgba(134, 239, 172, 0.42);
       position: relative;
       overflow: hidden;
     }
     .cta-banner-card::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
+      top: -40%;
+      right: -15%;
       width: 480px;
       height: 480px;
-      background: radial-gradient(circle, rgba(34, 197, 94, 0.18) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(134, 239, 172, 0.22) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
     .cta-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(4px);
-      padding: 4px 14px;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      padding: 5px 14px;
       border-radius: var(--radius-full);
       font-family: var(--font-display);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #86EFAC;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.35);
       margin-bottom: 14px;
     }
     .cta-banner-title {
-      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-size: clamp(1.85rem, 3.2vw, 2.65rem);
       font-weight: 900;
-      line-height: 1.1;
+      line-height: 1.08;
       text-transform: uppercase;
       color: var(--white);
       margin-bottom: 14px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
     .cta-banner-desc {
-      font-size: 0.96rem;
-      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.98rem;
+      color: rgba(255, 255, 255, 0.95);
       line-height: 1.6;
       margin-bottom: 24px;
       max-width: 620px;
@@ -633,28 +637,29 @@
     }
     .btn-cta-wa {
       background: #22C55E;
-      color: #0B2B15;
+      color: #064E3B;
       font-weight: 800;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       padding: 13px 26px;
       border-radius: var(--radius-sm);
       display: inline-flex;
       align-items: center;
       gap: 8px;
       transition: all var(--transition);
-      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4);
+      box-shadow: 0 6px 18px rgba(34, 197, 94, 0.45);
     }
     .btn-cta-wa:hover {
       background: #16A34A;
       color: #FFFFFF;
       transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(22, 163, 74, 0.5);
     }
     .btn-cta-outline {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.14);
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
       color: #FFFFFF;
       font-weight: 800;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       padding: 13px 24px;
       border-radius: var(--radius-sm);
       display: inline-flex;
@@ -664,45 +669,63 @@
     }
     .btn-cta-outline:hover {
       background: #FFFFFF;
-      color: var(--tega-dark);
+      color: #115328;
       border-color: #FFFFFF;
     }
 
     .cta-banner-features {
-      background: rgba(0, 0, 0, 0.22);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: var(--radius);
-      padding: 24px 20px;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 24px 22px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.9);
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 14px;
+      text-align: left;
     }
     .cta-feat-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 14px;
     }
-    .cta-feat-item svg {
+    .cta-feat-item:not(:last-child) {
+      padding-bottom: 14px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .cta-feat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #15803D;
+      flex-shrink: 0;
+    }
+    .cta-feat-icon svg {
       width: 22px;
       height: 22px;
-      stroke: #86EFAC;
-      flex-shrink: 0;
-      margin-top: 2px;
+      stroke: currentColor;
     }
-    .cta-feat-item strong {
+    .cta-feat-text strong {
       display: block;
       font-family: var(--font-display);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      color: #FFFFFF;
+      color: #0F172A;
       line-height: 1.2;
     }
-    .cta-feat-item span {
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.75);
+    .cta-feat-text span {
+      display: block;
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.35;
+      font-weight: 500;
     }
 
     /* ─── CUATRO RAZONES PARA CONFIAR EN TEGA ─── */
@@ -715,46 +738,97 @@
     .reasons-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
     .reason-card {
       background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 22px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transition: all var(--transition);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
       position: relative;
     }
     .reason-card:hover {
-      border-color: var(--tega-primary);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+      border-color: #16A34A;
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(22, 101, 52, 0.12);
     }
-    .reason-icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--tega-light);
-      border: 1.5px solid var(--tega-border);
+    .reason-card-media {
+      position: relative;
+      height: 160px;
+      overflow: hidden;
+      background: #0F172A;
+    }
+    .reason-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .reason-card:hover .reason-card-media img {
+      transform: scale(1.06);
+    }
+    .reason-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(11, 43, 21, 0.85);
+      backdrop-filter: blur(6px);
+      color: #86EFAC;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(134, 239, 172, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .reason-card-num {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 26px;
+      height: 26px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #0F172A;
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
-      color: var(--tega-dark);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
-    .reason-icon-box svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 2; }
+    .reason-card-body {
+      padding: 18px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
     .reason-card-title {
+      font-family: var(--font-display);
       font-size: 1.22rem;
-      font-weight: 800;
-      color: var(--text);
+      font-weight: 900;
+      color: #0F172A;
       text-transform: uppercase;
+      line-height: 1.18;
       margin-bottom: 8px;
-      line-height: 1.2;
     }
     .reason-card-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.55;
+      font-size: 0.86rem;
+      color: #475569;
+      line-height: 1.5;
+      font-weight: 500;
+      margin: 0;
     }
 
     @media (max-width: 1080px) {
@@ -4254,22 +4328,28 @@
           
           <div class="cta-banner-features">
             <div class="cta-feat-item">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <div>
+              <div class="cta-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="cta-feat-text">
                 <strong>Línea de Crédito B2B</strong>
                 <span>Facilidades comerciales para contratistas recurrentes</span>
               </div>
             </div>
             <div class="cta-feat-item">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/></svg>
-              <div>
+              <div class="cta-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/></svg>
+              </div>
+              <div class="cta-feat-text">
                 <strong>Despacho en 24 Horas</strong>
                 <span>Entrega directa en obra o flete programado</span>
               </div>
             </div>
             <div class="cta-feat-item">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-              <div>
+              <div class="cta-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="cta-feat-text">
                 <strong>Atención B2B Dedicada</strong>
                 <span>Canal comercial directo para compras por volumen</span>
               </div>
@@ -4295,44 +4375,64 @@
 
         <div class="reasons-grid">
           
+          <!-- Razón 01 -->
           <div class="reason-card">
-            <div class="reason-icon-box">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="reason-card-media">
+              <img src="/assets/razon_1_calidad.jpg" alt="Calidad Garantizada SSOMA" loading="lazy">
+              <span class="reason-card-badge">NORMA ANSI & SSOMA</span>
+              <span class="reason-card-num">01</span>
             </div>
-            <h3 class="reason-card-title">Calidad Garantizada</h3>
-            <p class="reason-card-desc">
-              Productos normados con fichas técnicas y certificados de fábrica (ANSI, NTP, ASTM) listos para fiscalización SSOMA.
-            </p>
+            <div class="reason-card-body">
+              <h3 class="reason-card-title">Calidad Garantizada</h3>
+              <p class="reason-card-desc">
+                Materiales y EPPs normados con fichas técnicas y certificados de fábrica listos para fiscalización en obra.
+              </p>
+            </div>
           </div>
 
+          <!-- Razón 02 -->
           <div class="reason-card">
-            <div class="reason-icon-box">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <div class="reason-card-media">
+              <img src="/assets/razon_2_asesoria.jpg" alt="Asesoría Especializada en Obra" loading="lazy">
+              <span class="reason-card-badge">A PIE DE OBRA</span>
+              <span class="reason-card-num">02</span>
             </div>
-            <h3 class="reason-card-title">Asesoría Especializada</h3>
-            <p class="reason-card-desc">
-              Equipo técnico capacitado para cubicación de partidas, sugerencias de materiales y reemplazos eficientes de obra.
-            </p>
+            <div class="reason-card-body">
+              <h3 class="reason-card-title">Asesoría en Obra</h3>
+              <p class="reason-card-desc">
+                Cubicación de partidas y reemplazos eficientes de materiales con visita y soporte técnico en campo.
+              </p>
+            </div>
           </div>
 
+          <!-- Razón 03 -->
           <div class="reason-card">
-            <div class="reason-icon-box">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zm14 10v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <div class="reason-card-media">
+              <img src="/assets/razon_3_atencion.jpg" alt="Atención B2B Directa" loading="lazy">
+              <span class="reason-card-badge">RESPUESTA &lt; 2 HORAS</span>
+              <span class="reason-card-num">03</span>
             </div>
-            <h3 class="reason-card-title">Atención B2B Directa</h3>
-            <p class="reason-card-desc">
-              Respuesta ágil sin intermediarios. Emisión de cotizaciones formales por ítem en menos de 2 horas.
-            </p>
+            <div class="reason-card-body">
+              <h3 class="reason-card-title">Atención B2B Directa</h3>
+              <p class="reason-card-desc">
+                Cotizaciones formales por ítem en tiempo récord y precios mayoristas directos sin intermediarios.
+              </p>
+            </div>
           </div>
 
+          <!-- Razón 04 -->
           <div class="reason-card">
-            <div class="reason-icon-box">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/></svg>
+            <div class="reason-card-media">
+              <img src="/assets/razon_4_cobertura.jpg" alt="Cobertura Lima y a Nivel Nacional" loading="lazy">
+              <span class="reason-card-badge">A TODO EL PERÚ</span>
+              <span class="reason-card-num">04</span>
             </div>
-            <h3 class="reason-card-title">Lima y a Nivel Nacional</h3>
-            <p class="reason-card-desc">
-              Almacén Central en El Agustino, sucursales en Malvinas y despacho a todo el Perú por Shalom y Marvisur.
-            </p>
+            <div class="reason-card-body">
+              <h3 class="reason-card-title">Cobertura Nacional</h3>
+              <p class="reason-card-desc">
+                Despacho programado directo a tu obra en Lima y envíos diarios a provincias por Shalom y Marvisur.
+              </p>
+            </div>
           </div>
 
         </div>
