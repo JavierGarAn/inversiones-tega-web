@@ -2085,85 +2085,7 @@
     .norma-card svg { width: 18px; height: 18px; stroke: var(--tega-primary); flex-shrink: 0; }
     .norma-card strong { color: var(--tega-dark); }
 
-    /* ─── PACKS DE SUMINISTRO POR ETAPA DE OBRA ─── */
-    .packs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 28px;
-    }
-    .pack-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all var(--transition);
-      position: relative;
-    }
-    .pack-card:hover {
-      border-color: var(--tega-primary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-    }
-    .pack-card.popular {
-      border-color: var(--tega-primary);
-      background: linear-gradient(180deg, #FFFFFF 0%, #F5FBF6 100%);
-    }
-    .pack-ribbon {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: var(--tega-primary);
-      color: var(--white);
-      font-size: 0.65rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: var(--radius-sm);
-      letter-spacing: 0.05em;
-    }
-    .pack-icon-svg {
-      width: 36px;
-      height: 36px;
-      color: var(--tega-primary);
-      margin-bottom: 12px;
-    }
-    .pack-icon-svg svg { width: 100%; height: 100%; stroke: currentColor; }
-    .pack-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-    .pack-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-      line-height: 1.5;
-    }
-    .pack-items-list {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 20px;
-    }
-    .pack-item-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: var(--text);
-    }
-    .pack-item-row svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--tega-primary);
-      flex-shrink: 0;
-    }
+
 
     /* ─── FEATURES GRID ─── */
     .features-grid {
@@ -3481,7 +3403,7 @@
     @media (max-width: 1080px) {
       .value-strip-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-grid, .about-layout, .quote-layout, .obras-grid-top, .marcas-grid { grid-template-columns: 1fr; }
-      .lines-overview-grid, .packs-grid, .locations-cards-grid { grid-template-columns: 1fr 1fr; }
+      .lines-overview-grid, .locations-cards-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .impact-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
       .team-cards-grid { grid-template-columns: repeat(2, 1fr); }
@@ -3697,10 +3619,6 @@
         gap: 14px !important;
       }
       .subproducts-grid {
-        grid-template-columns: 1fr !important;
-        gap: 14px !important;
-      }
-      .packs-grid {
         grid-template-columns: 1fr !important;
         gap: 14px !important;
       }
@@ -4440,83 +4358,6 @@
       </div>
     </section>
 
-
-    <!-- PACKS DE SUMINISTRO POR ETAPA DE OBRA -->
-    <section class="section">
-      <div class="container">
-        <div style="text-align:center;margin-bottom:12px;">
-          <div class="section-tag">Optimización de Compras B2B</div>
-          <h2 class="section-title">Packs de suministro <span class="em">por etapa de obra</span></h2>
-          <p class="section-sub" style="margin:0 auto 34px;">
-            Armados para acelerar las requisiciones de almacén. Cotiza partidas completas en un solo clic.
-          </p>
-        </div>
-
-        <div class="packs-grid">
-          <!-- Pack 1 -->
-          <div class="pack-card popular">
-            <span class="pack-ribbon">Alta Demanda</span>
-            <div>
-              <div class="pack-icon-svg">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3 class="pack-title">Pack Inducción SSOMA</h3>
-              <p class="pack-desc">Para ingreso masivo de personal y cumplimiento inmediato en garita de control.</p>
-              <div class="pack-items-list">
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Casco tipo Jockey ANSI con barbiquejo</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Lentes antiempañantes con protección UV</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Chaleco reflectivo con cintas de alta visibilidad</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Guantes anticorte / nitrilo reforzados</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Botas de seguridad con puntera de acero</span></div>
-              </div>
-            </div>
-            <button class="btn btn-primary" onclick="addToCart('Pack Inducción SSOMA (Lote Completo)')" id="pack-add-ssoma">
-              + Agregar Pack a Cotización
-            </button>
-          </div>
-
-          <!-- Pack 2 -->
-          <div class="pack-card">
-            <div>
-              <div class="pack-icon-svg">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-              </div>
-              <h3 class="pack-title">Pack Protección de Acabados</h3>
-              <p class="pack-desc">Asegura la entrega final de obra protegiendo pisos, porcelanatos y cristalería.</p>
-              <div class="pack-items-list">
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Rollos de cartón corrugado pesado para piso</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Film stretch industrial para embalaje hermético</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Plástico negro de polietileno impermeable</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Cintas de enmascarar resistentes para bordes</span></div>
-              </div>
-            </div>
-            <button class="btn btn-outline" onclick="addToCart('Pack Protección de Acabados (Lote Completo)')" id="pack-add-acabados">
-              + Agregar Pack a Cotización
-            </button>
-          </div>
-
-          <!-- Pack 3 -->
-          <div class="pack-card">
-            <div>
-              <div class="pack-icon-svg">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg>
-              </div>
-              <h3 class="pack-title">Pack Cerco & Perímetro Vial</h3>
-              <p class="pack-desc">Delimitación de zanjas, excavaciones y frentes de trabajo según INDECI.</p>
-              <div class="pack-items-list">
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Malla de faena naranja de polietileno denso</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Conos viales reflectivos de 28 pulgadas</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Cinta amarilla y roja 'Peligro No Pasar'</span></div>
-                <div class="pack-item-row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg><span>Señales fotoluminiscentes de evacuación</span></div>
-              </div>
-            </div>
-            <button class="btn btn-outline" onclick="addToCart('Pack Cerco & Perímetro Vial (Lote Completo)')" id="pack-add-cerco">
-              + Agregar Pack a Cotización
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- VENTAJAS B2B -->
     <section class="section section-alt">
