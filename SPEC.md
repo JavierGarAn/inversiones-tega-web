@@ -5,7 +5,10 @@
 - **Almacén Central y Despacho:** Av. Túpac Amaru 378, El Agustino, Lima - Perú
 - **Distribución Directa:** Desde Almacén Central El Agustino hacia obras en Lima y agencias de transporte (Shalom y Marvisur) para provincias.
 - **Sucursales / Puntos de Atención:** Sucursales en Las Malvinas, Lima.
-- **Canal Oficial WhatsApp:** Enlaces directos a WhatsApp oficial (+51 976 670 599) presentados como botones de acción sin exponer el número explícito en texto visible de la interfaz.
+- **Canales Oficiales WhatsApp (Multi-Asesor B2B):**
+  - Asesor Comercial 1: `+51 976 670 599` (Ventas, cubicación de partidas y EPPs)
+  - Asesor Comercial 2: `+51 958 379 759` (Despachos, almacén y envíos a provincia)
+  - Modal centralizador `openWhatsAppHub()` para permitir al cliente elegir a qué asesor escribir.
 - **Correo Institucional:** admin@inversionestega.pe
 - **Dominio Principal:** https://inversionestega.pe
 
