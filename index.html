@@ -2416,65 +2416,116 @@
     }
     .valores-cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
+      .valores-cards-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 720px) {
       .valores-cards-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
       .valores-cards-grid { grid-template-columns: 1fr; }
     }
     .valor-card {
       background: #FFFFFF;
       border: 1.5px solid #E2E8F0;
-      border-top: 3.5px solid #155C2B;
-      border-radius: 12px;
-      padding: 22px 20px;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-      transition: all 0.3s ease;
+      border-radius: 16px;
+      padding: 24px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.28s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      overflow: hidden;
+    }
+    .valor-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #155C2B, #22C55E);
+      opacity: 0.45;
+      transition: opacity 0.28s ease, height 0.28s ease;
     }
     .valor-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 28px rgba(21, 92, 43, 0.14);
-      border-color: #155C2B;
+      transform: translateY(-6px);
+      border-color: #16A34A;
+      box-shadow: 0 16px 32px rgba(22, 101, 52, 0.12);
+    }
+    .valor-card:hover::before {
+      opacity: 1;
+      height: 5px;
+    }
+    .valor-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .valor-card-num {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: #15803D;
+      line-height: 1;
+      letter-spacing: -0.02em;
     }
     .valor-card-icon {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
-      background: rgba(21, 92, 43, 0.08);
-      border: 1px solid rgba(21, 92, 43, 0.18);
+      background: #ECFDF5;
+      border: 1.5px solid #A7F3D0;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #155C2B;
-      margin-bottom: 14px;
-      transition: all 0.3s ease;
+      color: #15803D;
+      transition: all 0.25s ease;
+      margin-bottom: 0;
     }
     .valor-card:hover .valor-card-icon {
-      background: #155C2B;
+      background: #15803D;
       color: #FFFFFF;
       transform: scale(1.08);
     }
     .valor-card-icon svg {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       stroke: currentColor;
       stroke-width: 2;
     }
-    .valor-card-title {
-      font-size: 1.15rem;
+    .valor-card-tag {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
       font-weight: 800;
-      font-family: 'Barlow Condensed', sans-serif;
+      color: #166534;
+      background: #DCFCE7;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      align-self: flex-start;
+      margin-bottom: 10px;
+    }
+    .valor-card-title {
+      font-size: 1.18rem;
+      font-weight: 900;
+      font-family: var(--font-display);
       text-transform: uppercase;
       color: #0F172A;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      line-height: 1.15;
     }
     .valor-card-desc {
       font-size: 0.84rem;
-      color: #64748B;
-      line-height: 1.5;
+      color: #475569;
+      line-height: 1.48;
+      font-weight: 500;
+      margin: 0;
     }
 
 
@@ -4613,52 +4664,72 @@
           <div class="valores-cards-grid">
             
             <div class="valor-card">
-              <div class="valor-card-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <div class="valor-card-top">
+                <span class="valor-card-num">01</span>
+                <div class="valor-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
               </div>
-              <h3 class="valor-card-title">1. Calidad Homologada</h3>
+              <span class="valor-card-tag">NORMAS NTP &amp; ANSI</span>
+              <h3 class="valor-card-title">Calidad Homologada</h3>
               <p class="valor-card-desc">
-                Suministramos únicamente marcas que cumplen con normas técnicas peruanas e internacionales (NTP, ANSI, ASTM) para garantizar seguridad y aprobación en obra.
+                Suministros certificados con fichas técnicas listos para aprobación y fiscalización en obra.
               </p>
             </div>
 
             <div class="valor-card">
-              <div class="valor-card-icon">
-                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div class="valor-card-top">
+                <span class="valor-card-num">02</span>
+                <div class="valor-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
               </div>
-              <h3 class="valor-card-title">2. Puntualidad en Despacho</h3>
+              <span class="valor-card-tag">DESPACHO EN 24H</span>
+              <h3 class="valor-card-title">Puntualidad Absoluta</h3>
               <p class="valor-card-desc">
-                Entendemos que una cuadrilla parada genera sobrecostos. Por ello garantizamos despacho el mismo día para pedidos matutinos y entrega programada en 24h.
+                Garantizamos despacho el mismo día para pedidos matutinos. Cero paradas de cuadrilla.
               </p>
             </div>
 
             <div class="valor-card">
-              <div class="valor-card-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+              <div class="valor-card-top">
+                <span class="valor-card-num">03</span>
+                <div class="valor-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+                </div>
               </div>
-              <h3 class="valor-card-title">3. Confianza & Transparencia</h3>
+              <span class="valor-card-tag">TRAZABILIDAD 100%</span>
+              <h3 class="valor-card-title">Transparencia B2B</h3>
               <p class="valor-card-desc">
-                Cotizaciones claras por ítem, facturación electrónica inmediata y trazabilidad transparente en guías de remisión y tracking a provincias.
+                Cotizaciones claras por ítem, facturación electrónica inmediata y guías de remisión formales.
               </p>
             </div>
 
             <div class="valor-card">
-              <div class="valor-card-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div class="valor-card-top">
+                <span class="valor-card-num">04</span>
+                <div class="valor-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
               </div>
-              <h3 class="valor-card-title">4. Seguridad & Sostenibilidad</h3>
+              <span class="valor-card-tag">PREVENCIÓN SSOMA</span>
+              <h3 class="valor-card-title">Seguridad en Obra</h3>
               <p class="valor-card-desc">
-                Prioridad absoluta en suministros que protegen la vida humana en obra y promueven prácticas de construcción segura y ambientalmente responsable.
+                Prioridad en suministros que protegen la vida en faena y cumplen los requisitos de INDECI.
               </p>
             </div>
 
-            <div class="valor-card" style="grid-column: span 2;">
-              <div class="valor-card-icon">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+            <div class="valor-card">
+              <div class="valor-card-top">
+                <span class="valor-card-num">05</span>
+                <div class="valor-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+                </div>
               </div>
-              <h3 class="valor-card-title">5. Compromiso Total con la Obra</h3>
+              <span class="valor-card-tag">SOPORTE EN CAMPO</span>
+              <h3 class="valor-card-title">Compromiso Total</h3>
               <p class="valor-card-desc">
-                Flexibilidad operativa para resolver requerimientos de última hora, reposición de consumibles urgentes y facilidades comerciales de financiamiento B2B para clientes recurrentes.
+                Flexibilidad para urgencias de obra, reposición de consumibles y facilidades comerciales.
               </p>
             </div>
 
