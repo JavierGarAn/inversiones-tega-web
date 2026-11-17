@@ -846,13 +846,13 @@
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
           <input type="text" id="prodSearchInput" class="toolbar-search" placeholder="🔍 Buscar producto por nombre o norma..." oninput="filterAdminProducts()" />
           <select id="prodCatFilter" class="toolbar-filter" onchange="filterAdminProducts()">
-            <option value="all">Todas las Categorías</option>
-            <option value="epps">1) EPP's</option>
-            <option value="herramientas">2) Herramientas</option>
-            <option value="mallas">3) Malla Raschel</option>
-            <option value="carton">4) Cartón y Plásticos</option>
-            <option value="senaleticas">5) Señalización</option>
-            <option value="pvc">6) Tuberías PVC</option>
+            <option value="all">Todas las Categorías (283)</option>
+            <option value="epps">1) EPP's & Protección Personal (61)</option>
+            <option value="herramientas">2) Herramientas & Corte (60)</option>
+            <option value="senaleticas">3) Señaléticas & Seguridad Vial (69)</option>
+            <option value="carton">4) Cartón Corrugado & Embalaje (9)</option>
+            <option value="plasticos">5) Plásticos, Mallas & Limpieza (28)</option>
+            <option value="pvc">6) PVC, Ferretería & Eléctricos (56)</option>
           </select>
         </div>
 
@@ -1006,12 +1006,12 @@
           <div class="form-group">
             <label class="form-label">Categoría</label>
             <select id="formProdCat" class="form-select" required>
-              <option value="epps">1) EPP's</option>
-              <option value="herramientas">2) Herramientas</option>
-              <option value="mallas">3) Malla Raschel</option>
-              <option value="carton">4) Cartón y Plásticos</option>
-              <option value="senaleticas">5) Señalización</option>
-              <option value="pvc">6) Tuberías PVC</option>
+              <option value="epps">1) EPP's & Protección Personal</option>
+              <option value="herramientas">2) Herramientas & Corte</option>
+              <option value="senaleticas">3) Señaléticas & Seguridad Vial</option>
+              <option value="carton">4) Cartón Corrugado & Embalaje</option>
+              <option value="plasticos">5) Plásticos, Mallas & Limpieza</option>
+              <option value="pvc">6) PVC, Ferretería & Eléctricos</option>
             </select>
           </div>
           <div class="form-group">
@@ -1207,6 +1207,7 @@
 
       const filtered = products.filter(p => {
         const matchText = !filterText || 
+          (p.sku && p.sku.toLowerCase().includes(filterText.toLowerCase())) ||
           p.name.toLowerCase().includes(filterText.toLowerCase()) ||
           (p.tag && p.tag.toLowerCase().includes(filterText.toLowerCase())) ||
           (p.desc && p.desc.toLowerCase().includes(filterText.toLowerCase()));
@@ -1219,7 +1220,12 @@
         return;
       }
 
-      container.innerHTML = filtered.map(p => `
+      container.innerHTML = filtered.map(p => {
+        const priceNum = typeof p.price === 'number' ? p.price : parseFloat(p.price) || 0;
+        const priceDisplay = priceNum > 0 ? `S/ ${priceNum.toFixed(2)} inc. IGV` : (p.price || 'Bajo Cotización');
+        const skuDisplay = p.sku || p.id;
+
+        return `
         <div class="product-admin-card" id="card-${p.id}">
           <div class="prod-card-thumb-wrap">
             <img src="${p.image || '/assets/cat_epps.jpg'}" alt="${p.name}" onerror="this.src='/assets/cat_epps.jpg'" />
@@ -1227,10 +1233,11 @@
             <span class="prod-card-stock-badge">${p.stock || 'En Stock'}</span>
           </div>
           <div class="prod-card-body">
+            <div style="font-family:monospace;font-size:0.75rem;font-weight:800;color:var(--tega-primary);margin-bottom:2px;">${skuDisplay}</div>
             <h4 class="prod-card-title">${p.name}</h4>
             <p class="prod-card-desc">${p.desc || 'Sin descripción técnica'}</p>
             <div class="prod-card-price-row">
-              <span class="prod-card-price">${p.price || 'Bajo Cotización'}</span>
+              <span class="prod-card-price" style="font-size:1.05rem;">${priceDisplay}</span>
               <span class="prod-card-unit">${p.unit || 'Por volumen'}</span>
             </div>
             <div class="prod-card-actions">
@@ -1244,7 +1251,8 @@
             </div>
           </div>
         </div>
-      `).join('');
+      `;
+      }).join('');
     }
 
     function filterAdminProducts() {
