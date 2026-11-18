@@ -1259,6 +1259,7 @@
       height: 100%;
     }
     .nav-menu-item {
+      text-decoration: none !important;
       display: inline-flex;
       align-items: center;
       height: 100%;
@@ -1285,6 +1286,7 @@
     }
 
     .nav-strip-cta {
+      text-decoration: none !important;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -4254,17 +4256,17 @@
     
     <!-- ENLACES PRINCIPALES -->
     <div class="nav-links-menu">
-      <span class="nav-menu-item active" data-view="inicio" onclick="navigate('inicio')">Inicio</span>
-      <span class="nav-menu-item" data-view="catalogo" onclick="navigate('catalogo')">Catálogo B2B</span>
-      <span class="nav-menu-item" data-view="nosotros" onclick="navigate('nosotros')">Nosotros & Almacén</span>
-      <span class="nav-menu-item" data-view="obras" onclick="navigate('obras')">Visitas a Obras</span>
+      <a href="#inicio" class="nav-menu-item active" data-view="inicio" onclick="navigate('inicio'); return false;">Inicio</a>
+      <a href="#catalogo" class="nav-menu-item" data-view="catalogo" onclick="navigate('catalogo'); return false;">Catálogo B2B</a>
+      <a href="#nosotros" class="nav-menu-item" data-view="nosotros" onclick="navigate('nosotros'); return false;">Nosotros & Almacén</a>
+      <a href="#obras" class="nav-menu-item" data-view="obras" onclick="navigate('obras'); return false;">Visitas a Obras</a>
     </div>
 
     <!-- BOTÓN DERECHA SOLICITAR COTIZACIÓN -->
-    <div class="nav-strip-cta" onclick="navigate('cotizar')">
+    <a href="#cotizar" class="nav-strip-cta" onclick="navigate('cotizar'); return false;">
       <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
       <span>Solicitar Cotización</span>
-    </div>
+    </a>
 
     <!-- TOGGLE MOBILE -->
     <button class="mobile-nav-toggle" onclick="toggleMenu()" aria-label="Menú">
@@ -4277,11 +4279,11 @@
 
 <!-- MENÚ MÓVIL DESPLEGABLE -->
 <div class="mobile-menu-drawer" id="mobile-menu">
-  <span class="mobile-drawer-link active" data-view="inicio" onclick="navigate('inicio');closeMenu()">Inicio</span>
-  <span class="mobile-drawer-link" data-view="catalogo" onclick="navigate('catalogo');closeMenu()">Catálogo B2B</span>
-  <span class="mobile-drawer-link" data-view="nosotros" onclick="navigate('nosotros');closeMenu()">Nosotros & Almacén</span>
-  <span class="mobile-drawer-link" data-view="obras" onclick="navigate('obras');closeMenu()">Visitas a Obras</span>
-  <span class="mobile-drawer-link" data-view="cotizar" onclick="navigate('cotizar');closeMenu()">Solicitar Cotización</span>
+  <a href="#inicio" class="mobile-drawer-link active" data-view="inicio" onclick="navigate('inicio');closeMenu(); return false;">Inicio</a>
+  <a href="#catalogo" class="mobile-drawer-link" data-view="catalogo" onclick="navigate('catalogo');closeMenu(); return false;">Catálogo B2B</a>
+  <a href="#nosotros" class="mobile-drawer-link" data-view="nosotros" onclick="navigate('nosotros');closeMenu(); return false;">Nosotros & Almacén</a>
+  <a href="#obras" class="mobile-drawer-link" data-view="obras" onclick="navigate('obras');closeMenu(); return false;">Visitas a Obras</a>
+  <a href="#cotizar" class="mobile-drawer-link" data-view="cotizar" onclick="navigate('cotizar');closeMenu(); return false;">Solicitar Cotización</a>
 </div>
 
 
@@ -6755,37 +6757,45 @@
 
   function navigate(view) {
     if (!VIEWS.includes(view)) return;
-    VIEWS.forEach(v => {
-      const el = document.getElementById('view-' + v);
-      if (el) el.classList.remove('active');
-    });
-    const target = document.getElementById('view-' + view);
-    if (target) target.classList.add('active');
+    try {
+      VIEWS.forEach(v => {
+        const el = document.getElementById('view-' + v);
+        if (el) el.classList.remove('active');
+      });
+      const target = document.getElementById('view-' + view);
+      if (target) target.classList.add('active');
 
-    document.querySelectorAll('[data-view]').forEach(el => {
-      el.classList.toggle('active', el.dataset.view === view);
-    });
+      document.querySelectorAll('[data-view]').forEach(el => {
+        el.classList.toggle('active', el.dataset.view === view);
+      });
 
-    if (view === 'inicio') {
-      setTimeout(function() {
-        switchHeroSlide(1);
-      }, 50);
-    } else {
-      var vid = document.getElementById('heroVideoEl');
-      if (vid) {
-        vid.classList.remove('is-playing');
-        try { vid.pause(); } catch(e){}
+      if (view === 'inicio') {
+        setTimeout(function() {
+          if (typeof switchHeroSlide === 'function') switchHeroSlide(1);
+        }, 50);
+      } else {
+        var vid = document.getElementById('heroVideoEl');
+        if (vid) {
+          vid.classList.remove('is-playing');
+          try { vid.pause(); } catch(e){}
+        }
+        if (typeof clearHeroTimeout === 'function') clearHeroTimeout();
       }
-      clearHeroTimeout();
-    }
 
-    if (view === 'nosotros') {
-      setTimeout(initValoresCarousel, 80);
-    }
+      if (view === 'nosotros') {
+        setTimeout(function() {
+          if (typeof initValoresCarousel === 'function') initValoresCarousel();
+        }, 80);
+      }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    history.pushState(null, '', '#' + view);
-    closeSearchResults();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      try {
+        history.pushState(null, '', '#' + view);
+      } catch (e) {}
+      closeSearchResults();
+    } catch (err) {
+      console.error('Error in navigate:', err);
+    }
   }
 
   const CATEGORY_HASHES = ['epps', 'herramientas', 'senaleticas', 'carton', 'plasticos', 'pvc', 'mallas'];
@@ -6800,6 +6810,7 @@
   }
 
   window.addEventListener('popstate', handleRouteHash);
+  window.addEventListener('hashchange', handleRouteHash);
 
   (function initViewFromHash() {
     handleRouteHash();
@@ -7028,6 +7039,49 @@
 
     container.innerHTML = cardsHtml;
   }
+
+  // ─── SEARCH & DROPDOWN HELPERS ───
+  function closeSearchResults() {
+    const dropdown = document.getElementById('search-results-dropdown');
+    if (dropdown) {
+      dropdown.classList.remove('open');
+      dropdown.innerHTML = '';
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function highlightMatch(text, query) {
+    if (!text) return '';
+    if (!query) return escapeHtml(text);
+    const escapedQ = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escapedQ})`, 'gi');
+    return escapeHtml(text).replace(regex, '<mark style="background:#FEF08A;color:#854D0E;padding:0 2px;border-radius:2px;">$1</mark>');
+  }
+
+  function triggerSearchFocus() {
+    const input = document.getElementById('main-search-input');
+    if (input) {
+      input.focus();
+      const val = input.value.trim();
+      if (val) handleSearch(val);
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    const searchWrap = document.querySelector('.header-search-wrap');
+    if (searchWrap && !searchWrap.contains(e.target)) {
+      closeSearchResults();
+    }
+  });
 
   // ─── BUSCADOR EN TIEMPO REAL TIPO ROJAS SAFETY ───
   function handleSearch(query) {
