@@ -156,7 +156,7 @@
       "medidas": "40 x 60 cm · 20 x 30 cm",
       "texto": "PROHIBIDO FUMAR",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-001.jpg"
     },
     {
       "id": "TG-SEN-002",
@@ -174,7 +174,7 @@
       "medidas": "40 x 60 cm · 20 x 30 cm",
       "texto": "PROHIBIDO EL USO DE CELULARES O RADIOS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-002.jpg"
     },
     {
       "id": "TG-SEN-003",
@@ -192,7 +192,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PROHIBIDO EL INGRESO CON ARMAS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-003.jpg"
     },
     {
       "id": "TG-SEN-004",
@@ -210,7 +210,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PROHIBIDO EL PASO, SOLO PERSONAL AUTORIZADO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-004.jpg"
     },
     {
       "id": "TG-SEN-005",
@@ -228,7 +228,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PROHIBIDO EL INGRESO DE PERSONAS NO AUTORIZADAS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-005.jpg"
     },
     {
       "id": "TG-SEN-006",
@@ -246,7 +246,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PROHIBIDO APOYARSE",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-006.jpg"
     },
     {
       "id": "TG-SEN-007",
@@ -264,7 +264,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PROHIBIDO ESTACIONAR",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-007.jpg"
     },
     {
       "id": "TG-SEN-008",
@@ -282,7 +282,7 @@
       "medidas": "40 x 60 cm · 60 x 60 cm",
       "texto": "PROHIBIDO CIRCULAR O PERMANECER EN EL RADIO DE GIRO DE LA EXCAVADORA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-008.jpg"
     },
     {
       "id": "TG-SEN-009",
@@ -300,7 +300,7 @@
       "medidas": "20 x 30 cm · 40 x 30 cm · 40 x 60 cm",
       "texto": "USO OBLIGATORIO DE CASCO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-009.jpg"
     },
     {
       "id": "TG-SEN-010",
@@ -318,7 +318,7 @@
       "medidas": "40 x 60 cm · 40 x 30 cm · 120 x 80 cm",
       "texto": "USO OBLIGATORIO DE EPP",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-010.jpg"
     },
     {
       "id": "TG-SEN-011",
@@ -336,7 +336,7 @@
       "medidas": "40 x 60 cm · 50 x 60 cm",
       "texto": "USO OBLIGATORIO DE ARNÉS DE SEGURIDAD",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-011.jpg"
     },
     {
       "id": "TG-SEN-012",
@@ -354,7 +354,7 @@
       "medidas": "40 x 60 cm · 40 x 30 cm",
       "texto": "ATENCIÓN: PELIGRO DE CAÍDAS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-012.jpg"
     },
     {
       "id": "TG-SEN-013",
@@ -372,7 +372,7 @@
       "medidas": "40 x 60 cm",
       "texto": "CAÍDA A DIFERENTE NIVEL",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-013.jpg"
     },
     {
       "id": "TG-SEN-014",
@@ -390,7 +390,7 @@
       "medidas": "40 x 60 cm",
       "texto": "ATENCIÓN: CAÍDA DE OBJETOS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-014.jpg"
     },
     {
       "id": "TG-SEN-015",
@@ -408,7 +408,7 @@
       "medidas": "40 x 60 cm · 40 x 30 cm",
       "texto": "PELIGRO: ZONA DE OBRAS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-015.jpg"
     },
     {
       "id": "TG-SEN-016",
@@ -426,7 +426,7 @@
       "medidas": "40 x 60 cm",
       "texto": "¡PELIGRO! ZONA DE OBRAS ¡ALTO! NO PASAR",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-016.jpg"
     },
     {
       "id": "TG-SEN-017",
@@ -444,7 +444,7 @@
       "medidas": "40 x 60 cm",
       "texto": "ALTO: ACCESO SOLO A PERSONAL AUTORIZADO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-017.jpg"
     },
     {
       "id": "TG-SEN-018",
@@ -462,7 +462,7 @@
       "medidas": "40 x 60 cm · 20 x 30 cm",
       "texto": "RIESGO ELÉCTRICO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-018.jpg"
     },
     {
       "id": "TG-SEN-019",
@@ -480,7 +480,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PELIGRO: MAQUINARIA EN MOVIMIENTO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-019.jpg"
     },
     {
       "id": "TG-SEN-020",
@@ -498,7 +498,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PELIGRO: TRABAJO EN CALIENTE",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-020.jpg"
     },
     {
       "id": "TG-SEN-021",
@@ -516,7 +516,7 @@
       "medidas": "40 x 60 cm · 60 x 60 cm",
       "texto": "PELIGRO: EXCAVACIÓN",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-021.jpg"
     },
     {
       "id": "TG-SEN-022",
@@ -534,7 +534,7 @@
       "medidas": "40 x 60 cm",
       "texto": "PELIGRO: TRABAJOS EN ALTURA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-022.jpg"
     },
     {
       "id": "TG-SEN-023",
@@ -552,7 +552,7 @@
       "medidas": "40 x 60 cm · 60 x 60 cm",
       "texto": "HOMBRE TRABAJANDO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-023.jpg"
     },
     {
       "id": "TG-SEN-024",
@@ -570,7 +570,7 @@
       "medidas": "40 x 60 cm · 60 x 60 cm",
       "texto": "CUIDADO: SALIDA DE VEHÍCULOS PESADOS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-024.jpg"
     },
     {
       "id": "TG-SEN-025",
@@ -588,7 +588,7 @@
       "medidas": "40 x 60 cm · 100 x 60 cm",
       "texto": "PRECAUCIÓN: ALMACÉN DE RESIDUOS PELIGROSOS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-025.jpg"
     },
     {
       "id": "TG-SEN-026",
@@ -606,7 +606,7 @@
       "medidas": "20 x 30 cm · 40 x 30 cm · vinil fotoluminiscente 20 x 30 cm",
       "texto": "SALIDA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-026.jpg"
     },
     {
       "id": "TG-SEN-027",
@@ -624,7 +624,7 @@
       "medidas": "20 x 30 cm · vinil fotoluminiscente 20 x 30 cm",
       "texto": "SALIDA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-027.jpg"
     },
     {
       "id": "TG-SEN-028",
@@ -642,7 +642,7 @@
       "medidas": "20 x 30 cm · vinil fotoluminiscente 20 x 30 cm",
       "texto": "SALIDA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-028.jpg"
     },
     {
       "id": "TG-SEN-029",
@@ -660,7 +660,7 @@
       "medidas": "40 x 60 cm · 60 x 60 cm",
       "texto": "PUNTO DE REUNIÓN EN CASO DE EMERGENCIA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-029.jpg"
     },
     {
       "id": "TG-SEN-030",
@@ -678,7 +678,7 @@
       "medidas": "20 x 30 cm · vinil fotoluminiscente 20 x 30 cm",
       "texto": "BOTIQUÍN",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-030.jpg"
     },
     {
       "id": "TG-SEN-031",
@@ -696,7 +696,7 @@
       "medidas": "20 x 30 cm",
       "texto": "CAMILLA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-031.jpg"
     },
     {
       "id": "TG-SEN-032",
@@ -714,7 +714,7 @@
       "medidas": "20 x 30 cm · 40 x 60 cm",
       "texto": "LAVAOJOS DE EMERGENCIA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-032.jpg"
     },
     {
       "id": "TG-SEN-033",
@@ -732,7 +732,7 @@
       "medidas": "40 x 60 cm",
       "texto": "ESTACIÓN DE EMERGENCIA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-033.jpg"
     },
     {
       "id": "TG-SEN-034",
@@ -750,7 +750,7 @@
       "medidas": "20 x 30 cm · 40 x 60 cm · vinil fotoluminiscente 20 x 30 cm",
       "texto": "EXTINTOR",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-034.jpg"
     },
     {
       "id": "TG-SEN-035",
@@ -768,7 +768,7 @@
       "medidas": "20 x 30 cm · 30 x 15 cm",
       "texto": "ALMACÉN",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-035.jpg"
     },
     {
       "id": "TG-SEN-036",
@@ -786,7 +786,7 @@
       "medidas": "20 x 30 cm · 30 x 15 cm",
       "texto": "OFICINA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-036.jpg"
     },
     {
       "id": "TG-SEN-037",
@@ -804,7 +804,7 @@
       "medidas": "20 x 30 cm · 30 x 15 cm",
       "texto": "COMEDOR",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-037.jpg"
     },
     {
       "id": "TG-SEN-038",
@@ -822,7 +822,7 @@
       "medidas": "20 x 30 cm · 30 x 15 cm",
       "texto": "VESTUARIO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-038.jpg"
     },
     {
       "id": "TG-SEN-039",
@@ -840,7 +840,7 @@
       "medidas": "20 x 30 cm · 30 x 15 cm",
       "texto": "SS.HH.",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-039.jpg"
     },
     {
       "id": "TG-SEN-040",
@@ -858,7 +858,7 @@
       "medidas": "20 x 30 cm",
       "texto": "PISO {número}",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-040.jpg"
     },
     {
       "id": "TG-SEN-041",
@@ -876,7 +876,7 @@
       "medidas": "60 x 60 cm",
       "texto": "DESVÍO A {distancia} m",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-041.jpg"
     },
     {
       "id": "TG-SEN-042",
@@ -894,7 +894,7 @@
       "medidas": "60 x 60 cm",
       "texto": "INICIO DE DESVÍO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-042.jpg"
     },
     {
       "id": "TG-SEN-043",
@@ -912,7 +912,7 @@
       "medidas": "60 x 60 cm",
       "texto": "FIN DE DESVÍO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-043.jpg"
     },
     {
       "id": "TG-SEN-044",
@@ -930,7 +930,7 @@
       "medidas": "60 x 90 cm",
       "texto": "DESVÍO",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-044.jpg"
     },
     {
       "id": "TG-SEN-045",
@@ -948,7 +948,7 @@
       "medidas": "60 x 60 cm",
       "texto": "CALLE CLAUSURADA A {distancia} m",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-045.jpg"
     },
     {
       "id": "TG-SEN-046",
@@ -966,7 +966,7 @@
       "medidas": "60 x 60 cm",
       "texto": "TRÁNSITO RESTRINGIDO A {distancia} m",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-046.jpg"
     },
     {
       "id": "TG-SEN-047",
@@ -984,7 +984,7 @@
       "medidas": "60 x 60 cm",
       "texto": "SOLO UN CARRIL A 100 m",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-047.jpg"
     },
     {
       "id": "TG-SEN-048",
@@ -1002,7 +1002,7 @@
       "medidas": "60 x 60 cm",
       "texto": "DESPACIO OBRAS",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-048.jpg"
     },
     {
       "id": "TG-SEN-049",
@@ -1020,7 +1020,7 @@
       "medidas": "60 x 60 cm",
       "texto": "DISMINUIR VELOCIDAD",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-049.jpg"
     },
     {
       "id": "TG-SEN-050",
@@ -1038,7 +1038,7 @@
       "medidas": "60 x 60 cm",
       "texto": "OBRAS A 200 m",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-050.jpg"
     },
     {
       "id": "TG-SEN-051",
@@ -1056,7 +1056,7 @@
       "medidas": "60 x 60 cm",
       "texto": "PEATÓN",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-051.jpg"
     },
     {
       "id": "TG-SEN-052",
@@ -1074,7 +1074,7 @@
       "medidas": "60 x 60 cm",
       "texto": "PEATÓN TOME SU {DERECHA o IZQUIERDA}",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-052.jpg"
     },
     {
       "id": "TG-SEN-053",
@@ -1092,7 +1092,7 @@
       "medidas": "120 x 120 cm (a medida)",
       "texto": "{NOMBRE DE LA CALLE} CLAUSURADA",
       "stock": "Fabricación y stock inmediato",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-sen-053.jpg"
     },
     {
       "id": "TG-MAN-001",
@@ -1110,7 +1110,7 @@
       "warning": true,
       "reviewNote": "costo de S/ 4.50 (cotización 11-11) supera tu precio de venta: confirmar.",
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-man-001.jpg"
     },
     {
       "id": "TG-MAN-002",
@@ -1128,7 +1128,7 @@
       "warning": true,
       "reviewNote": "el precio varió más de 15 % entre facturas; precio normal 2.95; 4.07 fue amarillo grueso.",
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-man-002.jpg"
     },
     {
       "id": "TG-MAN-003",
@@ -1146,7 +1146,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-man-003.jpg"
     },
     {
       "id": "TG-MAN-004",
@@ -1164,7 +1164,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-man-004.jpg"
     },
     {
       "id": "TG-MAN-005",
@@ -1182,7 +1182,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-man-005.jpg"
     },
     {
       "id": "TG-MAN-006",
@@ -1200,7 +1200,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-man-006.jpg"
     },
     {
       "id": "TG-MAN-007",
@@ -1218,7 +1218,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-man-007.jpg"
     },
     {
       "id": "TG-CAB-001",
@@ -1236,7 +1236,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cab-001.jpg"
     },
     {
       "id": "TG-CAB-002",
@@ -1254,7 +1254,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cab-002.jpg"
     },
     {
       "id": "TG-CAB-003",
@@ -1272,7 +1272,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cab-003.jpg"
     },
     {
       "id": "TG-CAB-004",
@@ -1290,7 +1290,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cab-004.jpg"
     },
     {
       "id": "TG-CAB-005",
@@ -1308,7 +1308,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cab-005.jpg"
     },
     {
       "id": "TG-CAB-006",
@@ -1326,7 +1326,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cab-006.jpg"
     },
     {
       "id": "TG-VIS-001",
@@ -1344,7 +1344,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-vis-001.jpg"
     },
     {
       "id": "TG-VIS-002",
@@ -1362,7 +1362,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-vis-002.jpg"
     },
     {
       "id": "TG-VIS-003",
@@ -1380,7 +1380,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-vis-003.jpg"
     },
     {
       "id": "TG-VIS-004",
@@ -1398,7 +1398,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-vis-004.jpg"
     },
     {
       "id": "TG-VIS-005",
@@ -1416,7 +1416,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-vis-005.jpg"
     },
     {
       "id": "TG-VIS-006",
@@ -1434,7 +1434,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-vis-006.jpg"
     },
     {
       "id": "TG-VIS-007",
@@ -1452,7 +1452,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-vis-007.jpg"
     },
     {
       "id": "TG-RES-001",
@@ -1470,7 +1470,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-res-001.jpg"
     },
     {
       "id": "TG-RES-002",
@@ -1488,7 +1488,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-res-002.jpg"
     },
     {
       "id": "TG-RES-003",
@@ -1506,7 +1506,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-res-003.jpg"
     },
     {
       "id": "TG-RES-004",
@@ -1524,7 +1524,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-res-004.jpg"
     },
     {
       "id": "TG-AUD-001",
@@ -1542,7 +1542,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-aud-001.jpg"
     },
     {
       "id": "TG-AUD-002",
@@ -1560,7 +1560,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-aud-002.jpg"
     },
     {
       "id": "TG-AUD-003",
@@ -1578,7 +1578,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-aud-003.jpg"
     },
     {
       "id": "TG-CAL-001",
@@ -1596,7 +1596,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-001.jpg"
     },
     {
       "id": "TG-CAL-002",
@@ -1614,7 +1614,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-002.jpg"
     },
     {
       "id": "TG-CAL-003",
@@ -1632,7 +1632,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-003.jpg"
     },
     {
       "id": "TG-CAL-004",
@@ -1650,7 +1650,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-004.jpg"
     },
     {
       "id": "TG-CAL-005",
@@ -1668,7 +1668,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-005.jpg"
     },
     {
       "id": "TG-CAL-006",
@@ -1686,7 +1686,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-006.jpg"
     },
     {
       "id": "TG-CAL-007",
@@ -1704,7 +1704,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-007.jpg"
     },
     {
       "id": "TG-CAL-008",
@@ -1722,7 +1722,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-cal-008.jpg"
     },
     {
       "id": "TG-ROP-001",
@@ -1740,7 +1740,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-001.jpg"
     },
     {
       "id": "TG-ROP-002",
@@ -1758,7 +1758,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-002.jpg"
     },
     {
       "id": "TG-ROP-003",
@@ -1776,7 +1776,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-003.jpg"
     },
     {
       "id": "TG-ROP-004",
@@ -1794,7 +1794,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-004.jpg"
     },
     {
       "id": "TG-ROP-005",
@@ -1812,7 +1812,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-005.jpg"
     },
     {
       "id": "TG-ROP-006",
@@ -1830,7 +1830,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-006.jpg"
     },
     {
       "id": "TG-ROP-007",
@@ -1848,7 +1848,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-007.jpg"
     },
     {
       "id": "TG-ROP-008",
@@ -1866,7 +1866,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-008.jpg"
     },
     {
       "id": "TG-ROP-009",
@@ -1884,7 +1884,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-009.jpg"
     },
     {
       "id": "TG-ROP-010",
@@ -1902,7 +1902,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-010.jpg"
     },
     {
       "id": "TG-ROP-011",
@@ -1920,7 +1920,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-011.jpg"
     },
     {
       "id": "TG-ROP-012",
@@ -1938,7 +1938,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-012.jpg"
     },
     {
       "id": "TG-ROP-013",
@@ -1956,7 +1956,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-013.jpg"
     },
     {
       "id": "TG-ROP-014",
@@ -1974,7 +1974,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-014.jpg"
     },
     {
       "id": "TG-ROP-015",
@@ -1992,7 +1992,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-015.jpg"
     },
     {
       "id": "TG-ROP-016",
@@ -2010,7 +2010,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-rop-016.jpg"
     },
     {
       "id": "TG-ALT-001",
@@ -2028,7 +2028,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-001.jpg"
     },
     {
       "id": "TG-ALT-002",
@@ -2046,7 +2046,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-002.jpg"
     },
     {
       "id": "TG-ALT-003",
@@ -2064,7 +2064,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-003.jpg"
     },
     {
       "id": "TG-ALT-004",
@@ -2082,7 +2082,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-004.jpg"
     },
     {
       "id": "TG-ALT-005",
@@ -2100,7 +2100,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-005.jpg"
     },
     {
       "id": "TG-ALT-006",
@@ -2118,7 +2118,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-006.jpg"
     },
     {
       "id": "TG-ALT-007",
@@ -2136,7 +2136,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-007.jpg"
     },
     {
       "id": "TG-ALT-008",
@@ -2154,7 +2154,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-008.jpg"
     },
     {
       "id": "TG-ALT-009",
@@ -2172,7 +2172,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-009.jpg"
     },
     {
       "id": "TG-ALT-010",
@@ -2190,7 +2190,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_epps.jpg"
+      "image": "/assets/products/tg-alt-010.jpg"
     },
     {
       "id": "TG-VIA-001",
@@ -2208,7 +2208,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-001.jpg"
     },
     {
       "id": "TG-VIA-002",
@@ -2226,7 +2226,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-002.jpg"
     },
     {
       "id": "TG-VIA-003",
@@ -2244,7 +2244,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-003.jpg"
     },
     {
       "id": "TG-VIA-004",
@@ -2262,7 +2262,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-004.jpg"
     },
     {
       "id": "TG-VIA-005",
@@ -2280,7 +2280,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-005.jpg"
     },
     {
       "id": "TG-VIA-006",
@@ -2298,7 +2298,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-006.jpg"
     },
     {
       "id": "TG-VIA-007",
@@ -2316,7 +2316,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-007.jpg"
     },
     {
       "id": "TG-VIA-008",
@@ -2334,7 +2334,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-via-008.jpg"
     },
     {
       "id": "TG-COL-001",
@@ -2352,7 +2352,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-col-001.jpg"
     },
     {
       "id": "TG-COL-002",
@@ -2370,7 +2370,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-col-002.jpg"
     },
     {
       "id": "TG-COL-003",
@@ -2388,7 +2388,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-col-003.jpg"
     },
     {
       "id": "TG-COL-004",
@@ -2406,7 +2406,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-col-004.jpg"
     },
     {
       "id": "TG-EMB-001",
@@ -2424,7 +2424,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-001.jpg"
     },
     {
       "id": "TG-EMB-002",
@@ -2442,7 +2442,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-002.jpg"
     },
     {
       "id": "TG-EMB-003",
@@ -2460,7 +2460,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-003.jpg"
     },
     {
       "id": "TG-EMB-004",
@@ -2478,7 +2478,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-004.jpg"
     },
     {
       "id": "TG-EMB-005",
@@ -2496,7 +2496,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-005.jpg"
     },
     {
       "id": "TG-EMB-006",
@@ -2514,7 +2514,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-006.jpg"
     },
     {
       "id": "TG-EMB-007",
@@ -2532,7 +2532,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-007.jpg"
     },
     {
       "id": "TG-EMB-008",
@@ -2550,7 +2550,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-008.jpg"
     },
     {
       "id": "TG-EMB-009",
@@ -2568,7 +2568,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_carton_plasticos.jpg"
+      "image": "/assets/products/tg-emb-009.jpg"
     },
     {
       "id": "TG-ELE-001",
@@ -2586,7 +2586,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-001.jpg"
     },
     {
       "id": "TG-ELE-002",
@@ -2604,7 +2604,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-002.jpg"
     },
     {
       "id": "TG-ELE-003",
@@ -2622,7 +2622,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-003.jpg"
     },
     {
       "id": "TG-ELE-004",
@@ -2640,7 +2640,7 @@
       "warning": true,
       "reviewNote": "el precio varió más de 15 % entre facturas; bajó de S/ 27.50 a S/ 14.50 en octubre: confirmar costo.",
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-004.jpg"
     },
     {
       "id": "TG-ELE-005",
@@ -2658,7 +2658,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-005.jpg"
     },
     {
       "id": "TG-ELE-006",
@@ -2676,7 +2676,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-006.jpg"
     },
     {
       "id": "TG-ELE-007",
@@ -2694,7 +2694,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-007.jpg"
     },
     {
       "id": "TG-ELE-008",
@@ -2712,7 +2712,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-008.jpg"
     },
     {
       "id": "TG-ELE-009",
@@ -2730,7 +2730,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-009.jpg"
     },
     {
       "id": "TG-ELE-010",
@@ -2748,7 +2748,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-010.jpg"
     },
     {
       "id": "TG-ELE-011",
@@ -2766,7 +2766,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-011.jpg"
     },
     {
       "id": "TG-ELE-012",
@@ -2784,7 +2784,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-012.jpg"
     },
     {
       "id": "TG-ELE-013",
@@ -2802,7 +2802,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-013.jpg"
     },
     {
       "id": "TG-ELE-014",
@@ -2820,7 +2820,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-014.jpg"
     },
     {
       "id": "TG-ELE-015",
@@ -2838,7 +2838,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-015.jpg"
     },
     {
       "id": "TG-ELE-016",
@@ -2856,7 +2856,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-016.jpg"
     },
     {
       "id": "TG-ELE-017",
@@ -2874,7 +2874,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-017.jpg"
     },
     {
       "id": "TG-ELE-018",
@@ -2892,7 +2892,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-018.jpg"
     },
     {
       "id": "TG-ELE-019",
@@ -2910,7 +2910,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-019.jpg"
     },
     {
       "id": "TG-ELE-020",
@@ -2928,7 +2928,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-020.jpg"
     },
     {
       "id": "TG-ELE-021",
@@ -2946,7 +2946,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-021.jpg"
     },
     {
       "id": "TG-ELE-022",
@@ -2964,7 +2964,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-022.jpg"
     },
     {
       "id": "TG-ELE-023",
@@ -2982,7 +2982,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-023.jpg"
     },
     {
       "id": "TG-ELE-024",
@@ -3000,7 +3000,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-024.jpg"
     },
     {
       "id": "TG-ELE-025",
@@ -3018,7 +3018,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-025.jpg"
     },
     {
       "id": "TG-ELE-026",
@@ -3036,7 +3036,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-026.jpg"
     },
     {
       "id": "TG-ELE-027",
@@ -3054,7 +3054,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-027.jpg"
     },
     {
       "id": "TG-ELE-028",
@@ -3072,7 +3072,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-ele-028.jpg"
     },
     {
       "id": "TG-DIS-001",
@@ -3090,7 +3090,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-001.jpg"
     },
     {
       "id": "TG-DIS-002",
@@ -3108,7 +3108,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-002.jpg"
     },
     {
       "id": "TG-DIS-003",
@@ -3126,7 +3126,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-003.jpg"
     },
     {
       "id": "TG-DIS-004",
@@ -3144,7 +3144,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-004.jpg"
     },
     {
       "id": "TG-DIS-005",
@@ -3162,7 +3162,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-005.jpg"
     },
     {
       "id": "TG-DIS-006",
@@ -3180,7 +3180,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-006.jpg"
     },
     {
       "id": "TG-DIS-007",
@@ -3198,7 +3198,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-007.jpg"
     },
     {
       "id": "TG-DIS-008",
@@ -3216,7 +3216,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-dis-008.jpg"
     },
     {
       "id": "TG-HER-001",
@@ -3234,7 +3234,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-001.jpg"
     },
     {
       "id": "TG-HER-002",
@@ -3252,7 +3252,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-002.jpg"
     },
     {
       "id": "TG-HER-003",
@@ -3270,7 +3270,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-003.jpg"
     },
     {
       "id": "TG-HER-004",
@@ -3288,7 +3288,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-004.jpg"
     },
     {
       "id": "TG-HER-005",
@@ -3306,7 +3306,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-005.jpg"
     },
     {
       "id": "TG-HER-006",
@@ -3324,7 +3324,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-006.jpg"
     },
     {
       "id": "TG-HER-007",
@@ -3342,7 +3342,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-007.jpg"
     },
     {
       "id": "TG-HER-008",
@@ -3360,7 +3360,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-008.jpg"
     },
     {
       "id": "TG-HER-009",
@@ -3378,7 +3378,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-009.jpg"
     },
     {
       "id": "TG-HER-010",
@@ -3396,7 +3396,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-010.jpg"
     },
     {
       "id": "TG-HER-011",
@@ -3414,7 +3414,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-011.jpg"
     },
     {
       "id": "TG-HER-012",
@@ -3432,7 +3432,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-012.jpg"
     },
     {
       "id": "TG-HER-013",
@@ -3450,7 +3450,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-013.jpg"
     },
     {
       "id": "TG-HER-014",
@@ -3468,7 +3468,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-014.jpg"
     },
     {
       "id": "TG-HER-015",
@@ -3486,7 +3486,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-015.jpg"
     },
     {
       "id": "TG-HER-016",
@@ -3504,7 +3504,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-016.jpg"
     },
     {
       "id": "TG-HER-017",
@@ -3522,7 +3522,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-017.jpg"
     },
     {
       "id": "TG-HER-018",
@@ -3540,7 +3540,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-018.jpg"
     },
     {
       "id": "TG-HER-019",
@@ -3558,7 +3558,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-019.jpg"
     },
     {
       "id": "TG-HER-020",
@@ -3576,7 +3576,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-020.jpg"
     },
     {
       "id": "TG-HER-021",
@@ -3594,7 +3594,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-021.jpg"
     },
     {
       "id": "TG-HER-022",
@@ -3612,7 +3612,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-022.jpg"
     },
     {
       "id": "TG-HER-023",
@@ -3630,7 +3630,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-023.jpg"
     },
     {
       "id": "TG-HER-024",
@@ -3648,7 +3648,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-024.jpg"
     },
     {
       "id": "TG-HER-025",
@@ -3666,7 +3666,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-025.jpg"
     },
     {
       "id": "TG-HER-026",
@@ -3684,7 +3684,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-026.jpg"
     },
     {
       "id": "TG-HER-027",
@@ -3702,7 +3702,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-027.jpg"
     },
     {
       "id": "TG-HER-028",
@@ -3720,7 +3720,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-028.jpg"
     },
     {
       "id": "TG-HER-029",
@@ -3738,7 +3738,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-029.jpg"
     },
     {
       "id": "TG-HER-030",
@@ -3756,7 +3756,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-030.jpg"
     },
     {
       "id": "TG-HER-031",
@@ -3774,7 +3774,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-031.jpg"
     },
     {
       "id": "TG-HER-032",
@@ -3792,7 +3792,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-032.jpg"
     },
     {
       "id": "TG-HER-033",
@@ -3810,7 +3810,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-033.jpg"
     },
     {
       "id": "TG-HER-034",
@@ -3828,7 +3828,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-034.jpg"
     },
     {
       "id": "TG-HER-035",
@@ -3846,7 +3846,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-035.jpg"
     },
     {
       "id": "TG-HER-036",
@@ -3864,7 +3864,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-036.jpg"
     },
     {
       "id": "TG-HER-037",
@@ -3882,7 +3882,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-037.jpg"
     },
     {
       "id": "TG-HER-038",
@@ -3900,7 +3900,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-038.jpg"
     },
     {
       "id": "TG-HER-039",
@@ -3918,7 +3918,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-039.jpg"
     },
     {
       "id": "TG-HER-040",
@@ -3936,7 +3936,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-040.jpg"
     },
     {
       "id": "TG-HER-041",
@@ -3954,7 +3954,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-041.jpg"
     },
     {
       "id": "TG-HER-042",
@@ -3972,7 +3972,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-042.jpg"
     },
     {
       "id": "TG-HER-043",
@@ -3990,7 +3990,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-043.jpg"
     },
     {
       "id": "TG-HER-044",
@@ -4008,7 +4008,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-044.jpg"
     },
     {
       "id": "TG-HER-045",
@@ -4026,7 +4026,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-045.jpg"
     },
     {
       "id": "TG-HER-046",
@@ -4044,7 +4044,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-046.jpg"
     },
     {
       "id": "TG-HER-047",
@@ -4062,7 +4062,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-047.jpg"
     },
     {
       "id": "TG-HER-048",
@@ -4080,7 +4080,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-048.jpg"
     },
     {
       "id": "TG-HER-049",
@@ -4098,7 +4098,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-049.jpg"
     },
     {
       "id": "TG-HER-050",
@@ -4116,7 +4116,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-050.jpg"
     },
     {
       "id": "TG-HER-051",
@@ -4134,7 +4134,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-051.jpg"
     },
     {
       "id": "TG-HER-052",
@@ -4152,7 +4152,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_herramientas.jpg"
+      "image": "/assets/products/tg-her-052.jpg"
     },
     {
       "id": "TG-FER-001",
@@ -4170,7 +4170,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-001.jpg"
     },
     {
       "id": "TG-FER-002",
@@ -4188,7 +4188,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-002.jpg"
     },
     {
       "id": "TG-FER-003",
@@ -4206,7 +4206,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-003.jpg"
     },
     {
       "id": "TG-FER-004",
@@ -4224,7 +4224,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-004.jpg"
     },
     {
       "id": "TG-FER-005",
@@ -4242,7 +4242,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-005.jpg"
     },
     {
       "id": "TG-FER-006",
@@ -4260,7 +4260,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-006.jpg"
     },
     {
       "id": "TG-FER-007",
@@ -4278,7 +4278,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-007.jpg"
     },
     {
       "id": "TG-FER-008",
@@ -4296,7 +4296,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-008.jpg"
     },
     {
       "id": "TG-FER-009",
@@ -4314,7 +4314,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-009.jpg"
     },
     {
       "id": "TG-FER-010",
@@ -4332,7 +4332,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-010.jpg"
     },
     {
       "id": "TG-FER-011",
@@ -4350,7 +4350,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-011.jpg"
     },
     {
       "id": "TG-FER-012",
@@ -4368,7 +4368,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-012.jpg"
     },
     {
       "id": "TG-FER-013",
@@ -4386,7 +4386,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-013.jpg"
     },
     {
       "id": "TG-FER-014",
@@ -4404,7 +4404,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-014.jpg"
     },
     {
       "id": "TG-FER-015",
@@ -4422,7 +4422,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-015.jpg"
     },
     {
       "id": "TG-FER-016",
@@ -4440,7 +4440,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-016.jpg"
     },
     {
       "id": "TG-FER-017",
@@ -4458,7 +4458,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-017.jpg"
     },
     {
       "id": "TG-FER-018",
@@ -4476,7 +4476,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-018.jpg"
     },
     {
       "id": "TG-FER-019",
@@ -4494,7 +4494,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-019.jpg"
     },
     {
       "id": "TG-FER-020",
@@ -4512,7 +4512,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-020.jpg"
     },
     {
       "id": "TG-FER-021",
@@ -4530,7 +4530,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-021.jpg"
     },
     {
       "id": "TG-FER-022",
@@ -4548,7 +4548,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-022.jpg"
     },
     {
       "id": "TG-FER-023",
@@ -4566,7 +4566,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-023.jpg"
     },
     {
       "id": "TG-FER-024",
@@ -4584,7 +4584,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-024.jpg"
     },
     {
       "id": "TG-FER-025",
@@ -4602,7 +4602,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-fer-025.jpg"
     },
     {
       "id": "TG-LIM-001",
@@ -4620,7 +4620,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-001.jpg"
     },
     {
       "id": "TG-LIM-002",
@@ -4638,7 +4638,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-002.jpg"
     },
     {
       "id": "TG-LIM-003",
@@ -4656,7 +4656,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-003.jpg"
     },
     {
       "id": "TG-LIM-004",
@@ -4674,7 +4674,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-004.jpg"
     },
     {
       "id": "TG-LIM-005",
@@ -4692,7 +4692,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-005.jpg"
     },
     {
       "id": "TG-LIM-006",
@@ -4710,7 +4710,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-006.jpg"
     },
     {
       "id": "TG-LIM-007",
@@ -4728,7 +4728,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-007.jpg"
     },
     {
       "id": "TG-LIM-008",
@@ -4746,7 +4746,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-008.jpg"
     },
     {
       "id": "TG-LIM-009",
@@ -4764,7 +4764,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-009.jpg"
     },
     {
       "id": "TG-LIM-010",
@@ -4782,7 +4782,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-010.jpg"
     },
     {
       "id": "TG-LIM-011",
@@ -4800,7 +4800,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-011.jpg"
     },
     {
       "id": "TG-LIM-012",
@@ -4818,7 +4818,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-012.jpg"
     },
     {
       "id": "TG-LIM-013",
@@ -4836,7 +4836,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-013.jpg"
     },
     {
       "id": "TG-LIM-014",
@@ -4854,7 +4854,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-014.jpg"
     },
     {
       "id": "TG-LIM-015",
@@ -4872,7 +4872,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-015.jpg"
     },
     {
       "id": "TG-LIM-016",
@@ -4890,7 +4890,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-016.jpg"
     },
     {
       "id": "TG-LIM-017",
@@ -4908,7 +4908,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-017.jpg"
     },
     {
       "id": "TG-LIM-018",
@@ -4926,7 +4926,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-018.jpg"
     },
     {
       "id": "TG-LIM-019",
@@ -4944,7 +4944,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-019.jpg"
     },
     {
       "id": "TG-LIM-020",
@@ -4962,7 +4962,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-020.jpg"
     },
     {
       "id": "TG-LIM-021",
@@ -4980,7 +4980,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-021.jpg"
     },
     {
       "id": "TG-LIM-022",
@@ -4998,7 +4998,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-022.jpg"
     },
     {
       "id": "TG-LIM-023",
@@ -5016,7 +5016,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-023.jpg"
     },
     {
       "id": "TG-LIM-024",
@@ -5034,7 +5034,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_malla_raschel.jpg"
+      "image": "/assets/products/tg-lim-024.jpg"
     },
     {
       "id": "TG-EMG-001",
@@ -5052,7 +5052,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-001.jpg"
     },
     {
       "id": "TG-EMG-002",
@@ -5070,7 +5070,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-002.jpg"
     },
     {
       "id": "TG-EMG-003",
@@ -5088,7 +5088,7 @@
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-003.jpg"
     },
     {
       "id": "TG-EMG-004",
@@ -5106,7 +5106,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-004.jpg"
     },
     {
       "id": "TG-EMG-005",
@@ -5124,7 +5124,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-005.jpg"
     },
     {
       "id": "TG-EMG-006",
@@ -5142,7 +5142,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-006.jpg"
     },
     {
       "id": "TG-EMG-007",
@@ -5160,7 +5160,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-007.jpg"
     },
     {
       "id": "TG-EMG-008",
@@ -5178,7 +5178,7 @@
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/cat_senalizacion.jpg"
+      "image": "/assets/products/tg-emg-008.jpg"
     },
     {
       "id": "TG-PVC-001",
@@ -5194,7 +5194,7 @@
       "unit": "Tubo x 3m / 5m",
       "desc": "Tuberías livianas y pesadas para instalaciones sanitarias de desagüe y ventilación en edificios.",
       "stock": "En Stock / Despacho Inmediato",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-pvc-001.jpg"
     },
     {
       "id": "TG-PVC-002",
@@ -5210,7 +5210,7 @@
       "unit": "Tubo x 5m",
       "desc": "Tuberías con rosca o embone para presiones nominales de agua en redes interiores de obra.",
       "stock": "En Stock / Despacho Inmediato",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-pvc-002.jpg"
     },
     {
       "id": "TG-PVC-003",
@@ -5226,7 +5226,7 @@
       "unit": "Lata 1/4 gal / 1 gal",
       "desc": "Soldadura líquida de secado rápido y máxima adherencia hermética en redes presurizadas.",
       "stock": "En Stock / Despacho Inmediato",
-      "image": "/assets/cat_tuberias_pvc.jpg"
+      "image": "/assets/products/tg-pvc-003.jpg"
     }
   ]
 }
