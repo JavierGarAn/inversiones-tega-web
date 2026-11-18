@@ -4452,7 +4452,7 @@
           </div>
 
           <!-- 4) Cartón y Plásticos -->
-          <div class="category-card" onclick="filterAndNavigate('plasticos')" title="Ver cartón corrugado y plásticos para pisos">
+          <div class="category-card" onclick="filterAndNavigate('carton')" title="Ver cartón corrugado y plásticos para pisos">
             <div class="category-img-wrap">
               <span class="category-badge-num">04 / 06</span>
               <img src="/assets/cat_carton_plasticos.jpg" alt="Cartón Corrugado y Plásticos para Pisos" class="category-img" loading="lazy" draggable="false" />
@@ -5348,7 +5348,7 @@
                 <span class="line-chip">Guantes</span>
                 <span class="line-chip">Botas Punta Acero</span>
               </div>
-              <button class="btn btn-outline" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
+              <button type="button" class="btn btn-outline" onclick="event.stopPropagation(); filterSubcategory('epps')" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
             </div>
           </div>
 
@@ -5365,7 +5365,7 @@
                 <span class="line-chip">Discos Diamantados</span>
                 <span class="line-chip">Palas & Picos</span>
               </div>
-              <button class="btn btn-outline" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
+              <button type="button" class="btn btn-outline" onclick="event.stopPropagation(); filterSubcategory('herramientas')" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
             </div>
           </div>
 
@@ -5382,7 +5382,7 @@
                 <span class="line-chip">Conos 28"</span>
                 <span class="line-chip">Malla Faenera</span>
               </div>
-              <button class="btn btn-outline" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
+              <button type="button" class="btn btn-outline" onclick="event.stopPropagation(); filterSubcategory('senaleticas')" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
             </div>
           </div>
 
@@ -5399,7 +5399,7 @@
                 <span class="line-chip">Láminas Cartón</span>
                 <span class="line-chip">Embalaje</span>
               </div>
-              <button class="btn btn-outline" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
+              <button type="button" class="btn btn-outline" onclick="event.stopPropagation(); filterSubcategory('carton')" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
             </div>
           </div>
 
@@ -5416,7 +5416,7 @@
                 <span class="line-chip">Film Stretch</span>
                 <span class="line-chip">Plástico Negro</span>
               </div>
-              <button class="btn btn-outline" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
+              <button type="button" class="btn btn-outline" onclick="event.stopPropagation(); filterSubcategory('plasticos')" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
             </div>
           </div>
 
@@ -5433,7 +5433,7 @@
                 <span class="line-chip">Tubos SAP Agua</span>
                 <span class="line-chip">Pegamentos</span>
               </div>
-              <button class="btn btn-outline" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
+              <button type="button" class="btn btn-outline" onclick="event.stopPropagation(); filterSubcategory('pvc')" style="width:100%;font-size:0.82rem;padding:8px;">Ver productos de esta línea ↓</button>
             </div>
           </div>
         </div>
@@ -6729,10 +6729,24 @@
   function filterAndNavigate(category) {
     navigate('catalogo');
     setTimeout(function() {
-      filterCatalog(category);
-      const catEl = document.getElementById('catalogo-grid');
-      if (catEl) catEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 150);
+      if (category === 'mallas') {
+        filterSubcategory('plasticos');
+        filterSubSubcategory('Protección colectiva');
+      } else {
+        filterSubcategory(category);
+      }
+      setTimeout(function() {
+        const area = document.getElementById('subproducts-area');
+        if (area) {
+          const topPos = area.getBoundingClientRect().top + window.pageYOffset - 15;
+          window.scrollTo({ top: topPos, behavior: 'smooth' });
+        }
+      }, 70);
+    }, 100);
+  }
+
+  function filterCatalog(category) {
+    filterSubcategory(category);
   }
 
 
@@ -6774,14 +6788,21 @@
     closeSearchResults();
   }
 
-  window.addEventListener('popstate', () => {
-    const h = location.hash.replace('#', '') || 'inicio';
-    if (VIEWS.includes(h)) navigate(h);
-  });
+  const CATEGORY_HASHES = ['epps', 'herramientas', 'senaleticas', 'carton', 'plasticos', 'pvc', 'mallas'];
+
+  function handleRouteHash() {
+    const h = location.hash.replace('#', '').toLowerCase() || 'inicio';
+    if (VIEWS.includes(h)) {
+      navigate(h);
+    } else if (CATEGORY_HASHES.includes(h)) {
+      filterAndNavigate(h);
+    }
+  }
+
+  window.addEventListener('popstate', handleRouteHash);
 
   (function initViewFromHash() {
-    const h = location.hash.replace('#', '') || 'inicio';
-    if (VIEWS.includes(h) && h !== 'inicio') navigate(h);
+    handleRouteHash();
   })();
 
   // ─── MOBILE MENU ───
@@ -6839,7 +6860,10 @@
 
     const area = document.getElementById('subproducts-area');
     if (area && cat !== 'all') {
-      area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(function() {
+        const topPos = area.getBoundingClientRect().top + window.pageYOffset - 15;
+        window.scrollTo({ top: topPos, behavior: 'smooth' });
+      }, 60);
     }
   }
 
@@ -6957,7 +6981,7 @@
         <div class="subproduct-item">
           <div>
             <div class="subprod-img-box">
-              <img src="${item.image || ('/assets/products/' + (item.sku ? item.sku.toLowerCase() : 'tg-prd') + '.jpg')}" alt="${item.name}" loading="lazy" class="subprod-img" onerror="this.onerror=null; this.src='/assets/cat_${item.cat || \'epps\'}.jpg';" />
+              <img src="${item.image || ('/assets/products/' + (item.sku ? item.sku.toLowerCase() : 'tg-prd') + '.jpg')}" alt="${item.name}" loading="lazy" class="subprod-img" onerror="this.onerror=null; this.src='/assets/cat_${item.cat || 'epps'}.jpg';" />
             </div>
             <div class="subprod-meta">
               <span class="subprod-sku">${item.sku || 'TG-PRD'}</span>
