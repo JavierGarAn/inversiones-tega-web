@@ -2414,118 +2414,256 @@
       font-size: 0.9rem;
       color: #64748B;
     }
-    .valores-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 1100px) {
-      .valores-cards-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 720px) {
-      .valores-cards-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-      .valores-cards-grid { grid-template-columns: 1fr; }
-    }
-    .valor-card {
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 24px 18px 22px;
-      display: flex;
-      flex-direction: column;
+    /* ─── VALORES CORPORATIVOS B2B (CAROUSEL CON FOTOGRAFÍAS REALES) ─── */
+    .valores-carousel-section {
+      margin-bottom: 56px;
       position: relative;
-      transition: all 0.28s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      overflow: hidden;
     }
-    .valor-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #155C2B, #22C55E);
-      opacity: 0.45;
-      transition: opacity 0.28s ease, height 0.28s ease;
+    .valores-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
     }
-    .valor-card:hover {
-      transform: translateY(-6px);
-      border-color: #16A34A;
-      box-shadow: 0 16px 32px rgba(22, 101, 52, 0.12);
-    }
-    .valor-card:hover::before {
-      opacity: 1;
-      height: 5px;
-    }
-    .valor-card-top {
+    .valores-carousel-controls {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
+      gap: 12px;
     }
-    .valor-card-num {
-      font-family: var(--font-display);
-      font-size: 2.1rem;
-      font-weight: 900;
-      color: #15803D;
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-    .valor-card-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: #ECFDF5;
-      border: 1.5px solid #A7F3D0;
+    .valores-arrow-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1.5px solid #CBD5E1;
+      background: #FFFFFF;
+      color: #1E293B;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .valores-arrow-btn:hover {
+      border-color: #16A34A;
+      background: #F0FDF4;
       color: #15803D;
-      transition: all 0.25s ease;
-      margin-bottom: 0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(22, 101, 52, 0.12);
     }
-    .valor-card:hover .valor-card-icon {
-      background: #15803D;
-      color: #FFFFFF;
-      transform: scale(1.08);
-    }
-    .valor-card-icon svg {
+    .valores-arrow-btn svg {
       width: 20px;
       height: 20px;
       stroke: currentColor;
-      stroke-width: 2;
+      stroke-width: 2.2;
     }
-    .valor-card-tag {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
+    .valores-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 4px;
+    }
+    .valor-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #CBD5E1;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .valor-dot.active {
+      width: 26px;
+      background: #15803D;
+    }
+
+    /* Track & Wrapper */
+    .valores-carousel-wrapper {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 6px 4px 20px;
+    }
+    .valores-carousel-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .valores-carousel-track {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+    }
+
+    /* Cards */
+    .valor-carousel-card {
+      flex: 0 0 360px;
+      width: 360px;
+      scroll-snap-align: start;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+    }
+    .valor-carousel-card:hover {
+      transform: translateY(-6px);
+      border-color: #22C55E;
+      box-shadow: 0 18px 36px rgba(22, 101, 52, 0.14);
+    }
+
+    /* Media (Foto) */
+    .valor-card-media {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: #0F172A;
+    }
+    .valor-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .valor-carousel-card:hover .valor-card-img {
+      transform: scale(1.06);
+    }
+    .valor-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0.65) 100%);
+      pointer-events: none;
+    }
+    .valor-card-badge-num {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 36px;
+      height: 36px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+      font-weight: 900;
+      font-size: 1.15rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      letter-spacing: 0.02em;
+    }
+    .valor-card-tag-pill {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      background: #15803D;
+      color: #FFFFFF;
+      font-size: 0.72rem;
       font-weight: 800;
-      color: #166534;
-      background: #DCFCE7;
-      padding: 3px 8px;
-      border-radius: 4px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      align-self: flex-start;
-      margin-bottom: 10px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
-    .valor-card-title {
+
+    /* Content */
+    .valor-card-content {
+      padding: 20px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .valor-card-header-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .valor-card-icon-mini {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #F0FDF4;
+      color: #15803D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .valor-card-icon-mini svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+    }
+    .valor-card-heading {
       font-size: 1.18rem;
-      font-weight: 900;
-      font-family: var(--font-display);
+      font-weight: 800;
+      font-family: var(--font-display, 'Barlow Condensed', sans-serif);
       text-transform: uppercase;
       color: #0F172A;
-      margin-bottom: 8px;
-      line-height: 1.15;
-    }
-    .valor-card-desc {
-      font-size: 0.84rem;
-      color: #475569;
-      line-height: 1.48;
-      font-weight: 500;
       margin: 0;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+    .valor-card-statement {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      flex: 1;
+      font-weight: 500;
+    }
+    .valor-card-footer-note {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #166534;
+      padding-top: 12px;
+      border-top: 1px dashed #E2E8F0;
+    }
+    .valor-card-footer-note svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      flex-shrink: 0;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 860px) {
+      .valor-carousel-card {
+        flex: 0 0 310px;
+        width: 310px;
+      }
+      .valor-card-media {
+        height: 180px;
+      }
+    }
+    @media (max-width: 580px) {
+      .valor-carousel-card {
+        flex: 0 0 84vw;
+        width: 84vw;
+      }
+      .valores-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .valores-carousel-controls {
+        align-self: flex-end;
+      }
     }
 
 
@@ -4859,87 +4997,161 @@
 
 
         <!-- ══════════════════════════════════════════════════════════════════ -->
-        <!--   SECCIÓN: 5 VALORES CORPORATIVOS B2B CON RELIEVE                 -->
+        <!--   SECCIÓN: 5 VALORES CORPORATIVOS B2B (CARRUSEL CON FOTOGRAFÍAS)   -->
         <!-- ══════════════════════════════════════════════════════════════════ -->
-        <div class="nosotros-section-block">
-          <div class="nosotros-block-header">
-            <div class="section-tag-accent">CULTURA EMPRESARIAL</div>
-            <h2 class="nosotros-block-title">NUESTROS 5 VALORES CORPORATIVOS</h2>
-            <p class="nosotros-block-desc">Principios que respaldan cada relación comercial y despacho con constructoras e inmobiliarias:</p>
+        <div class="nosotros-section-block valores-carousel-section">
+          <div class="valores-header-row">
+            <div>
+              <div class="section-tag-accent">CULTURA EMPRESARIAL</div>
+              <h2 class="nosotros-block-title">NUESTROS 5 VALORES CORPORATIVOS</h2>
+              <p class="nosotros-block-desc">Principios que respaldan cada relación comercial y despacho con constructoras e inmobiliarias:</p>
+            </div>
+            <div class="valores-carousel-controls">
+              <button class="valores-arrow-btn" onclick="scrollValores(-1)" aria-label="Valor anterior" title="Desplazar a la izquierda">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="valores-dots" id="valoresDots">
+                <span class="valor-dot active" onclick="goToValor(0)" title="01. Calidad Homologada"></span>
+                <span class="valor-dot" onclick="goToValor(1)" title="02. Puntualidad Absoluta"></span>
+                <span class="valor-dot" onclick="goToValor(2)" title="03. Transparencia B2B"></span>
+                <span class="valor-dot" onclick="goToValor(3)" title="04. Seguridad en Obra"></span>
+                <span class="valor-dot" onclick="goToValor(4)" title="05. Compromiso Total"></span>
+              </div>
+              <button class="valores-arrow-btn" onclick="scrollValores(1)" aria-label="Siguiente valor" title="Desplazar a la derecha">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
           </div>
 
-          <div class="valores-cards-grid">
-            
-            <div class="valor-card">
-              <div class="valor-card-top">
-                <span class="valor-card-num">01</span>
-                <div class="valor-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="valores-carousel-wrapper" id="valoresCarouselWrapper">
+            <div class="valores-carousel-track" id="valoresCarouselTrack">
+              
+              <!-- VALOR 01 -->
+              <div class="valor-carousel-card" data-index="0">
+                <div class="valor-card-media">
+                  <img src="/assets/valor_1_calidad.jpg" alt="Calidad Homologada - Normas NTP & ANSI" class="valor-card-img" loading="lazy" />
+                  <div class="valor-card-overlay"></div>
+                  <div class="valor-card-badge-num">01</div>
+                  <div class="valor-card-tag-pill">NORMAS NTP &amp; ANSI</div>
+                </div>
+                <div class="valor-card-content">
+                  <div class="valor-card-header-line">
+                    <div class="valor-card-icon-mini">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <h3 class="valor-card-heading">Calidad Homologada</h3>
+                  </div>
+                  <p class="valor-card-statement">
+                    Suministros certificados con fichas técnicas listos para aprobación y fiscalización en obra.
+                  </p>
+                  <div class="valor-card-footer-note">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
+                    <span>Fichas técnicas y protocolos de prueba</span>
+                  </div>
                 </div>
               </div>
-              <span class="valor-card-tag">NORMAS NTP &amp; ANSI</span>
-              <h3 class="valor-card-title">Calidad Homologada</h3>
-              <p class="valor-card-desc">
-                Suministros certificados con fichas técnicas listos para aprobación y fiscalización en obra.
-              </p>
-            </div>
 
-            <div class="valor-card">
-              <div class="valor-card-top">
-                <span class="valor-card-num">02</span>
-                <div class="valor-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <!-- VALOR 02 -->
+              <div class="valor-carousel-card" data-index="1">
+                <div class="valor-card-media">
+                  <img src="/assets/valor_2_puntualidad.jpg" alt="Puntualidad Absoluta - Despacho 24h" class="valor-card-img" loading="lazy" />
+                  <div class="valor-card-overlay"></div>
+                  <div class="valor-card-badge-num">02</div>
+                  <div class="valor-card-tag-pill">DESPACHO EN 24H</div>
+                </div>
+                <div class="valor-card-content">
+                  <div class="valor-card-header-line">
+                    <div class="valor-card-icon-mini">
+                      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="valor-card-heading">Puntualidad Absoluta</h3>
+                  </div>
+                  <p class="valor-card-statement">
+                    Garantizamos despacho el mismo día para pedidos matutinos. Cero paradas de cuadrilla.
+                  </p>
+                  <div class="valor-card-footer-note">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
+                    <span>Entrega directa a obra y agencias en 24h</span>
+                  </div>
                 </div>
               </div>
-              <span class="valor-card-tag">DESPACHO EN 24H</span>
-              <h3 class="valor-card-title">Puntualidad Absoluta</h3>
-              <p class="valor-card-desc">
-                Garantizamos despacho el mismo día para pedidos matutinos. Cero paradas de cuadrilla.
-              </p>
-            </div>
 
-            <div class="valor-card">
-              <div class="valor-card-top">
-                <span class="valor-card-num">03</span>
-                <div class="valor-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+              <!-- VALOR 03 -->
+              <div class="valor-carousel-card" data-index="2">
+                <div class="valor-card-media">
+                  <img src="/assets/valor_3_transparencia.jpg" alt="Transparencia B2B - Trazabilidad 100%" class="valor-card-img" loading="lazy" />
+                  <div class="valor-card-overlay"></div>
+                  <div class="valor-card-badge-num">03</div>
+                  <div class="valor-card-tag-pill">TRAZABILIDAD 100%</div>
+                </div>
+                <div class="valor-card-content">
+                  <div class="valor-card-header-line">
+                    <div class="valor-card-icon-mini">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+                    </div>
+                    <h3 class="valor-card-heading">Transparencia B2B</h3>
+                  </div>
+                  <p class="valor-card-statement">
+                    Cotizaciones claras por ítem, facturación electrónica inmediata y guías de remisión formales.
+                  </p>
+                  <div class="valor-card-footer-note">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
+                    <span>Facturación electrónica y guías de remisión</span>
+                  </div>
                 </div>
               </div>
-              <span class="valor-card-tag">TRAZABILIDAD 100%</span>
-              <h3 class="valor-card-title">Transparencia B2B</h3>
-              <p class="valor-card-desc">
-                Cotizaciones claras por ítem, facturación electrónica inmediata y guías de remisión formales.
-              </p>
-            </div>
 
-            <div class="valor-card">
-              <div class="valor-card-top">
-                <span class="valor-card-num">04</span>
-                <div class="valor-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <!-- VALOR 04 -->
+              <div class="valor-carousel-card" data-index="3">
+                <div class="valor-card-media">
+                  <img src="/assets/valor_4_seguridad.jpg" alt="Seguridad en Obra - Prevención SSOMA" class="valor-card-img" loading="lazy" />
+                  <div class="valor-card-overlay"></div>
+                  <div class="valor-card-badge-num">04</div>
+                  <div class="valor-card-tag-pill">PREVENCIÓN SSOMA</div>
+                </div>
+                <div class="valor-card-content">
+                  <div class="valor-card-header-line">
+                    <div class="valor-card-icon-mini">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="valor-card-heading">Seguridad en Obra</h3>
+                  </div>
+                  <p class="valor-card-statement">
+                    Prioridad en suministros que protegen la vida en faena y cumplen los requisitos de INDECI.
+                  </p>
+                  <div class="valor-card-footer-note">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
+                    <span>Protección activa para trabajos de alto riesgo</span>
+                  </div>
                 </div>
               </div>
-              <span class="valor-card-tag">PREVENCIÓN SSOMA</span>
-              <h3 class="valor-card-title">Seguridad en Obra</h3>
-              <p class="valor-card-desc">
-                Prioridad en suministros que protegen la vida en faena y cumplen los requisitos de INDECI.
-              </p>
-            </div>
 
-            <div class="valor-card">
-              <div class="valor-card-top">
-                <span class="valor-card-num">05</span>
-                <div class="valor-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+              <!-- VALOR 05 -->
+              <div class="valor-carousel-card" data-index="4">
+                <div class="valor-card-media">
+                  <img src="/assets/valor_5_compromiso.jpg" alt="Compromiso Total con la Obra" class="valor-card-img" loading="lazy" />
+                  <div class="valor-card-overlay"></div>
+                  <div class="valor-card-badge-num">05</div>
+                  <div class="valor-card-tag-pill">SOPORTE EN CAMPO</div>
+                </div>
+                <div class="valor-card-content">
+                  <div class="valor-card-header-line">
+                    <div class="valor-card-icon-mini">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+                    </div>
+                    <h3 class="valor-card-heading">Compromiso Total</h3>
+                  </div>
+                  <p class="valor-card-statement">
+                    Flexibilidad para urgencias de obra, reposición de consumibles y facilidades comerciales.
+                  </p>
+                  <div class="valor-card-footer-note">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"/></svg>
+                    <span>Alianza estratégica con ingenieros y contratistas</span>
+                  </div>
                 </div>
               </div>
-              <span class="valor-card-tag">SOPORTE EN CAMPO</span>
-              <h3 class="valor-card-title">Compromiso Total</h3>
-              <p class="valor-card-desc">
-                Flexibilidad para urgencias de obra, reposición de consumibles y facilidades comerciales.
-              </p>
-            </div>
 
+            </div>
           </div>
         </div>
 
@@ -6389,9 +6601,93 @@
 
   // Ejecución garantizada inmediata y en DOMContentLoaded
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeroSlider);
+    document.addEventListener('DOMContentLoaded', () => {
+      initHeroSlider();
+      initValoresCarousel();
+    });
   } else {
     initHeroSlider();
+    initValoresCarousel();
+  }
+
+  // ─── VALORES CORPORATIVOS CAROUSEL CONTROLLER ───
+  let valoresAutoplayTimer = null;
+  let valoresCarouselInitialized = false;
+
+  function initValoresCarousel() {
+    const track = document.getElementById('valoresCarouselTrack');
+    const wrapper = document.getElementById('valoresCarouselWrapper');
+    const dots = document.querySelectorAll('.valor-dot');
+    if (!track || !wrapper) return;
+
+    function updateDots() {
+      const cards = track.querySelectorAll('.valor-carousel-card');
+      if (!cards.length) return;
+      const cardWidth = (cards[0].offsetWidth > 0) ? (cards[0].offsetWidth + 22) : 382;
+      const activeIndex = Math.min(
+        Math.max(0, Math.round(wrapper.scrollLeft / cardWidth)),
+        dots.length - 1
+      );
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIndex);
+      });
+    }
+
+    if (!valoresCarouselInitialized) {
+      wrapper.addEventListener('scroll', updateDots, { passive: true });
+
+      function startAutoplay() {
+        stopAutoplay();
+        valoresAutoplayTimer = setInterval(() => {
+          const cards = track.querySelectorAll('.valor-carousel-card');
+          if (!cards.length) return;
+          const cardWidth = (cards[0].offsetWidth > 0) ? (cards[0].offsetWidth + 22) : 382;
+          const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+          if (wrapper.scrollLeft >= maxScroll - 15) {
+            wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            wrapper.scrollBy({ left: cardWidth, behavior: 'smooth' });
+          }
+        }, 5500);
+      }
+
+      function stopAutoplay() {
+        if (valoresAutoplayTimer) {
+          clearInterval(valoresAutoplayTimer);
+          valoresAutoplayTimer = null;
+        }
+      }
+
+      wrapper.addEventListener('mouseenter', stopAutoplay);
+      wrapper.addEventListener('mouseleave', startAutoplay);
+      wrapper.addEventListener('touchstart', stopAutoplay, { passive: true });
+      wrapper.addEventListener('touchend', startAutoplay, { passive: true });
+
+      startAutoplay();
+      valoresCarouselInitialized = true;
+    }
+
+    updateDots();
+  }
+
+  function scrollValores(direction) {
+    const wrapper = document.getElementById('valoresCarouselWrapper');
+    const track = document.getElementById('valoresCarouselTrack');
+    if (!wrapper || !track) return;
+    const cards = track.querySelectorAll('.valor-carousel-card');
+    const cardWidth = (cards.length && cards[0].offsetWidth > 0) ? (cards[0].offsetWidth + 22) : 382;
+    wrapper.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+  }
+
+  function goToValor(index) {
+    const wrapper = document.getElementById('valoresCarouselWrapper');
+    const track = document.getElementById('valoresCarouselTrack');
+    if (!wrapper || !track) return;
+    const cards = track.querySelectorAll('.valor-carousel-card');
+    if (cards[index]) {
+      const leftPos = cards[index].offsetLeft - track.offsetLeft;
+      wrapper.scrollTo({ left: leftPos, behavior: 'smooth' });
+    }
   }
 
   // ─── CATEGORY CAROUSEL & NAVIGATION HELPERS ───
@@ -6427,6 +6723,10 @@
     document.querySelectorAll('[data-view]').forEach(el => {
       el.classList.toggle('active', el.dataset.view === view);
     });
+
+    if (view === 'nosotros') {
+      setTimeout(initValoresCarousel, 80);
+    }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
     history.pushState(null, '', '#' + view);
