@@ -6957,7 +6957,7 @@
         <div class="subproduct-item">
           <div>
             <div class="subprod-img-box">
-              <img src="${item.image || ('/assets/products/' + (item.sku ? item.sku.toLowerCase() : 'tg-prd') + '.jpg')}" alt="${item.name}" loading="lazy" class="subprod-img" onerror="this.onerror=null; this.src='/assets/cat_' + (item.cat || 'epps') + '.jpg';" />
+              <img src="${item.image || ('/assets/products/' + (item.sku ? item.sku.toLowerCase() : 'tg-prd') + '.jpg')}" alt="${item.name}" loading="lazy" class="subprod-img" onerror="this.onerror=null; this.src='/assets/cat_${item.cat || \'epps\'}.jpg';" />
             </div>
             <div class="subprod-meta">
               <span class="subprod-sku">${item.sku || 'TG-PRD'}</span>
