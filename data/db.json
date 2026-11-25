@@ -2828,20 +2828,21 @@
     {
       "id": "TG-EMB-002",
       "sku": "TG-EMB-002",
-      "name": "Plástico azul doble ancho 1.5 m x 100 m",
+      "name": "Plástico Azul Doble Ancho (26\", 31\", 1m, 1.5m, 2m)",
       "cat": "carton",
       "catName": "Cartón & Protección de Pisos",
       "subCat": "Protección de acabados y embalaje",
       "macroCat": "carton",
-      "tag": "Protección de Pisos",
-      "price": 259.6,
-      "priceSinIgv": 220.0,
+      "tag": "Doble Ancho · 26\" a 2 m",
+      "price": null,
+      "priceSinIgv": null,
       "unit": "Por rollo",
-      "desc": "Plástico azul doble ancho 1.5 m x 100 m. Material para proteger pisos, acabados y carga durante la obra. Venta por rollo.",
+      "desc": "Manga de polietileno azul doble ancho para protección de pisos, cerramientos de obra, techado provisional y cubrimiento de materiales. Disponible en anchos de 26\", 31\", 1 m, 1.5 m y 2 m (al abrirse duplica su cobertura). Venta por rollo.",
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/products/tg-emb-002.jpg"
+      "image": "/assets/products/tg-emb-002.jpg?v=2",
+      "medidas": "26\" · 31\" · 1 m · 1.5 m · 2 m (abre al doble)"
     },
     {
       "id": "TG-EMB-003",
