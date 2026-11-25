@@ -3045,9 +3045,10 @@
       transition: all var(--transition);
       position: relative;
     }
-        .subprod-img-box {
+    .subprod-img-box {
       width: 100%;
-      height: 180px;
+      aspect-ratio: 1 / 1;
+      height: auto;
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: 8px;
@@ -3062,7 +3063,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 4px;
+      padding: 0;
       transition: transform 0.25s ease;
       background: #FFFFFF;
     }
@@ -7017,7 +7018,7 @@
                 <span class="subprod-price-val" style="color:var(--primary);font-size:0.98rem;font-weight:800;">A cotizar B2B</span>
               </div>
               <div class="subprod-price-sub">
-                Precio según metraje · <span class="subprod-unit">${item.unit || 'Por rollo'}</span>
+                Precio por volumen · <span class="subprod-unit">${item.unit || 'Por rollo'}</span>
               </div>
               `}
             </div>
