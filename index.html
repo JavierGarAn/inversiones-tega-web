@@ -7146,7 +7146,7 @@
                 <p>${item.desc.slice(0, 80)}...</p>
               </div>
               <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;">
-                <span style="font-weight:900;font-size:0.9rem;color:var(--tega-dark);">S/ ${priceNum.toFixed(2)}</span>
+                <span style="font-weight:900;font-size:0.9rem;color:var(--tega-dark);">${priceNum > 0 ? 'S/ ' + priceNum.toFixed(2) : 'A cotizar B2B'}</span>
                 <button class="btn btn-primary" style="padding:4px 9px;font-size:0.72rem;" onclick="event.stopPropagation();addToCart('${item.sku}')">
                   + Cotizar
                 </button>
@@ -7279,7 +7279,7 @@
           <div class="cart-item-info">
             <div class="cart-item-sku">${item.sku}</div>
             <div class="cart-item-title">${item.name}</div>
-            <div style="font-size:0.74rem;color:var(--text-muted);">S/ ${item.price.toFixed(2)} c/u (${item.unit})</div>
+            <div style="font-size:0.74rem;color:var(--text-muted);">${item.price > 0 ? 'S/ ' + item.price.toFixed(2) + ' c/u' : 'A cotizar B2B'} (${item.unit})</div>
           </div>
           <div class="cart-item-qty-wrap">
             <button class="cart-qty-btn" onclick="updateCartItemQty('${item.sku}', -1)">-</button>
@@ -7287,7 +7287,7 @@
             <button class="cart-qty-btn" onclick="updateCartItemQty('${item.sku}', 1)">+</button>
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
-            <span class="cart-item-price">S/ ${itemTotalCon.toFixed(2)}</span>
+            <span class="cart-item-price">${item.price > 0 ? 'S/ ' + itemTotalCon.toFixed(2) : 'A cotizar'}</span>
             <button class="cart-item-del" onclick="removeFromCart('${item.sku}')" aria-label="Eliminar ítem">✕</button>
           </div>
         </div>
