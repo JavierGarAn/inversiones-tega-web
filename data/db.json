@@ -2938,20 +2938,21 @@
     {
       "id": "TG-EMB-008",
       "sku": "TG-EMB-008",
-      "name": "Plástico transparente doble ancho 1 m x 100 m",
+      "name": "Plástico Transparente Doble Ancho (1 m × 100 m)",
       "cat": "carton",
       "catName": "Cartón & Protección de Pisos",
       "subCat": "Protección de acabados y embalaje",
       "macroCat": "carton",
-      "tag": "Protección de Pisos",
-      "price": 188.8,
-      "priceSinIgv": 160.0,
+      "tag": "Doble Ancho · Abre a 2 m",
+      "price": null,
+      "priceSinIgv": null,
       "unit": "Por rollo",
-      "desc": "Plástico transparente doble ancho 1 m x 100 m. Material para proteger pisos, acabados y carga durante la obra. Venta por rollo.",
+      "desc": "Manga de polietileno transparente doble ancho de 1 m × 100 m (al abrirse cubre 2 metros de ancho). Alta transparencia y resistencia para protección de pisos, ventanas, cerramientos luminosos, muebles y acabados en obra. Venta por rollo.",
       "warning": false,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/products/tg-emb-008.jpg"
+      "image": "/assets/products/tg-emb-008.jpg?v=2",
+      "medidas": "1.00 m × 100 m (abre a 2.00 m)"
     },
     {
       "id": "TG-EMB-009",
