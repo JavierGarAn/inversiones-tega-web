@@ -2884,20 +2884,21 @@
     {
       "id": "TG-EMB-005",
       "sku": "TG-EMB-005",
-      "name": "Stretch film",
+      "name": "Stretch Film Industrial para Embalaje (Rollo)",
       "cat": "carton",
       "catName": "Cartón & Protección de Pisos",
       "subCat": "Protección de acabados y embalaje",
       "macroCat": "carton",
-      "tag": "Protección de Pisos",
-      "price": 26.6,
-      "priceSinIgv": 22.54,
+      "tag": "Embalaje · Alta Adherencia",
+      "price": null,
+      "priceSinIgv": null,
       "unit": "Por rollo",
-      "desc": "Stretch film. Material para proteger pisos, acabados y carga durante la obra. Venta por rollo.",
+      "desc": "Rollo de stretch film transparente de alta elasticidad, transparencia y poder de adherencia para paletizado de carga, embalaje de materiales, protección contra polvo y humedad en almacén y obra. Venta por rollo.",
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/products/tg-emb-005.jpg"
+      "image": "/assets/products/tg-emb-005.jpg?v=2",
+      "medidas": "50 cm de ancho (uso manual / paletizado)"
     },
     {
       "id": "TG-EMB-006",
