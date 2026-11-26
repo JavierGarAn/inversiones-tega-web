@@ -2866,20 +2866,20 @@
     {
       "id": "TG-EMB-004",
       "sku": "TG-EMB-004",
-      "name": "Plástico doble cara azul/negro (rollo)",
+      "name": "Plástico Doble Cara Azul / Negro (Rollo)",
       "cat": "carton",
       "catName": "Cartón & Protección de Pisos",
       "subCat": "Protección de acabados y embalaje",
       "macroCat": "carton",
-      "tag": "Protección de Pisos",
-      "price": 340.0,
-      "priceSinIgv": 288.14,
+      "tag": "Bicapa · Cara Azul / Cara Negra",
+      "price": null,
+      "priceSinIgv": null,
       "unit": "Por rollo",
-      "desc": "Plástico doble cara azul/negro (rollo). Material para proteger pisos, acabados y carga durante la obra. Venta por rollo.",
+      "desc": "Rollo de polietileno bicapa doble cara (exterior azul / interior negro) de alta resistencia e impermeabilidad. Ideal para cerramientos de obra, techado provisional, protección de materiales, agricultura y almacenaje. Venta por rollo.",
       "warning": true,
       "reviewNote": null,
       "stock": "En Stock / Despacho 24h",
-      "image": "/assets/products/tg-emb-004.jpg"
+      "image": "/assets/products/tg-emb-004.jpg?v=2"
     },
     {
       "id": "TG-EMB-005",
